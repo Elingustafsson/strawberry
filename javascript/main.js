@@ -57,15 +57,19 @@
     });
 
 
-    let loopFunction = function () {
 
-    // Try HTML5 geolocation.
+
+
+
+
+    let loopFunction = function () {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+
         var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
         var beachMarker = new google.maps.Marker({
           position: pos,
@@ -78,19 +82,12 @@
         handleLocationError(true, infoWindow, map.getCenter());
       });
 
-        // setInterval(function() {
-        //   var pos = {
-        //     lat: position.coords.latitude,
-        //     lng: position.coords.longitude
-        //   };
-        // }, 3000);
-
     } else {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
-  }
 
+  }
 
 
 let doLoop = true
