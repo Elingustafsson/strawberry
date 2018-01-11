@@ -20,10 +20,10 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {
-        lat: -34.397,
-        lng: 150.644
+        lat: 59.31082,
+        lng: 18.11587
       },
-      zoom: 6
+      zoom: 15
     });
     infoWindow = new google.maps.InfoWindow;
 
@@ -56,6 +56,9 @@
 
     });
 
+
+    let loopFunction = function () {
+
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -70,27 +73,45 @@
           icon: image
         });
 
-        // infoWindow.setPosition(pos);
-        // infoWindow.setContent('Location found.');
-        infoWindow.open(map);
         map.setCenter(pos);
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
       });
 
-      function myFunction() {
-        setInterval(function() {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-        }, 3000);
-      }
+        // setInterval(function() {
+        //   var pos = {
+        //     lat: position.coords.latitude,
+        //     lng: position.coords.longitude
+        //   };
+        // }, 3000);
+
     } else {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
   }
+
+
+
+let doLoop = true
+let intervalFunction = function () {
+  if (doLoop) {
+    loopFunction();
+  }
+  return window.setTimeout(intervalFunction, 1000)
+}
+intervalFunction()
+}
+
+
+
+
+
+
+
+
+
+
 
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
