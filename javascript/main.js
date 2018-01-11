@@ -63,14 +63,29 @@
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        var beachMarker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          icon: image
+        });
 
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        // infoWindow.setPosition(pos);
+        // infoWindow.setContent('Location found.');
         infoWindow.open(map);
         map.setCenter(pos);
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
       });
+
+      function myFunction() {
+        setInterval(function() {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+        }, 3000);
+      }
     } else {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
@@ -84,3 +99,13 @@
       'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
   }
+
+  //
+  //   function myFunction() {
+  //     setInterval(function(){
+  //       var pos = {
+  //         lat: position.coords.latitude,
+  //         lng: position.coords.longitude
+  //       };
+  //   }, 3000);
+  // }
