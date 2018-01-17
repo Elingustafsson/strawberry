@@ -1,105 +1,66 @@
-  function initMap() {
-    let origin = {
-      lat: 59.31074,
-      lng: 18.11595
-    };
-    let map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: origin
-    });
+function initMap() {
+  let origin = {
+    lat: 59.31074,
+    lng: 18.11595
+  };
+  let map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: origin
+  });
 
-    // Gör fler
-    // let marker = new google.maps.Marker({
-    //   position: origin,
-    //   map: map
-    // });
-  }
+  // Gör fler
+  // let marker = new google.maps.Marker({
+  //   position: origin,
+  //   map: map
+  // });
+}
 
-  var map, infoWindow;
+var map, infoWindow;
 
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {
-        lat: 59.31082,
-        lng: 18.11587
-      },
-      zoom: 15
-    });
-    infoWindow = new google.maps.InfoWindow;
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
 
+  var marker = null;
 
-    let marker = new google.maps.Marker({
-      position: {
-        lat: 59.31074,
-        lng: 18.11595
-      },
-      map: map
-    });
+  function autoUpdate() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var newPoint = new google.maps.LatLng(position.coords.latitude,
+        position.coords.longitude);
 
-    marker.addListener('click', function() {
-
-      let modal = document.getElementById('myModal');
-
-      let span = document.getElementsByClassName("close")[0];
-
-      modal.style.display = "block";
-
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-    });
-
-
-
-
-
-
-
-    let loopFunction = function () {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-
-        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-        var beachMarker = new google.maps.Marker({
-          position: pos,
+      if (marker) {
+        // Marker exists, Move it
+        marker.setPosition(newPoint);
+      } else {
+        // No marker,create it
+        marker = new google.maps.Marker({
+          position: newPoint,
           map: map,
-          icon: image
+          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
         });
+      }
 
-        map.setCenter(pos);
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
+      // Center the map on the new position
+      map.setCenter(newPoint);
+    });
 
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
 
+    setTimeout(autoUpdate, 1000);
   }
 
-
-let doLoop = true
-let intervalFunction = function () {
-  if (doLoop) {
-    loopFunction();
-  }
-  return window.setTimeout(intervalFunction, 1000)
+  autoUpdate();
 }
-intervalFunction()
-}
-
+//
+//   function myFunction() {
+//     setInterval(function(){
+//       var pos = {
+//         lat: position.coords.latitude,
+//         lng: position.coords.longitude
+//       };
+//   }, 3000);
+// }
 
 
 
