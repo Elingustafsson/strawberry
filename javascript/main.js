@@ -64,7 +64,7 @@
         map:map
        });
 
-       
+
        marker.addListener('click', setModalOne);
        marker2.addListener('click', setModalTwo);
        marker3.addListener('click', setModalThree);
@@ -76,9 +76,9 @@
        marker9.addListener('click', setModalNine);
        marker10.addListener('click', setModalTen);
 
-      
+
         function setModal() {
-                 
+
        // Get the modal
        var modal = document.getElementById('myModal');
        // Get the button that opens the modal
@@ -259,7 +259,7 @@
 
       if (beachmarker) {
         // Marker exists, Move it
-        marker.setPosition(newPoint);
+        beachmarker.setPosition(newPoint);
       } else {
         // No marker,create it
         beachmarker = new google.maps.Marker({
