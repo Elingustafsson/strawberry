@@ -1,3 +1,4 @@
+
 //-------------Viktors kod börjar-----------//
 function initMap() {
   let origin = {
@@ -15,6 +16,132 @@ function initMap() {
   //   map: map
   // });
 }
+
+
+  var map, infoWindow;
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 59.31082,
+        lng: 18.11587
+      },
+
+      zoom: 14
+
+    });
+
+    //Paulina code start
+    //lng lines
+    var lng1 = [
+      {lat: 59.316330, lng: 18.101649},
+      {lat: 59.308446, lng: 18.101649}
+    ];
+
+    var lng2 = [
+      {lat: 59.316330, lng: 18.105903},
+      {lat: 59.308446, lng: 18.105903}
+    ];
+
+    var lng3 = [
+      {lat: 59.316330, lng: 18.110110},
+      {lat: 59.308446, lng: 18.110110}
+    ];
+
+    var lng4 = [
+      {lat: 59.316330, lng: 18.113499},
+      {lat: 59.308446, lng: 18.113499}
+    ];
+
+    var lng5 = [
+      {lat: 59.316330, lng: 18.116396},
+      {lat: 59.308446, lng: 18.116396}
+    ];
+
+    var lng6 = [
+      {lat: 59.316330, lng: 18.119410},
+      {lat: 59.308446, lng: 18.119410}
+    ];
+
+    //lat lines
+    var lat1 = [
+      {lat: 59.316330, lng: 18.101649},
+      {lat: 59.316330, lng: 18.119410}
+    ];
+
+    var lat2 = [
+      {lat: 59.314819, lng: 18.101649},
+      {lat: 59.314819, lng: 18.119410}
+    ];
+
+    var lat3 = [
+      {lat: 59.313011, lng: 18.101649},
+      {lat: 59.313011, lng: 18.119410}
+    ];
+
+    var lat4 = [
+      {lat: 59.3113702, lng: 18.101649},
+      {lat: 59.3113702, lng: 18.119410}
+    ];
+
+    var lat5 = [
+      {lat: 59.309650, lng: 18.101649},
+      {lat: 59.309650, lng: 18.119410}
+    ];
+
+    var lat6 = [
+      {lat: 59.308446, lng: 18.101649},
+      {lat: 59.308446, lng: 18.119410}
+    ];
+
+    map.data.add({geometry: new google.maps.Data.Polygon([lng1,
+                                                          lng2,
+                                                          lng3,
+                                                          lng4,
+                                                          lng5,
+                                                          lng6,
+                                                          lat1,
+                                                          lat2,
+                                                          lat3,
+                                                          lat4,
+                                                          lat5,
+                                                          lat6])})
+    //Paulian code end
+
+    infoWindow = new google.maps.InfoWindow;
+
+
+    let marker = new google.maps.Marker({
+      position: {
+        lat: 59.31074,
+        lng: 18.11595
+      },
+      map: map
+    });
+
+    marker.addListener('click', function() {
+
+      let modal = document.getElementById('myModal');
+
+      let span = document.getElementsByClassName("close")[0];
+
+      modal.style.display = "block";
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+    });
+
+
+
+
 
 var map, infoWindow;
 
@@ -92,3 +219,4 @@ function initMap() {
   //       };
   //   }, 3000);
   // }
+
