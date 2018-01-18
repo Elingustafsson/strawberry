@@ -1,3 +1,4 @@
+//-------------Viktors kod börjar-----------//
 function initMap() {
   let origin = {
     lat: 59.31074,
@@ -23,19 +24,19 @@ function initMap() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
-  var marker = null;
+  var beachmarker = null;
 
   function autoUpdate() {
     navigator.geolocation.getCurrentPosition(function(position) {
       var newPoint = new google.maps.LatLng(position.coords.latitude,
         position.coords.longitude);
 
-      if (marker) {
+      if (beachmarker) {
         // Marker exists, Move it
         marker.setPosition(newPoint);
       } else {
         // No marker,create it
-        marker = new google.maps.Marker({
+        beachmarker = new google.maps.Marker({
           position: newPoint,
           map: map,
           icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
@@ -52,6 +53,9 @@ function initMap() {
 
   autoUpdate();
 }
+//-------------Viktors kod avslutas-----------//
+
+
 //
 //   function myFunction() {
 //     setInterval(function(){
