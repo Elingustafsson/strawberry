@@ -23,7 +23,11 @@
         lat: 59.31082,
         lng: 18.11587
       },
+<<<<<<< HEAD
+      zoom: 14
+=======
       zoom: 15
+>>>>>>> fb918e0366e1ba5296270756f8514c9210da1a18
     });
     infoWindow = new google.maps.InfoWindow;
 
@@ -117,6 +121,9 @@ intervalFunction()
       'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
   }
+<<<<<<< HEAD
+setInterval(initMap,3000);
+=======
 
   //
   //   function myFunction() {
@@ -127,3 +134,4 @@ intervalFunction()
   //       };
   //   }, 3000);
   // }
+>>>>>>> fb918e0366e1ba5296270756f8514c9210da1a18
