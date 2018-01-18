@@ -1,0 +1,177 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+h1 {
+  font-size: 35px;
+  text-shadow: 2px 2px pink;
+}
+
+h2 {
+  font-size: 20px;
+  padding-top: 10px;
+  letter-spacing: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: center
+}
+
+.nav {
+  font-family: fantasy;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-right: 1px solid black;
+  color: black;
+  font-size: 50px;
+}
+
+.nav li a:hover {
+  color: pink;
+  background-color:
+}
+
+.menu-t {
+  display: none;
+}
+
+/* MOBIL MENY */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky+.content {
+  padding-top: 60px;
+}
+
+.line1, .line2, .line3 {
+  width: 40px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0 7px 10px;
+  transition: 0.9s;
+}
+
+.change .line1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .line2 {
+  opacity: 0;
+}
+
+.change .line3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.menu {
+  cursor: pointer;
+  margin-right: auto;
+  flex: 1 1 auto;
+  position: fixed;
+  width: 100%;
+}
+
+.bmenu {
+  font-family: fantasy;
+  padding: 50px 0px;
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 600px) {
+  .header {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .menu {
+    display: none;
+  }
+}
+/* MOBIL MENY */
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: geogrotesque;
+  min-height: 400px;
+}
+
+.content-padding {
+  padding-top: 250px;
+}
+
+.button {
+  font-family: geogrotesque;
+  background-color: pink;
+  border: none;
+  color: black;
+  padding: 24px 40px;
+  font-size: 23px;
+  margin: 34px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.news {
+  background-color: white;
+  min-height: 700px;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.h1-news {
+  padding-top: 20px;
+  letter-spacing: 10px;
+}
+
+.p1-news {
+  padding-top: 10px;
+}
+
+.p2-news {
+  padding-top: 20px;
+}
+
+hr.style12 {
+	height: 6px;
+	background: url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0;
+  border: 0;
+}
