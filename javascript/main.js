@@ -23,7 +23,7 @@
         lat: -34.397,
         lng: 150.644
       },
-      zoom: 6
+      zoom: 14
     });
     infoWindow = new google.maps.InfoWindow;
 
@@ -84,3 +84,4 @@
       'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
   }
+setInterval(initMap,3000);
