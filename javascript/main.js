@@ -20,10 +20,14 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {
-        lat: -34.397,
-        lng: 150.644
+        lat: 59.31082,
+        lng: 18.11587
       },
+<<<<<<< HEAD
       zoom: 14
+=======
+      zoom: 15
+>>>>>>> fb918e0366e1ba5296270756f8514c9210da1a18
     });
     infoWindow = new google.maps.InfoWindow;
 
@@ -56,6 +60,9 @@
 
     });
 
+
+    let loopFunction = function () {
+
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -63,19 +70,52 @@
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        var beachMarker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          icon: image
+        });
 
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
-        infoWindow.open(map);
         map.setCenter(pos);
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
       });
+
+        // setInterval(function() {
+        //   var pos = {
+        //     lat: position.coords.latitude,
+        //     lng: position.coords.longitude
+        //   };
+        // }, 3000);
+
     } else {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
   }
+
+
+
+let doLoop = true
+let intervalFunction = function () {
+  if (doLoop) {
+    loopFunction();
+  }
+  return window.setTimeout(intervalFunction, 1000)
+}
+intervalFunction()
+}
+
+
+
+
+
+
+
+
+
+
 
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
@@ -84,4 +124,17 @@
       'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
   }
+<<<<<<< HEAD
 setInterval(initMap,3000);
+=======
+
+  //
+  //   function myFunction() {
+  //     setInterval(function(){
+  //       var pos = {
+  //         lat: position.coords.latitude,
+  //         lng: position.coords.longitude
+  //       };
+  //   }, 3000);
+  // }
+>>>>>>> fb918e0366e1ba5296270756f8514c9210da1a18
