@@ -1,23 +1,4 @@
 
-//-------------Viktors kod börjar-----------//
-function initMap() {
-  let origin = {
-    lat: 59.31074,
-    lng: 18.11595
-  };
-  let map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: origin
-  });
-
-  // Gör fler
-  // let marker = new google.maps.Marker({
-  //   position: origin,
-  //   map: map
-  // });
-}
-
-
   var map, infoWindow;
 
   function initMap() {
@@ -143,13 +124,30 @@ function initMap() {
 
 
 
-var map, infoWindow;
 
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
+// //
+// // //-------------Viktors kod börjar-----------//
+// // function initMap() {
+// //   let origin = {
+// //     lat: 59.31074,
+// //     lng: 18.11595
+// //   };
+// //   let map = new google.maps.Map(document.getElementById('map'), {
+// //     zoom: 15,
+// //     center: origin
+// //   });
+//
+//   // Gör fler
+//   // let marker = new google.maps.Marker({
+//   //   position: origin,
+//   //   map: map
+//   // });
+// }
+// function initMap() {
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 15,
+//     mapTypeId: google.maps.MapTypeId.ROADMAP
+//   });
 
   var beachmarker = null;
 
@@ -219,4 +217,3 @@ function initMap() {
   //       };
   //   }, 3000);
   // }
-
