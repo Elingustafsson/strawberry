@@ -25,6 +25,82 @@
       },
       zoom: 15
     });
+
+    //lng lines
+    var lng1 = [
+      {lat: 59.316330, lng: 18.101649},
+      {lat: 59.308446, lng: 18.101649}
+    ];
+
+    var lng2 = [
+      {lat: 59.316330, lng: 18.105903},
+      {lat: 59.308446, lng: 18.105903}
+    ];
+
+    var lng3 = [
+      {lat: 59.316330, lng: 18.110110},
+      {lat: 59.308446, lng: 18.110110}
+    ];
+
+    var lng4 = [
+      {lat: 59.316330, lng: 18.113499},
+      {lat: 59.308446, lng: 18.113499}
+    ];
+
+    var lng5 = [
+      {lat: 59.316330, lng: 18.116396},
+      {lat: 59.308446, lng: 18.116396}
+    ];
+
+    var lng6 = [
+      {lat: 59.316330, lng: 18.119410},
+      {lat: 59.308446, lng: 18.119410}
+    ];
+
+    //lat lines
+    var lat1 = [
+      {lat: 59.316330, lng: 18.101649},
+      {lat: 59.316330, lng: 18.119410}
+    ];
+
+    var lat2 = [
+      {lat: 59.314819, lng: 18.101649},
+      {lat: 59.314819, lng: 18.119410}
+    ];
+
+    var lat3 = [
+      {lat: 59.313011, lng: 18.101649},
+      {lat: 59.313011, lng: 18.119410}
+    ];
+
+    var lat4 = [
+      {lat: 59.3113702, lng: 18.101649},
+      {lat: 59.3113702, lng: 18.119410}
+    ];
+
+    var lat5 = [
+      {lat: 59.309650, lng: 18.101649},
+      {lat: 59.309650, lng: 18.119410}
+    ];
+
+    var lat6 = [
+      {lat: 59.308446, lng: 18.101649},
+      {lat: 59.308446, lng: 18.119410}
+    ];
+
+    map.data.add({geometry: new google.maps.Data.Polygon([lng1,
+                                                          lng2,
+                                                          lng3,
+                                                          lng4,
+                                                          lng5,
+                                                          lng6,
+                                                          lat1,
+                                                          lat2,
+                                                          lat3,
+                                                          lat4,
+                                                          lat5,
+                                                          lat6])})
+
     infoWindow = new google.maps.InfoWindow;
 
 
