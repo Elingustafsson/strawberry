@@ -26,6 +26,7 @@
       zoom: 15
     });
 
+    //Paulina code start
     //lng lines
     var lng1 = [
       {lat: 59.316330, lng: 18.101649},
@@ -100,6 +101,7 @@
                                                           lat4,
                                                           lat5,
                                                           lat6])})
+    //Paulian code end
 
     infoWindow = new google.maps.InfoWindow;
 
