@@ -1,19 +1,22 @@
-  function initMap() {
-    let origin = {
-      lat: 59.31074,
-      lng: 18.11595
-    };
-    let map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: origin
-    });
 
-    // Gör fler
-    // let marker = new google.maps.Marker({
-    //   position: origin,
-    //   map: map
-    // });
-  }
+//-------------Viktors kod börjar-----------//
+function initMap() {
+  let origin = {
+    lat: 59.31074,
+    lng: 18.11595
+  };
+  let map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: origin
+  });
+
+  // Gör fler
+  // let marker = new google.maps.Marker({
+  //   position: origin,
+  //   map: map
+  // });
+}
+
 
   var map, infoWindow;
 
@@ -23,11 +26,9 @@
         lat: 59.31082,
         lng: 18.11587
       },
-<<<<<<< HEAD
+
       zoom: 14
-=======
-      zoom: 15
->>>>>>> fb918e0366e1ba5296270756f8514c9210da1a18
+
     });
 
     //Paulina code start
@@ -142,46 +143,55 @@
 
 
 
+var map, infoWindow;
 
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
 
-    let loopFunction = function () {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
+  var beachmarker = null;
 
-        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-        var beachMarker = new google.maps.Marker({
-          position: pos,
+  function autoUpdate() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var newPoint = new google.maps.LatLng(position.coords.latitude,
+        position.coords.longitude);
+
+      if (beachmarker) {
+        // Marker exists, Move it
+        marker.setPosition(newPoint);
+      } else {
+        // No marker,create it
+        beachmarker = new google.maps.Marker({
+          position: newPoint,
           map: map,
-          icon: image
+          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
         });
+      }
 
-        map.setCenter(pos);
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
+      // Center the map on the new position
+      map.setCenter(newPoint);
+    });
 
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
 
+    setTimeout(autoUpdate, 1000);
   }
 
-
-let doLoop = true
-let intervalFunction = function () {
-  if (doLoop) {
-    loopFunction();
-  }
-  return window.setTimeout(intervalFunction, 1000)
+  autoUpdate();
 }
-intervalFunction()
-}
+//-------------Viktors kod avslutas-----------//
 
+
+//
+//   function myFunction() {
+//     setInterval(function(){
+//       var pos = {
+//         lat: position.coords.latitude,
+//         lng: position.coords.longitude
+//       };
+//   }, 3000);
+// }
 
 
 
@@ -199,9 +209,6 @@ intervalFunction()
       'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
   }
-<<<<<<< HEAD
-setInterval(initMap,3000);
-=======
 
   //
   //   function myFunction() {
@@ -212,4 +219,4 @@ setInterval(initMap,3000);
   //       };
   //   }, 3000);
   // }
->>>>>>> fb918e0366e1ba5296270756f8514c9210da1a18
+
