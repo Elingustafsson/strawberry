@@ -11,6 +11,136 @@
       zoom: 14
 
     });
+     var origin = {lat: 59.31074, lng: 18.11595};
+       var origin2 = {lat: 59.311, lng: 18.118};
+       var origin3 = {lat: 59.31234, lng: 18.111};
+       var origin4 = {lat: 59.31274, lng: 18.111};
+       var origin5 = {lat: 59.31277, lng: 18.112};
+       var origin6 = {lat: 59.31273, lng: 18.113};
+       var origin7 = {lat: 59.31276, lng: 18.114};
+       var origin8 = {lat: 59.31363, lng: 18.113};
+       var origin9 = {lat: 59.31333, lng: 18.1132};
+       var origin10 = {lat: 59.31393, lng: 18.1134};
+
+
+       var marker = new google.maps.Marker({
+         position: origin,
+         map: map
+       });
+       var marker2 = new google.maps.Marker({
+        position: origin2,
+        map:map
+       });
+       var marker3 = new google.maps.Marker({
+        position: origin3,
+        map:map
+       });
+       var marker4 = new google.maps.Marker({
+        position: origin4,
+        map:map
+       });
+       var marker5 = new google.maps.Marker({
+        position: origin5,
+        map:map
+       });
+       var marker6 = new google.maps.Marker({
+        position: origin6,
+        map:map
+       });
+       var marker7 = new google.maps.Marker({
+        position: origin7,
+        map:map
+       });
+       var marker8 = new google.maps.Marker({
+        position: origin8,
+        map:map
+       });
+       var marker9 = new google.maps.Marker({
+        position: origin9,
+        map:map
+       });
+       var marker10 = new google.maps.Marker({
+        position: origin10,
+        map:map
+       });
+
+       
+       marker.addListener('click', setModalOne);
+       marker2.addListener('click', setModalTwo);
+       marker3.addListener('click', setModalThree);
+       marker4.addListener('click', setModalFour);
+       marker5.addListener('click', setModalFive);
+       marker6.addListener('click', setModalSix);
+       marker7.addListener('click', setModalSeven);
+       marker8.addListener('click', setModalEight);
+       marker9.addListener('click', setModalNine);
+       marker10.addListener('click', setModalTen);
+
+      
+        function setModal() {
+                 map.setCenter(marker.getPosition());
+       // Get the modal
+       var modal = document.getElementById('myModal');
+       // Get the button that opens the modal
+       var btn = document.getElementById("myBtn");
+       // Get the <span> element that closes the modal
+       var span = document.getElementsByClassName("close")[0];
+       // When the user clicks the marker, open the modal
+      modal.style.display="block";
+       // When the user clicks on <span> (x), close the modal
+       span.onclick = function() {
+           modal.style.display = "none";
+       }
+       // When the user clicks anywhere outside of the modal, close it
+       window.onclick = function(event) {
+           if (event.target == modal) {
+               modal.style.display = "none";
+           }
+       }
+     }
+
+     function setModalOne() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "bajsbaadgfshfhfdhgfssbfjs";
+     }
+     function setModalTwo() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "hejhejhejhejhjehje";
+     }
+     function setModalThree() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "ibland suger detta";
+     }
+     function setModalFour() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "Jag är hungrig";
+     }
+     function setModalFive() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "Jag vill äta på pong";
+     }
+     function setModalSix() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "Ingen kommer se detta";
+     }
+     function setModalSeven() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "fint väder";
+     }
+     function setModalEight() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "finns de chips?";
+     }
+     function setModalNine() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "mat är gott";
+     }
+     function setModalTen() {
+        setModal();
+        document.querySelector('.questions').innerHTML = "vems idé var detta?";
+     }
+
+
 
     //Paulina code start
     //lng lines
@@ -89,36 +219,7 @@
                                                           lat6])})
     //Paulian code end
 
-    infoWindow = new google.maps.InfoWindow;
 
-
-    let marker = new google.maps.Marker({
-      position: {
-        lat: 59.31074,
-        lng: 18.11595
-      },
-      map: map
-    });
-
-    marker.addListener('click', function() {
-
-      let modal = document.getElementById('myModal');
-
-      let span = document.getElementsByClassName("close")[0];
-
-      modal.style.display = "block";
-
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-    });
 
 
 
@@ -177,6 +278,7 @@
   }
 
   autoUpdate();
+
 }
 //-------------Viktors kod avslutas-----------//
 
