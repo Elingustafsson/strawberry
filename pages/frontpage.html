@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<link rel="stylesheet" href="../style/frontpage.css" type="text/css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8">
-	<title>Game title</title>
+  <link rel="stylesheet" href="../style/frontpage.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Game title</title>
 </head>
+
 <body>
-	<header class="header">
+  <header class="header">
     <ul class="nav">
-    	<li><a href="#">Contact</a></li>
-    	<li><a href="#">High scores</a></li>
-    	<li><a href="#">FAQs</a></li>
+      <li><a href="#cantact-pg">Contact</a></li>
+      <li><a href="#news-pg">News</a></li>
+      <li><a href="#high-pg">High scores</a></li>
+      <li><a href="#">FAQs</a></li>
       <li><a href="#">Sign Up Now!</a></li>
     </ul>
-	</header>
+  </header>
   <!-- MOBIL -->
   <div class="menu" onclick="menu(this)">
-		<div class="line1"></div>
-		<div class="line2"></div>
-		<div class="line3"></div>
-		<div class="menu-t">
-			<ul class="bmenu">
-        <li><a href="#">Contact</a></li>
-      	<li><a href="#">High scores</a></li>
-      	<li><a href="#">FAQs</a></li>
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    <div class="menu-t">
+      <ul class="bmenu">
+        <li><a href="#cantact-pg">Contact</a></li>
+        <li><a href="#news-pg">News</a></li>
+        <li><a href="#">High scores</a></li>
+        <li><a href="#">FAQs</a></li>
         <li><a href="#">Sign Up Now!</a></li>
-			</ul>
-		</div>
-	</div>
+      </ul>
+    </div>
+  </div>
   <script>
-  function menu(x) {
-    x.classList.toggle('change')
-  }
+    function menu(x) {
+      x.classList.toggle('change')
+    }
   </script>
   <!-- MOBIL -->
 
   <div class="content content-padding">
-    <h1>STRAWBERRY GAME REPRESENT</h1>
+    <h1 class="strong">STRAWBERRY GAME REPRESENT</h1>
     <h2>Conquer areas</h2>
     <h2>Find your team</h2>
     <h2>Answer questions</h2>
-    <button class="button" type="button">START GAME!</button>
+    <button class="button" type="button" onclick="window.location.href='../index.html'">START GAME!</button>
   </div>
-<hr>
-  <section class="news content">
-        <h1 class="test">NEWS</h1>
-    <p>fhurihuvihgu4ihgu4gjgihguithui</p>
+  <hr class="style12">
+  <section id="news-pg" class="news content">
+    <h1 class="h1-news strong">NEWS</h1>
+    <p class="p1-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="p2-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="p2-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="p2-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="p2-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="p2-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+  </section>
+  <hr class="style12">
+
+  <section id="high-pg" class="contact news content">
+    <h1 class="h1-news strong">HIGH SCORES</h1>
+    <p class="p1-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
+
+  <hr class="style12">
+  <section id="cantact-pg" class="contact news content">
+    <h1 class="h1-news strong">CONTACT</h1>
+    <p class="p1-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </section>
 
 
 
 </body>
+
 </html>
