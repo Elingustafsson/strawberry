@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="quiz.css">
+
+<body>
+  <div id="map"></div>
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <div class="question-container">
+        <div class="question1">
+          <p>Fråga 1.</p>
+          <div class="question-text">
+            <p>"Winter is coming" är ett känt citat, vilken tv-serie kommer det från?</p>
+          </div>
+        </div>
+      </div>
+      <div class="answers-container1">
+        <div class="answer-button1 col-6 col-md-4 col-sm-3">
+          <div class="answer-button">
+            <a href=#>Black Mirror</a>
+          </div>
+        </div>
+        <div class="answer-button2 col-6 col-md-4 col-sm-3">
+          <div class="answer-button">
+            <a href=#>Stranger Things</a>
+          </div>
+        </div>
+      </div>
+      <div class="answers-container2">
+        <div class="answers-button3 col-6 col-md-4 col-sm-3">
+          <div class="answer-button">
+            <a href=#>Game of Thrones</a>
+          </div>
+        </div>
+        <div class="answer-button4 col-6 col-md-4 col-sm-3">
+          <div class="answer-button">
+            <a href=#>Breaking Bad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="mapp"></div>
+
+</body>
+<script type="text/javascript" src="quiz.js">
+
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJLmTfiWZQO-ItiRKMWasaU-WNhHyw1TE&callback=initMap">
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+
+</html>

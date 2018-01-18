@@ -1,0 +1,152 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+
+#mapp {
+height: 100%;
+}
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+
+#map {
+height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 100px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+background-color: #fefefe ;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+}
+
+.question-container {
+display: flex;
+justify-content: center;
+}
+
+.question1 {
+font-size: 18px;
+}
+
+.question-text {
+font-size: 18px;
+}
+
+.answers-container1 {
+display: flex;
+padding: 20px 0;
+text-align: center;
+padding-bottom: 2px;
+position: relative center;
+flex-wrap: wrap;
+}
+
+.answers-container2 {
+display: flex;
+padding: 20px 0;
+text-align: center;
+padding-top: 2px;
+position: relative center;
+flex-wrap: wrap;
+}
+
+.answer-button {
+display: inline-block;
+padding: 15px 25px;
+font-size: 18px;
+width: 120px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #ffffff;
+background-color: #444346;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+
+.answer-button:hover {
+background-color: #4f4e52a6
+}
+
+.answer-button:active {
+background-color: #4f4e52a6
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+.answer-button1 {
+position: relative;
+}
+
+.answer-button2 {
+position: relative;
+}
+
+.answer-button3 {
+position: relative;
+}
+
+.answer-button4 {
+position: relative;
+}
+
+/* The Close Button */
+.close {
+color: #aaaaaa ;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+@-ms-viewport{
+	width: device-width;
+  }
