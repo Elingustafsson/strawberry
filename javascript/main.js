@@ -376,7 +376,7 @@ function initMap() {
       map.setCenter(newPoint);
     });
   }
-  setInterval(autoUpdate, 5000);
+  setInterval(autoUpdate, 1000);
 
 }
 //-------------Viktors kod avslutas-----------//
