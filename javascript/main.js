@@ -50,6 +50,19 @@ function initMap() {
     lat: 59.313910,
     lng: 18.123958
   };
+  var origin11 = {
+    lat: 59.314142,
+    lng: 18.128604
+  };
+  var origin12 = {
+    lat: 59.314138,
+    lng: 18.132489
+  };
+  var origin13 = {
+    lat: 59.312397,
+    lng: 18.128854
+  };
+
 
 
   var marker = new google.maps.Marker({
@@ -92,6 +105,18 @@ function initMap() {
     position: origin10,
     map: map
   });
+  var marker11 = new google.maps.Marker({
+    position: origin11,
+    map: map
+  });
+  var marker12 = new google.maps.Marker({
+    position: origin12,
+    map: map
+  });
+  var marker13 = new google.maps.Marker({
+    position: origin13,
+    map: map
+  });
 
 
   marker.addListener('click', setModalOne);
@@ -104,6 +129,11 @@ function initMap() {
   marker8.addListener('click', setModalEight);
   marker9.addListener('click', setModalNine);
   marker10.addListener('click', setModalTen);
+  marker11.addListener('click', setModalEleven);
+  marker12.addListener('click', setModalTwelve);
+  marker13.addListener('click', setModalThirteen);
+
+
 
 
   function setModal() {
@@ -178,214 +208,403 @@ function initMap() {
     document.querySelector('.questions').innerHTML = "vems idé var detta?";
   }
 
+  function setModalEleven() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "Elins första";
+  }
+
+  function setModalTwelve() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "Elins andra";
+  }
+
+  function setModalThirteen() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "Elins tredje";
+  }
+
+
 
 
   //Paulina code start
   //outline
-  var line1 = [
-    {lat: 59.315429, lng: 18.107863},
-    {lat: 59.312078, lng: 18.102610}
+  var line1 = [{
+      lat: 59.315429,
+      lng: 18.107863
+    },
+    {
+      lat: 59.312078,
+      lng: 18.102610
+    }
   ];
 
-  var line2 = [
-    {lat: 59.312078, lng: 18.102610},
-    {lat: 59.311622, lng: 18.103188}
+  var line2 = [{
+      lat: 59.312078,
+      lng: 18.102610
+    },
+    {
+      lat: 59.311622,
+      lng: 18.103188
+    }
   ];
 
-  var line3 = [
-    {lat: 59.311622, lng: 18.103188},
-    {lat: 59.309638, lng: 18.101770}
+  var line3 = [{
+      lat: 59.311622,
+      lng: 18.103188
+    },
+    {
+      lat: 59.309638,
+      lng: 18.101770
+    }
   ];
 
-  var line4 = [
-    {lat: 59.309638, lng: 18.101770},
-    {lat: 59.309316, lng: 18.103450}
+  var line4 = [{
+      lat: 59.309638,
+      lng: 18.101770
+    },
+    {
+      lat: 59.309316,
+      lng: 18.103450
+    }
   ];
 
-  var line5 = [
-    {lat: 59.309316, lng: 18.103450},
-    {lat: 59.308351, lng: 18.102925}
+  var line5 = [{
+      lat: 59.309316,
+      lng: 18.103450
+    },
+    {
+      lat: 59.308351,
+      lng: 18.102925
+    }
   ];
 
-  var line6 = [
-    {lat: 59.308351, lng: 18.102925},
-    {lat: 59.307842, lng: 18.105552}
+  var line6 = [{
+      lat: 59.308351,
+      lng: 18.102925
+    },
+    {
+      lat: 59.307842,
+      lng: 18.105552
+    }
   ];
 
-  var line7 = [
-    {lat: 59.307842, lng: 18.105552},
-    {lat: 59.308271, lng: 18.105919}
+  var line7 = [{
+      lat: 59.307842,
+      lng: 18.105552
+    },
+    {
+      lat: 59.308271,
+      lng: 18.105919
+    }
   ];
 
-  var line8 = [
-    {lat: 59.308271, lng: 18.105919},
-    {lat: 59.309477, lng: 18.118264}
+  var line8 = [{
+      lat: 59.308271,
+      lng: 18.105919
+    },
+    {
+      lat: 59.309477,
+      lng: 18.118264
+    }
   ];
 
-  var line9 = [
-    {lat: 59.309477, lng: 18.118264},
-    {lat: 59.309879, lng: 18.120365}
+  var line9 = [{
+      lat: 59.309477,
+      lng: 18.118264
+    },
+    {
+      lat: 59.309879,
+      lng: 18.120365
+    }
   ];
 
-  var line10 = [
-    {lat: 59.309879, lng: 18.120365},
-    {lat: 59.310898, lng: 18.122414}
+  var line10 = [{
+      lat: 59.309879,
+      lng: 18.120365
+    },
+    {
+      lat: 59.310898,
+      lng: 18.122414
+    }
   ];
 
-    var line11 = [
-      {lat: 59.310898, lng: 18.122414},
-      {lat: 59.310979, lng: 18.124515}
-    ];
+  var line11 = [{
+      lat: 59.310898,
+      lng: 18.122414
+    },
+    {
+      lat: 59.310979,
+      lng: 18.124515
+    }
+  ];
 
-    var line12 = [
-      {lat: 59.310979, lng: 18.124515},
-      {lat: 59.311408, lng: 18.126091}
-    ];
+  var line12 = [{
+      lat: 59.310979,
+      lng: 18.124515
+    },
+    {
+      lat: 59.311408,
+      lng: 18.126091
+    }
+  ];
 
-    var line13 = [
-      {lat: 59.311408, lng: 18.126091},
-      {lat: 59.311817, lng: 18.131213}
-    ];
+  var line13 = [{
+      lat: 59.311408,
+      lng: 18.126091
+    },
+    {
+      lat: 59.311817,
+      lng: 18.131213
+    }
+  ];
 
-    var line14 = [
-      {lat: 59.311817, lng: 18.131213},
-      {lat: 59.312299, lng: 18.133918}
-    ];
+  var line14 = [{
+      lat: 59.311817,
+      lng: 18.131213
+    },
+    {
+      lat: 59.312299,
+      lng: 18.133918
+    }
+  ];
 
-    var line15 = [
-      {lat: 59.312299, lng: 18.133918},
-      {lat: 59.313358, lng: 18.136203}
-    ];
+  var line15 = [{
+      lat: 59.312299,
+      lng: 18.133918
+    },
+    {
+      lat: 59.313358,
+      lng: 18.136203
+    }
+  ];
 
-    var line16 = [
-      {lat: 59.313358, lng: 18.136203},
-      {lat: 59.314068, lng: 18.135809}
-    ];
+  var line16 = [{
+      lat: 59.313358,
+      lng: 18.136203
+    },
+    {
+      lat: 59.314068,
+      lng: 18.135809
+    }
+  ];
 
-    var line17 = [
-      {lat: 59.314068, lng: 18.135809},
-      {lat: 59.315462, lng: 18.131712}
-    ];
+  var line17 = [{
+      lat: 59.314068,
+      lng: 18.135809
+    },
+    {
+      lat: 59.315462,
+      lng: 18.131712
+    }
+  ];
 
-    var line18 = [
-      {lat: 59.315462, lng: 18.131712},
-      {lat: 59.315235, lng: 18.130635}
-    ];
+  var line18 = [{
+      lat: 59.315462,
+      lng: 18.131712
+    },
+    {
+      lat: 59.315235,
+      lng: 18.130635
+    }
+  ];
 
-    var line19 = [
-      {lat: 59.315235, lng: 18.130635},
-      {lat: 59.315945, lng: 18.130189}
-    ];
+  var line19 = [{
+      lat: 59.315235,
+      lng: 18.130635
+    },
+    {
+      lat: 59.315945,
+      lng: 18.130189
+    }
+  ];
 
-    var line20 = [
-      {lat: 59.315945, lng: 18.130189},
-      {lat: 59.315529, lng: 18.126932}
-    ];
+  var line20 = [{
+      lat: 59.315945,
+      lng: 18.130189
+    },
+    {
+      lat: 59.315529,
+      lng: 18.126932
+    }
+  ];
 
-    var line21 = [
-      {lat: 59.315529, lng: 18.126932},
-      {lat: 59.316267, lng: 18.125855}
-    ];
+  var line21 = [{
+      lat: 59.315529,
+      lng: 18.126932
+    },
+    {
+      lat: 59.316267,
+      lng: 18.125855
+    }
+  ];
 
-    var line22 = [
-      {lat: 59.316267, lng: 18.125855},
-      {lat: 59.315940, lng: 18.125113}
-    ];
+  var line22 = [{
+      lat: 59.316267,
+      lng: 18.125855
+    },
+    {
+      lat: 59.315940,
+      lng: 18.125113
+    }
+  ];
 
-    var line23 = [
-      {lat: 59.315940, lng: 18.125113},
-      {lat: 59.316736, lng: 18.120681}
-    ];
+  var line23 = [{
+      lat: 59.315940,
+      lng: 18.125113
+    },
+    {
+      lat: 59.316736,
+      lng: 18.120681
+    }
+  ];
 
-    var line24 = [
-      {lat: 59.316736, lng: 18.120681},
-      {lat: 59.314819, lng: 18.108887}
-    ];
+  var line24 = [{
+      lat: 59.316736,
+      lng: 18.120681
+    },
+    {
+      lat: 59.314819,
+      lng: 18.108887
+    }
+  ];
 
-    var line25 = [
-      {lat: 59.314819, lng: 18.108887},
-      {lat: 59.315429, lng: 18.107863}
-    ];
+  var line25 = [{
+      lat: 59.314819,
+      lng: 18.108887
+    },
+    {
+      lat: 59.315429,
+      lng: 18.107863
+    }
+  ];
 
-    //grid
-    var line26 = [
-      {lat: 59.313720, lng: 18.105166},
-      {lat: 59.315565, lng: 18.127096}
-    ];
+  //grid
+  var line26 = [{
+      lat: 59.313720,
+      lng: 18.105166
+    },
+    {
+      lat: 59.315565,
+      lng: 18.127096
+    }
+  ];
 
-    var line27 = [
-      {lat: 59.311622, lng: 18.103188},
-      {lat: 59.313358, lng: 18.136203}
-    ];
+  var line27 = [{
+      lat: 59.311622,
+      lng: 18.103188
+    },
+    {
+      lat: 59.313358,
+      lng: 18.136203
+    }
+  ];
 
-    var line28 = [
-      {lat: 59.309316, lng: 18.103450},
-      {lat: 59.310898, lng: 18.122414}
-    ];
+  var line28 = [{
+      lat: 59.309316,
+      lng: 18.103450
+    },
+    {
+      lat: 59.310898,
+      lng: 18.122414
+    }
+  ];
 
-    var line29 = [
-      {lat: 59.314819, lng: 18.108887},
-      {lat: 59.308271, lng: 18.105919}
-    ];
+  var line29 = [{
+      lat: 59.314819,
+      lng: 18.108887
+    },
+    {
+      lat: 59.308271,
+      lng: 18.105919
+    }
+  ];
 
-    var line30 = [
-      {lat: 59.316736, lng: 18.120681},
-      {lat: 59.310898, lng: 18.122414}
-    ];
+  var line30 = [{
+      lat: 59.316736,
+      lng: 18.120681
+    },
+    {
+      lat: 59.310898,
+      lng: 18.122414
+    }
+  ];
 
-    var line31 = [
-      {lat: 59.315565, lng: 18.127096},
-      {lat: 59.311408, lng: 18.126091}
-    ];
+  var line31 = [{
+      lat: 59.315565,
+      lng: 18.127096
+    },
+    {
+      lat: 59.311408,
+      lng: 18.126091
+    }
+  ];
 
-    var line32 = [
-      {lat: 59.315235, lng: 18.130635},
-      {lat: 59.311817, lng: 18.131213}
-    ];
+  var line32 = [{
+      lat: 59.315235,
+      lng: 18.130635
+    },
+    {
+      lat: 59.311817,
+      lng: 18.131213
+    }
+  ];
 
-    var line33 = [
-      {lat: 59.315992, lng: 18.116096},
-      {lat: 59.309477, lng: 18.118264}
-    ];
+  var line33 = [{
+      lat: 59.315992,
+      lng: 18.116096
+    },
+    {
+      lat: 59.309477,
+      lng: 18.118264
+    }
+  ];
 
-    var line34 = [
-      {lat: 59.315144, lng: 18.110915},
-      {lat: 59.308852, lng: 18.111862}
-    ];
-  map.data.add({geometry: new google.maps.Data.Polygon([line1,
-                                                        line2,
-                                                        line3,
-                                                        line4,
-                                                        line5,
-                                                        line6,
-                                                        line7,
-                                                        line8,
-                                                        line9,
-                                                        line10,
-                                                        line11,
-                                                        line12,
-                                                        line13,
-                                                        line14,
-                                                        line15,
-                                                        line16,
-                                                        line17,
-                                                        line18,
-                                                        line19,
-                                                        line20,
-                                                        line21,
-                                                        line22,
-                                                        line23,
-                                                        line24,
-                                                        line25,
-                                                        line26,
-                                                        line27,
-                                                        line28,
-                                                        line29,
-                                                        line30,
-                                                        line31,
-                                                        line32,
-                                                        line33,
-                                                        line34])})
+  var line34 = [{
+      lat: 59.315144,
+      lng: 18.110915
+    },
+    {
+      lat: 59.308852,
+      lng: 18.111862
+    }
+  ];
+  map.data.add({
+    geometry: new google.maps.Data.Polygon([line1,
+      line2,
+      line3,
+      line4,
+      line5,
+      line6,
+      line7,
+      line8,
+      line9,
+      line10,
+      line11,
+      line12,
+      line13,
+      line14,
+      line15,
+      line16,
+      line17,
+      line18,
+      line19,
+      line20,
+      line21,
+      line22,
+      line23,
+      line24,
+      line25,
+      line26,
+      line27,
+      line28,
+      line29,
+      line30,
+      line31,
+      line32,
+      line33,
+      line34
+    ])
+  })
   //Paulian code end
 
 
