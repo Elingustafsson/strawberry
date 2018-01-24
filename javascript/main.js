@@ -220,7 +220,7 @@ function initMap() {
   marker20.addListener('click', setModalTwenty);
   marker21.addListener('click', setModalTwentyOne);
   marker22.addListener('click', setModalTwentyTwo);
-  marker22.addListener('click', setModalTwentyThree);
+  marker23.addListener('click', setModalTwentyThree);
 
 
   function setModal() {
