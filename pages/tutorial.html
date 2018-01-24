@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style/tut.css">
+
+<body>
+  <nav>
+    <button><img src="https://png.icons8.com/ios/33/ffffff/undo-filled.png"></button>
+    <button id="questionbutton"><img src="https://png.icons8.com/ios/40/ffffff/question-mark.png"></button>
+  </nav>
+
+  <!-- The Modal -->
+  <div id="info-Modal" class="modal-infoc">
+
+    <!-- Modal content -->
+    <div class="info-content">
+      <span class="close">&times;</span>
+      <section class="tutorial-section">
+        <h1>Tutorial</h1>
+        <div class="how-to">
+          <ul>
+            <li>What is the game about?
+              <p>In this game you and your team <br> are supposed to capture zones in the area.
+              </p>
+            </li>
+            <li>How do i capture zones?
+              <p>In this game you and your team <br> are supposed to capture zones in the area.
+              </p>
+            </li>
+            <li>What is the game about?</li>
+            <li>What is the game about?</li>
+            <li>What is the game about?</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+  </div>
+  <div id="map"></div>
+</body>
+<script type="text/javascript" src="../javascript/tut.js">
+</script>
+
+<script>
+  // // Get the modal
+  // var modal = document.getElementById('info-Modal');
+  //
+  // // Get the button that opens the modal
+  // var btn = document.getElementById("questionbutton");
+  //
+  // // Get the <span> element that closes the modal
+  // var span = document.getElementsByClassName("close")[0];
+  //
+  // // When the user clicks the button, open the modal
+  // btn.onclick = function() {
+  //   modal.style.display = "block";
+  // }
+  //
+  // // When the user clicks on <span> (x), close the modal
+  // span.onclick = function() {
+  //   modal.style.display = "none";
+  // }
+  //
+  // // When the user clicks anywhere outside of the modal, close it
+  // window.onclick = function(event) {
+  //   if (event.target == modal) {
+  //     modal.style.display = "none";
+  //   }
+  // }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJLmTfiWZQO-ItiRKMWasaU-WNhHyw1TE&callback=initMap">
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+
+</html>
