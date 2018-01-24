@@ -27,8 +27,8 @@ function initMap() {
     lng: 18.105562
   };
   var origin5 = {
-    lat: 59.311496,
-    lng: 18.114184
+    lat: 59.310822,
+    lng: 18.114690
   };
   var origin6 = {
     lat: 59.311496,
@@ -62,7 +62,46 @@ function initMap() {
     lat: 59.312397,
     lng: 18.128854
   };
-
+  var origin14 = {
+    lat: 59.312596,
+    lng: 18.132403
+  };
+  var origin15 = {
+    lat: 59.311934,
+    lng: 18.123680
+  };
+  var origin16 = {
+    lat: 59.310214,
+    lng: 18.119443
+  };
+  var origin17 = {
+    lat: 59.308769,
+    lng: 18.104712
+  };
+  var origin18 = {
+    lat: 59.310663,
+    lng: 18.109411
+  };
+  var origin19 = {
+    lat: 59.314359,
+    lng: 18.107662
+  };
+  var origin20 = {
+    lat: 59.314403,
+    lng: 18.109626
+  };
+  var origin21 = {
+    lat: 59.314836,
+    lng: 18.113413
+  };
+  var origin22 = {
+    lat: 59.315448,
+    lng: 18.118670
+  };
+  var origin23 = {
+    lat: 59.315706,
+    lng: 18.122586
+  };
 
 
   var marker = new google.maps.Marker({
@@ -117,6 +156,46 @@ function initMap() {
     position: origin13,
     map: map
   });
+  var marker14 = new google.maps.Marker({
+    position: origin14,
+    map: map
+  });
+  var marker15 = new google.maps.Marker({
+    position: origin15,
+    map: map
+  });
+  var marker16 = new google.maps.Marker({
+    position: origin16,
+    map: map
+  });
+  var marker17 = new google.maps.Marker({
+    position: origin17,
+    map: map
+  });
+  var marker18 = new google.maps.Marker({
+    position: origin18,
+    map: map
+  });
+  var marker19 = new google.maps.Marker({
+    position: origin19,
+    map: map
+  });
+  var marker20 = new google.maps.Marker({
+    position: origin20,
+    map: map
+  });
+  var marker21 = new google.maps.Marker({
+    position: origin21,
+    map: map
+  });
+  var marker22 = new google.maps.Marker({
+    position: origin22,
+    map: map
+  });
+  var marker23 = new google.maps.Marker({
+    position: origin23,
+    map: map
+  });
 
 
   marker.addListener('click', setModalOne);
@@ -132,8 +211,16 @@ function initMap() {
   marker11.addListener('click', setModalEleven);
   marker12.addListener('click', setModalTwelve);
   marker13.addListener('click', setModalThirteen);
-
-
+  marker14.addListener('click', setModalFourteen);
+  marker15.addListener('click', setModalFifteen);
+  marker16.addListener('click', setModalSixteen);
+  marker17.addListener('click', setModalSeventeen);
+  marker18.addListener('click', setModalEightteen);
+  marker19.addListener('click', setModalNineteen);
+  marker20.addListener('click', setModalTwenty);
+  marker21.addListener('click', setModalTwentyOne);
+  marker22.addListener('click', setModalTwentyTwo);
+  marker22.addListener('click', setModalTwentyThree);
 
 
   function setModal() {
@@ -223,6 +310,55 @@ function initMap() {
     document.querySelector('.questions').innerHTML = "Elins tredje";
   }
 
+  function setModalFourteen() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "vnsklnvl";
+  }
+
+  function setModalFifteen() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "avmanpgitjg";
+  }
+
+  function setModalSixteen() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "vmaklbailg";
+  }
+
+  function setModalSeventeen() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "ktrpohjndgl";
+  }
+
+  function setModalEightteen() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "mbklmlteniho";
+  }
+
+  function setModalNineteen() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "akfogjaoj";
+  }
+
+  function setModalTwenty() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "jihsnblnhis";
+  }
+
+  function setModalTwentyOne() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "kvlsnbito";
+  }
+
+  function setModalTwentyTwo() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "mvnalblgja";
+  }
+
+  function setModalTwentyThree() {
+    setModal();
+    document.querySelector('.questions').innerHTML = "bndkjhlx";
+  }
 
 
 
