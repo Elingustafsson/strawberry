@@ -165,6 +165,7 @@ h2 {
   margin: 34px;
   cursor: pointer;
   border-radius: 12px;
+  text-decoration: none;
 }
 
 .news {
@@ -176,6 +177,7 @@ h2 {
 
 .strong {
   font-weight: bold;
+  padding-bottom: 10px;
 }
 
 .h1-news {
@@ -195,6 +197,8 @@ hr.style12 {
 	height: 6px;
 	background: url(http://ibrahimjabbari.com/english/images/hr-12.png) repeat-x 0 0;
   border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* MODAL */
@@ -214,12 +218,13 @@ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 /* Modal Content */
 .modal-content {
-background-color: #fefefe ;
+background-color: white;
 margin: auto;
 padding: 20px;
 border: 1px solid #888;
 width: 50%;
 text-align: center;
+margin-top: 10px;
 }
 
 .modal-header {
@@ -242,4 +247,49 @@ margin-bottom: 10px;
 color: #000;
 text-decoration: none;
 cursor: pointer;
+}
+
+/* LEADERBOARD */
+.teams {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.team1 {
+  border: 10px groove yellow;
+  margin-top: 20px;
+  background-color: pink;
+  width: 300px;
+  height: 350px;
+}
+
+.team2 {
+  margin-top: 20px;
+  border: 10px dotted yellow;
+  background-color: #deb3e1;
+  width: 300px;
+  height: 350px;
+}
+
+.team3 {
+  border: 10px ridge turquoise;
+  margin-top: 20px;
+  background-color: #deb3e1;
+  width: 300px;
+  height: 350px;
+}
+
+.p-tagg {
+  text-align: left;
+  padding: 3px 10px 10px 10px;
+  border-bottom: 1px solid black;
+}
+
+.leader-b {
+  min-height: 600px;
+    background: repeating-linear-gradient(-45deg, #e9dcdc, #deb3e1 10px, #ede8e82e 0, #e9e1e15c 20px);
 }
