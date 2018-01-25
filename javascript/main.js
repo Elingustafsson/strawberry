@@ -247,117 +247,117 @@ function initMap() {
 
   function setModalOne() {
     setModal();
-    document.querySelector('.questions').innerHTML = "bajsbaadgfshfhfdhgfssbfjs";
+    document.querySelector('.questions');
   }
 
   function setModalTwo() {
     setModal();
-    document.querySelector('.questions').innerHTML = "hejhejhejhejhjehje";
+    document.querySelector('.questions');
   }
 
   function setModalThree() {
     setModal();
-    document.querySelector('.questions').innerHTML = "ibland suger detta";
+    document.querySelector('.questions');
   }
 
   function setModalFour() {
     setModal();
-    document.querySelector('.questions').innerHTML = "Jag är hungrig";
+    document.querySelector('.questions');
   }
 
   function setModalFive() {
     setModal();
-    document.querySelector('.questions').innerHTML = "Jag vill äta på pong";
+    document.querySelector('.questions');
   }
 
   function setModalSix() {
     setModal();
-    document.querySelector('.questions').innerHTML = "Ingen kommer se detta";
+    document.querySelector('.questions');
   }
 
   function setModalSeven() {
     setModal();
-    document.querySelector('.questions').innerHTML = "fint väder";
+    document.querySelector('.questions');
   }
 
   function setModalEight() {
     setModal();
-    document.querySelector('.questions').innerHTML = "finns de chips?";
+    document.querySelector('.questions');
   }
 
   function setModalNine() {
     setModal();
-    document.querySelector('.questions').innerHTML = "mat är gott";
+    document.querySelector('.questions');
   }
 
   function setModalTen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "vems idé var detta?";
+    document.querySelector('.questions');
   }
 
   function setModalEleven() {
     setModal();
-    document.querySelector('.questions').innerHTML = "Elins första";
+    document.querySelector('.questions');
   }
 
   function setModalTwelve() {
     setModal();
-    document.querySelector('.questions').innerHTML = "Elins andra";
+    document.querySelector('.questions');
   }
 
   function setModalThirteen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "Elins tredje";
+    document.querySelector('.questions');
   }
 
   function setModalFourteen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "vnsklnvl";
+    document.querySelector('.questions');
   }
 
   function setModalFifteen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "avmanpgitjg";
+    document.querySelector('.questions');
   }
 
   function setModalSixteen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "vmaklbailg";
+    document.querySelector('.questions');
   }
 
   function setModalSeventeen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "ktrpohjndgl";
+    document.querySelector('.questions');
   }
 
   function setModalEightteen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "mbklmlteniho";
+    document.querySelector('.questions');
   }
 
   function setModalNineteen() {
     setModal();
-    document.querySelector('.questions').innerHTML = "akfogjaoj";
+    document.querySelector('.questions');
   }
 
   function setModalTwenty() {
     setModal();
-    document.querySelector('.questions').innerHTML = "jihsnblnhis";
+    document.querySelector('.questions');
   }
 
   function setModalTwentyOne() {
     setModal();
-    document.querySelector('.questions').innerHTML = "kvlsnbito";
+    document.querySelector('.questions');
   }
 
   function setModalTwentyTwo() {
     setModal();
-    document.querySelector('.questions').innerHTML = "mvnalblgja";
+    document.querySelector('.questions');
   }
 
   function setModalTwentyThree() {
     setModal();
-    document.querySelector('.questions').innerHTML = "bndkjhlx";
+    document.querySelector('.questions');
   }
 
 
