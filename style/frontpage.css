@@ -129,9 +129,25 @@ h2 {
   text-shadow: 0px 0px 0px #fff;
 }
 
+.frontFooter{
+  height: 20vh;
+  background-color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.frontFooter a{
+  text-decoration: none;
+  color: #000;
+}
+
 @media (max-width: 600px) {
   .header {
     display: none;
+  }
+  footer{
   }
 }
 
