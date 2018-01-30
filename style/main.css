@@ -58,7 +58,7 @@ width: 80%;
 }
 
 /* The Close Button */
-.close {
+.close,.close1 {
 color: #aaaaaa ;
 float: right;
 font-size: 28px;
