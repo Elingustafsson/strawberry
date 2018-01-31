@@ -1,3 +1,8 @@
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
 function startMap() {
   var myPos = navigator.geolocation.getCurrentPosition(initMap);
 }
@@ -24,12 +29,15 @@ function initMap(myPos) {
 
 function runMap(MapCenter) {
   let beachmarker = null;
+  let newPoint = null;
   function autoUpdate() {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var newPoint = new google.maps.LatLng(position.coords.latitude,
+      newPoint = new google.maps.LatLng(position.coords.latitude,
         position.coords.longitude);
+
       if (beachmarker) {
         beachmarker.setPosition(newPoint);
+
       } else {
         beachmarker = new google.maps.Marker({
           position: newPoint,
@@ -38,18 +46,26 @@ function runMap(MapCenter) {
         });
       }
       myMap.setCenter(newPoint);
-    });
-  }
-  setInterval(autoUpdate, 1000);
+ var dist = google.maps.geometry.spherical.computeDistanceBetween(newPoint,origin);
+ if (dist >= presetDistance)
+     {
+       marker.addListener('click', setModalOne);
+     }
+ else if (dist > presetDistance)
+     {
+       google.maps.event.clearInstanceListeners(marker);
+     }
+});
 
-  var origin = {
-    lat: 59.312943,
-    lng: 18.109854
-  };
-  var origin2 = {
-    lat: 59.313670,
-    lng: 18.114184
-  };
+    }
+
+
+
+  setInterval(autoUpdate, 1000);
+  presetDistance = 10;
+
+var origin = new google.maps.LatLng(59.312943, 18.109854);
+  var origin2 = new google.maps.LatLng(59.313680, 18.114184);
   var origin3 = {
     lat: 59.313670,
     lng: 18.118675
