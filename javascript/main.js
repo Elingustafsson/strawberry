@@ -690,3 +690,27 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+//----Questions---//
+
+let v = document.getElementById("quest").innerHTML="Winter is coming är ett känt citat, vilken tv-serie kommer det från?";
+let a = document.getElementById("answer1").innerHTML="Black Mirror";
+let b = document.getElementById("answer2").innerHTML="Stranger Things";
+let c = document.getElementById("answer3").innerHTML="Game of Thrones";
+let d = document.getElementById("answer4").innerHTML="Breaking Bad";
+
+let theParent = document.querySelector(".correction");
+theParent.addEventListener("click", doSomething, false);
+
+function doSomething(e) {
+  let x = document.getElementById("answer3");
+   if (e.target === x) {
+       e.target.style.color = "green";
+   }else{
+     e.target.style.color = "red";
+   }
+   e.stopPropagation();
+}
+
+//----Questions end----//
