@@ -14,6 +14,8 @@ body {
   width: 100%;
 }
 
+/* Blå röd lila färger: blueTeam, redTeam, purpTeam*/
+
 h1 {
   font-size: 35px;
   text-shadow: 2px 2px pink;
@@ -129,9 +131,25 @@ h2 {
   text-shadow: 0px 0px 0px #fff;
 }
 
+.frontFooter{
+  height: 20vh;
+  background-color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.frontFooter a{
+  text-decoration: none;
+  color: #000;
+}
+
 @media (max-width: 600px) {
   .header {
     display: none;
+  }
+  footer{
   }
 }
 

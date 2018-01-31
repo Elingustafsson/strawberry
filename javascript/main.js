@@ -690,6 +690,7 @@ var modal = document.getElementById('info-Modal');
 
 var btn = document.getElementById("questionbutton");
 
+
 var span = document.getElementsByClassName("close1")[0];
 
 btn.onclick = function() {

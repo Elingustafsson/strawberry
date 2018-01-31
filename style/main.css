@@ -37,12 +37,14 @@ html, body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+
 .modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+
 }
 
 .close, .close1 {
@@ -133,4 +135,15 @@ nav {
   background-color: #4f4e52a6;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+@media only screen and (max-width:780px){
+	.info-content{
+		height: 50vh;
+		width: 65%;
+	}
+	.tutorial-section{
+		font-size: 1.2em;
+	}
+
 }
