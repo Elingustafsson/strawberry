@@ -155,3 +155,14 @@ background-color: #4f4e52a6
 box-shadow: 0 5px #666;
 transform: translateY(4px);
 }
+
+@media only screen and (max-width:780px){
+	.info-content{
+		height: 50vh;
+		width: 65%;
+	}
+	.tutorial-section{
+		font-size: 1.2em;
+	}
+
+}
