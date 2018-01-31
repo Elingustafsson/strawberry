@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style/main.css">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Strawberry game</title>
+  <link rel="stylesheet" href="style/main.css">
+</head>
+
 <body>
+
   <nav>
     <a href="pages/profile.html"><img src="https://png.icons8.com/ios/33/ffffff/exit.png"></a>
     <button id="questionbutton"><img src="https://png.icons8.com/ios/40/ffffff/question-mark.png"></button>
   </nav>
 
-  <!-- The Modal -->
   <div id="info-Modal" class="modal-infoc">
 
-    <!-- Modal content -->
     <div class="info-content">
       <span class="close1">&times;</span>
       <section class="tutorial-section">
@@ -35,35 +38,29 @@
       </section>
     </div>
   </div>
-  <div id="map"></div>
-
-
-   <div id="myModal" class="modal">
-     <!-- Modal content -->
-     <div class="modal-content">
-       <span class="close">&times;</span>
-       <div class="questions">
-         <div class="question">
-           <p>"Winter is coming" är ett känt citat, vilken tv-serie kommer det från?</p>
-         </div>
-         <div class="answerbox">
-           <div class="answer">Black Mirror</div>
-           <div class="answer">Stranger Things</div>
-         </div>
-         <div class="answerbox">
-           <div class="answer">Game of Thrones</div>
-           <div class="answer">Breaking Bad</div>
-         </div>
-       </div>
-     </div>
-   </div>
-  <div id="mapp"></div>
-
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="questions">
+        <div class="question">
+          <p>"Winter is coming" är ett känt citat, vilken tv-serie kommer det från?</p>
+        </div>
+        <div class="answerbox">
+          <div class="answer">Black Mirror</div>
+          <div class="answer">Stranger Things</div>
+        </div>
+        <div class="answerbox">
+          <div class="answer">Game of Thrones</div>
+          <div class="answer">Breaking Bad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="map_canvas"></div>
+  <footer>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE5kp8oYu5PBbBxklN9QjSMLte2vpgfFg"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
+  </footer>
 </body>
-<script type="text/javascript" src="javascript/main.js">
 
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJLmTfiWZQO-ItiRKMWasaU-WNhHyw1TE&callback=initMap">
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 </html>
