@@ -27,51 +27,92 @@ function initMap(myPos) {
   myMap = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
   runMap(MapCenter);
 }
-let presetDistance = 10;
+
 
 function runMap(MapCenter) {
   let beachmarker = null;
-  let playerPos = null;
+let presetDistance = 10;
 
 
   function autoUpdate() {
+    // navigator.geolocation.getCurrentPosition(function(position) {
+    //   var playerPos = new google.maps.LatLng(position.coords.latitude,
+    //     position.coords.longitude);
+    //     console.log(playerPos);
+    //   if (beachmarker) {
+    //     beachmarker.setPosition(playerPos);
+    //
+    //   } else {
+    //     beachmarker = new google.maps.Marker({
+    //       position: playerPos,
+    //       map: myMap,
+    //       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+    //     });
+    //   }
+    //   myMap.setCenter(playerPos);
+    //
+    //   var dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos,bajs);
+    //   console.log(dist)
+    //    if (dist <= presetDistance)
+    //        {
+    //          setModal();
+    //        }
+    //    else if (dist > presetDistance)
+    //        {
+    //          google.maps.event.clearInstanceListeners(markers[0]);
+    //        }
+    // });
+    //
+    // let marker, p;
+    // let markers = [];
+    // let bajs = new google.maps.LatLng(locations[0], locations[1]);
+    // console.log(bajs);
+    // for (p = 0; p < locations.length; p++) {
+    //   marker = new google.maps.Marker({
+    //     position: new google.maps.LatLng(locations[p][0], locations[p][1]),
+    //     map: myMap,
+    //   });
+    //
+    //   markers.push(marker);
+    //   markers[p].addListener('click', function() {
+    //     setModal();
+    //   });
+    //
+    // }  function autoUpdate() {
     navigator.geolocation.getCurrentPosition(function(position) {
-      playerPos = new google.maps.LatLng(position.coords.latitude,
+      newPoint = new google.maps.LatLng(position.coords.latitude,
         position.coords.longitude);
 
       if (beachmarker) {
-        beachmarker.setPosition(playerPos);
+        beachmarker.setPosition(newPoint);
 
       } else {
         beachmarker = new google.maps.Marker({
-          position: playerPos,
+          position: newPoint,
           map: myMap,
           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
         });
       }
-      myMap.setCenter(playerPos);
+      myMap.setCenter(newPoint);
+ var dist = google.maps.geometry.spherical.computeDistanceBetween(newPoint,origin);
+ console.log(dist);
+ if (dist <= presetDistance)
+     {
+       setModal();
+     }
+ else if (dist > presetDistance)
+     {
+       google.maps.event.clearInstanceListeners(marker);
+     }
+});
 
-    });
-    let marker, p;
-    let markers = [];
-    let loc = new google.maps.LatLng(locations[0], locations[1]);
-    console.log(loc);
-    for (p = 0; p < locations.length; p++) {
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[p][0], locations[p][1]),
-        map: myMap,
-
-      });
-
-      markers.push(marker);
-      markers[p].addListener('click', function() {
-        setModal();
-      });
-
-    }
+var origin = new google.maps.LatLng(59.312943, 18.109854);
+var marker = new google.maps.Marker({
+position: origin,
+map: myMap
+});
 
   }
-
 
   setInterval(autoUpdate, 1000);
   var locations = [
