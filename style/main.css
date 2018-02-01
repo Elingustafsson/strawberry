@@ -37,18 +37,15 @@ html, body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-
 .modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-
 }
 
 .close, .close1 {
-  color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -87,6 +84,17 @@ nav {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.h1-tutorial {
+  margin: 10px 0 30px 0;
+  font-size: 48px;
+  font-family: fantasy;
+}
+
+.how-to {
+  font-size: 20px;
+  font-family: fantasy;
+}
+
 .info-content {
   background-color: rgba(255, 255, 255, 0.9);
   margin: auto;
@@ -94,7 +102,6 @@ nav {
   border: 0px solid #888;
   border-radius: 10px;
   width: 30%;
-  height: 50vh;
 }
 
 .questions {
@@ -145,5 +152,4 @@ nav {
 	.tutorial-section{
 		font-size: 1.2em;
 	}
-
 }
