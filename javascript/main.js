@@ -46,9 +46,13 @@ function runMap(MapCenter) {
         });
       }
       myMap.setCenter(playerPos);
+for (var t=0; t< locations.length; t++){
 
- var dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos,markers[p]);
- console.log(dist);
+
+ var dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos,locations[p]);
+
+ //console.log(locations[0]);
+
        if (dist <= presetDistance)
            {
              markers[p].addListener('click', setModalOne);
@@ -57,8 +61,24 @@ function runMap(MapCenter) {
            {
              google.maps.event.clearInstanceListeners(markers);
            }
+         }
 });
+let marker, p;
+let markers = [];
 
+for ( p = 0; p < locations.length; p++)
+{
+  marker = new google.maps.Marker({
+    position: new google.maps.LatLng(locations[p][0], locations[p][1]),
+    map: myMap
+
+  });
+  markers.push(marker);
+  markers[p].addListener('click', function(){
+    setModal();
+  });
+
+}
     }
     var locations = [
       [59.313670, 18.118675],
@@ -90,21 +110,7 @@ function runMap(MapCenter) {
 
   setInterval(autoUpdate, 1000);
 
-  let marker, p;
-  let markers = [];
-  for ( p = 0; p < locations.length; p++)
-  {
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[p][0], locations[p][1]),
-      map: myMap
 
-    });
-    markers.push(marker);
-    markers[p].addListener('click', function(){
-      setModal();
-    });
-
-  }
   // var marker = new google.maps.Marker({
   //   position: origin,
   //   map: myMap
