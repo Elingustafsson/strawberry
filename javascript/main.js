@@ -3,6 +3,35 @@ var options = {
   timeout: 5000,
   maximumAge: 0
 };
+let marker, p;
+let markers = [];
+var locations = [
+  [59.313670, 18.118675],
+  [59.312560, 18.105562],
+  [59.310822, 18.114690],
+  [59.312943, 18.109854],
+  [59.313680, 18.114184],
+  [59.311496, 18.118675],
+  [59.309242, 18.109821],
+  [59.309242, 18.104818],
+  [59.310603, 18.104818],
+  [59.313910, 18.123958],
+  [59.314142, 18.128604],
+  [59.314138, 18.132489],
+  [59.312397, 18.128854],
+  [59.312596, 18.132403],
+  [59.311934, 18.123680],
+  [59.310214, 18.119443],
+  [59.308769, 18.104712],
+  [59.310663, 18.109411],
+  [59.314359, 18.107662],
+  [59.314403, 18.109626],
+  [59.314836, 18.113413],
+  [59.315448, 19.118670],
+  [59.315706, 18.122586]
+];
+  var beachmarker = null;
+
 
 function startMap() {
   var myPos = navigator.geolocation.getCurrentPosition(initMap);
@@ -28,13 +57,45 @@ function initMap(myPos) {
   runMap(MapCenter);
 }
 
+function calcDistance (fromLat, fromLng, toLat, toLng) {
+      return google.maps.geometry.spherical.computeDistanceBetween(
+        new google.maps.LatLng(fromLat, fromLng), new google.maps.LatLng(toLat, toLng));
+   }
+
+function runGame(pos) {
+  var crd = pos.coords;
+  beachmarker.setPosition(new google.maps.LatLng(crd.latitude, crd.longitude));
+  console.log(crd);
+  // loop through markers, see if distance < preset, if then do XYZ
+  locations.forEach(function(element) {
+    dist = calcDistance(crd.latitude, crd.longitude, element[0], element[1]);
+    if (dist <= 15) {
+    
+
+    }
+    else if (dist > 15)
+    {
+
+    }
+});
+
+    //navigator.geolocation.clearWatch(id);
+
+}
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
 
 function runMap(MapCenter) {
-  let beachmarker = null;
-let presetDistance = 10;
+
+  let presetDistance = 10;
 
 
-  function autoUpdate() {
+
+  id = navigator.geolocation.watchPosition(runGame, error, options);
+
+  //function autoUpdate() {
     // navigator.geolocation.getCurrentPosition(function(position) {
     //   var playerPos = new google.maps.LatLng(position.coords.latitude,
     //     position.coords.longitude);
@@ -43,103 +104,31 @@ let presetDistance = 10;
     //     beachmarker.setPosition(playerPos);
     //
     //   } else {
-    //     beachmarker = new google.maps.Marker({
-    //       position: playerPos,
-    //       map: myMap,
-    //       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-    //     });
-    //   }
-    //   myMap.setCenter(playerPos);
-    //
-    //   var dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos,bajs);
-    //   console.log(dist)
-    //    if (dist <= presetDistance)
-    //        {
-    //          setModal();
-    //        }
-    //    else if (dist > presetDistance)
-    //        {
-    //          google.maps.event.clearInstanceListeners(markers[0]);
-    //        }
-    // });
-    //
-    // let marker, p;
-    // let markers = [];
-    // let bajs = new google.maps.LatLng(locations[0], locations[1]);
-    // console.log(bajs);
-    // for (p = 0; p < locations.length; p++) {
-    //   marker = new google.maps.Marker({
-    //     position: new google.maps.LatLng(locations[p][0], locations[p][1]),
-    //     map: myMap,
-    //   });
-    //
-    //   markers.push(marker);
-    //   markers[p].addListener('click', function() {
-    //     setModal();
-    //   });
-    //
-    // }  function autoUpdate() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      newPoint = new google.maps.LatLng(position.coords.latitude,
-        position.coords.longitude);
+         beachmarker = new google.maps.Marker({
+           position: MapCenter,
+           map: myMap,
+           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+         });
 
-      if (beachmarker) {
-        beachmarker.setPosition(newPoint);
 
-      } else {
-        beachmarker = new google.maps.Marker({
-          position: newPoint,
-          map: myMap,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-        });
-      }
-      myMap.setCenter(newPoint);
- var dist = google.maps.geometry.spherical.computeDistanceBetween(newPoint,origin);
- console.log(dist);
- if (dist <= presetDistance)
-     {
-       setModal();
-     }
- else if (dist > presetDistance)
-     {
-       google.maps.event.clearInstanceListeners(marker);
-     }
-});
 
-var origin = new google.maps.LatLng(59.312943, 18.109854);
-var marker = new google.maps.Marker({
-position: origin,
-map: myMap
-});
+ for (p = 0; p < locations.length; p++) {
+   marker = new google.maps.Marker({
+     position: new google.maps.LatLng(locations[p][0], locations[p][1]),
+     map: myMap,
+   });
 
-  }
+   markers.push(marker);
+//   markers[p].addListener('click', function() {
+//   setModal();
 
-  setInterval(autoUpdate, 1000);
-  var locations = [
-    [59.313670, 18.118675],
-    [59.312560, 18.105562],
-    [59.310822, 18.114690],
-    [59.312943, 18.109854],
-    [59.313680, 18.114184],
-    [59.311496, 18.118675],
-    [59.309242, 18.109821],
-    [59.309242, 18.104818],
-    [59.310603, 18.104818],
-    [59.313910, 18.123958],
-    [59.314142, 18.128604],
-    [59.314138, 18.132489],
-    [59.312397, 18.128854],
-    [59.312596, 18.132403],
-    [59.311934, 18.123680],
-    [59.310214, 18.119443],
-    [59.308769, 18.104712],
-    [59.310663, 18.109411],
-    [59.314359, 18.107662],
-    [59.314403, 18.109626],
-    [59.314836, 18.113413],
-    [59.315448, 19.118670],
-    [59.315706, 18.122586]
-  ];
+
+
+
+
+
+}
+
 
   for (var i = 0; i < lines.length; i++) {
     myMap.data.add({
