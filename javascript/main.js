@@ -113,8 +113,8 @@ function runMap(MapCenter) {
            position: MapCenter,
            map: myMap,
            icon: {
-        url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-        scaledSize: new google.maps.Size(50, 50) // pixels
+        url: 'https://png.icons8.com/metro/33/000000/chicken.png',
+        scaledSize: new google.maps.Size(35, 35) // pixels
     }
          });
 
