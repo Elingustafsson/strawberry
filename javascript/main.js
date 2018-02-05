@@ -69,19 +69,21 @@ function runGame(pos) {
   // loop through markers, see if distance < preset, if then do XYZ
   locations.forEach(function(element) {
     dist = calcDistance(crd.latitude, crd.longitude, element[0], element[1]);
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(element[0], element[1]),
+      map: myMap,
+    });
     if (dist <= 15) {
-    
+marker.addListener('click', setModal);
 
     }
-    else if (dist > 15)
-    {
 
-    }
 });
 
-    //navigator.geolocation.clearWatch(id);
 
-}
+
+
+} //end of rungame
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
@@ -112,22 +114,6 @@ function runMap(MapCenter) {
 
 
 
- for (p = 0; p < locations.length; p++) {
-   marker = new google.maps.Marker({
-     position: new google.maps.LatLng(locations[p][0], locations[p][1]),
-     map: myMap,
-   });
-
-   markers.push(marker);
-//   markers[p].addListener('click', function() {
-//   setModal();
-
-
-
-
-
-
-}
 
 
   for (var i = 0; i < lines.length; i++) {
