@@ -73,9 +73,8 @@ function runGame(pos) {
       position: new google.maps.LatLng(element[0], element[1]),
       map: myMap,
     });
-    if (dist <= 15) {
-marker.addListener('click', setModal);
-
+    if (dist <= 100) {
+        marker.addListener('click', setModal);
     }
 
 });
