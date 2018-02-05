@@ -72,6 +72,10 @@ function runGame(pos) {
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(element[0], element[1]),
       map: myMap,
+      icon: {
+        url: 'https://png.icons8.com/color/33/ffffff/strawberry.png',
+        scaledSize: new google.maps.Size(40, 40) // pixels
+      }
     });
     if (dist <= 100) {
         marker.addListener('click', setModal);
@@ -108,7 +112,10 @@ function runMap(MapCenter) {
          beachmarker = new google.maps.Marker({
            position: MapCenter,
            map: myMap,
-           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+           icon: {
+        url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        scaledSize: new google.maps.Size(50, 50) // pixels
+    }
          });
 
 
