@@ -1,5 +1,13 @@
 //Create the variables that will be used within the map configuration options.
 //The latitude and longitude of the center of the map.
+var test1 = () => {
+  console.log('hej')
+}
+var arrayMarker = [test1, 'www.aftonbladet.se', 'www.facebook.com']
+var pointMarker = new Array();
+var pointMarkerImage = new Array();
+var quizzes = new Array();
+
 let gameMapCenter;
 var options = {
   enableHighAccuracy: true,
@@ -150,8 +158,61 @@ function error(err) {
 }
 
 function loadMapMarkers() {
+
+  //create array to store a set of location
+var collection = new Array();
+
+//a set of locations stored in array
+collection[0] = new google.maps.LatLng(59.312943, 18.109854);
+collection[1] = new google.maps.LatLng(59.313670, 18.114184);
+collection[2] = new google.maps.LatLng(59.313670, 18.118675);
+quizzes[0] = {question: "Frågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
+              answer1: "Olle från Byxekrok",
+              answer2: "Pelle från Öland",
+              answer3: "Johan från Stockholm",
+              answer4: "Pekka från Årjäng",
+              correctAnswer: 3};
+              quizzes[1] = {question: "XFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
+                            answer1: "Olle från Byxekrok",
+                            answer2: "Pelle från Öland",
+                            answer3: "Johan från Stockholm",
+                            answer4: "Pekka från Årjäng",
+                            correctAnswer: 3};
+
+
+//
+quizzes[2] = {question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
+              answer1: "Olle från Byxekrok",
+              answer2: "Pelle från Öland",
+              answer3: "Johan från Stockholm",
+              answer4: "Pekka från Årjäng",
+              correctAnswer: 3};
+
+var pointMarkerImage = new Array();//store image of marker in array
+//var pointMarker = new Array();//store marker in array
+
+//create number of markers based on collection.length
+
+for(var i=0; i<collection.length; i++){
+
+pointMarkerImage[i] = new google.maps.MarkerImage('pins/orange_MarkerC.png');
+pointMarker[i] = new google.maps.Marker({
+        position: collection[i],
+        map: gameMap,
+        icon: pointMarkerImage[i],
+        animation: google.maps.Animation.BOUNCE,
+        title: "Quest nr. "+ i,
+        my_id: i
+    });
+
+    //google.maps.event.addListener(pointMarker[i], 'click', function()    {
+    //         console.log("marker clicked: " + i)}
+    //);
+    }
+}
   //Setting the position of map marker.
   //Creating the map marker.
+  /*
   let markerPosition1 = new google.maps.LatLng(59.312943, 18.109854);
   marker1 = new google.maps.Marker({
     //uses the position set above.
@@ -182,19 +243,18 @@ function loadMapMarkers() {
     icon: 'pins/orange_MarkerC.png'
   });
   marker1.addListener('click', function() {
-    return arrayMarker[0];
+    console.log(arrayMarker);
   });
   marker2.addListener('click', function() {
     window.location.href = arrayMarker[1];
   });
   marker3.setAnimation(google.maps.Animation.BOUNCE);
-}
+  */
 
-test1 = () => {
-  console.log('hej')
-}
 
-var arrayMarker = [test1(), 'www.aftonbladet.se', 'www.facebook.com']
+
+
+
 
 function setPlayerMarker(gameMapCenter) {
   id = navigator.geolocation.watchPosition(setLocation, error, options);
@@ -206,9 +266,26 @@ function setPlayerMarker(gameMapCenter) {
   loadMapMarkers();
 }
 
-function setLocation(pos) {
+function setLocation(pos) { // watchPosition callback
   let presetDistance = 100;
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+  playerMarker.setPosition(playerPos);
+  for(var i=0; i<pointMarker.length; i++) {
+    //console.log(element.getPosition())
+    questPos = pointMarker[i].getPosition()
+    dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
+    console.log(dist)
+    if (dist <= presetDistance)
+      google.maps.event.addListener(pointMarker[i], 'click', function(e) {
+        //console.log(this.my_id)
+         var i = this.my_id
+        console.log(quizzes[i])
+        
+      })
+  }}
+
+
+  /*
   questPos = marker3.getPosition();
   playerMarker.setPosition(playerPos);
   dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
@@ -220,9 +297,8 @@ function setLocation(pos) {
   } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(marker3);
   }
+  */
 
-
-}
 
 var testString = '<div id="content">' +
   '<div id="siteNotice">' +
