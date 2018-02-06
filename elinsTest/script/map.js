@@ -1,8 +1,14 @@
 //Create the variables that will be used within the map configuration options.
 //The latitude and longitude of the center of the map.
-let gameMapCenter
+let gameMapCenter;
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
 //The degree to which the map is zoomed in. This can range from 0 (least zoomed) to 21 and above (most zoomed).
 gameMapZoom = 16;
+let beachmarker = null;
 //The max and min zoom levels that are allowed.
 let gameMapZoomMax = 21;
 let gameMapZoomMin = 6;
@@ -135,8 +141,12 @@ function loadGameMap() {
 
   //The empty map variable ('gameMap') was created above. The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'game-map' (see code within the 'body' tags below), and applies the 'gameMapOptions' (above) to configure this map.
   gameMap = new google.maps.Map(document.getElementById("game-map"), gameMapOptions);
+  testMap(gameMapCenter);
   //Calls the function below to load up all the map markers.
   loadMapMarkers();
+}
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
 }
 
 function loadMapMarkers() {
@@ -226,24 +236,20 @@ var arrayMarker = [test1(), 'www.aftonbladet.se', 'www.facebook.com']
 //  content: contentString1
 // });
 // distance stop
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(function(callback) {
-      showPosition(callback)
-    }, function(error) {
-      console.log(error)
-    });
-  }
+function testMap(gameMapCenter){
+id = navigator.geolocation.watchPosition(getLocation, error, options);
+  beachmarker = new google.maps.Marker({
+  position: gameMapCenter,
+  map: gameMap,
+  icon: {
+url: 'https://png.icons8.com/metro/33/000000/chicken.png',
+scaledSize: new google.maps.Size(35, 35) // pixels
 }
+});
 
-function showPosition(position) {
-  markerPositionSELF = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-  markerSELF = new google.maps.Marker({
-    position: markerPositionSELF,
-    map: gameMap,
-    title: 'Self',
-    icon: 'pins/pink_MarkerA.png'
-  });
 }
-getLocation();
+function getLocation(pos) {
+  var crd = pos.coords;
+  console.log(crd);
+  beachmarker.setPosition(new google.maps.LatLng(crd.latitude, crd.longitude));
+}
