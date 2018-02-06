@@ -241,10 +241,7 @@ id = navigator.geolocation.watchPosition(getLocation, error, options);
   beachmarker = new google.maps.Marker({
   position: gameMapCenter,
   map: gameMap,
-  icon: {
-url: 'https://png.icons8.com/metro/33/000000/chicken.png',
-scaledSize: new google.maps.Size(35, 35) // pixels
-}
+  icon: 'pins/pink_MarkerA.png'
 });
 
 }
