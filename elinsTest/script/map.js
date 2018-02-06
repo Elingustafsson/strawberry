@@ -8,7 +8,7 @@ var options = {
 };
 //The degree to which the map is zoomed in. This can range from 0 (least zoomed) to 21 and above (most zoomed).
 gameMapZoom = 16;
-let beachmarker = null;
+let playerMarker = null;
 //The max and min zoom levels that are allowed.
 let gameMapZoomMax = 21;
 let gameMapZoomMin = 6;
@@ -141,18 +141,16 @@ function loadGameMap() {
 
   //The empty map variable ('gameMap') was created above. The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'game-map' (see code within the 'body' tags below), and applies the 'gameMapOptions' (above) to configure this map.
   gameMap = new google.maps.Map(document.getElementById("game-map"), gameMapOptions);
-  testMap(gameMapCenter);
+  setPlayerMarker(gameMapCenter);
   //Calls the function below to load up all the map markers.
-  loadMapMarkers();
 }
+
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
 
 function loadMapMarkers() {
   //Setting the position of map marker.
-  // VARA KVAR? let markerPositionSomePlace = new google.maps.LatLng(59.32331, 18.110538);
-
   //Creating the map marker.
   let markerPosition1 = new google.maps.LatLng(59.312943, 18.109854);
   marker1 = new google.maps.Marker({
@@ -183,17 +181,13 @@ function loadMapMarkers() {
     title: 'Tredje, yaaaay!',
     icon: 'pins/orange_MarkerC.png'
   });
-  marker3.setAnimation(google.maps.Animation.BOUNCE);
-
   marker1.addListener('click', function() {
-  return arrayMarker[0];
+    return arrayMarker[0];
   });
   marker2.addListener('click', function() {
     window.location.href = arrayMarker[1];
   });
-  marker3.addListener('click', function() {
-    window.location.href = arrayMarker[2];
-  });
+  marker3.setAnimation(google.maps.Animation.BOUNCE);
 }
 
 test1 = () => {
@@ -202,51 +196,41 @@ test1 = () => {
 
 var arrayMarker = [test1(), 'www.aftonbladet.se', 'www.facebook.com']
 
-// distance start
-// var markerSELF, marker3;
-// var presetDistance = 1000;
-//
-// function checkQuest(pos) {
-//  playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-//  questPos = marker3.getPosition();
-//  markerSELF.setPosition(playerPos);
-//  dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
-//  console.log(dist);
-//  if (dist <= presetDistance) {
-//    marker3.addListener('click', function() {
-//      infowindow.open(gameMap, markerSELF);
-//    });
-//  } else if (dist > presetDistance) {
-//    google.maps.event.clearInstanceListeners(marker3);
-//  }
-//
-// }
-// var contentString1 = '<div id="content">'+
-// '<div id="siteNotice">'+
-// '</div>'+
-// '<h1 id="firstHeading" class="firstHeading">Spy Quest</h1>'+
-// '<div id="bodyContent">'+
-// '<p>Welcome <b>Agent Cherry</b>.' +
-// 'This is the beginning of your mission. ' +
-// 'Proceed to the next marker to continue.</p>'+
-// '</div>'+
-// '</div>';
-//
-// var infowindow = new google.maps.InfoWindow({
-//  content: contentString1
-// });
-// distance stop
-function testMap(gameMapCenter){
-id = navigator.geolocation.watchPosition(getLocation, error, options);
-  beachmarker = new google.maps.Marker({
-  position: gameMapCenter,
-  map: gameMap,
-  icon: 'pins/pink_MarkerA.png'
-});
+function setPlayerMarker(gameMapCenter) {
+  id = navigator.geolocation.watchPosition(setLocation, error, options);
+  playerMarker = new google.maps.Marker({
+    position: gameMapCenter,
+    map: gameMap,
+    icon: 'pins/pink_MarkerA.png'
+  });
+  loadMapMarkers();
+}
 
+function setLocation(pos) {
+  let presetDistance = 100;
+  playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+  questPos = marker3.getPosition();
+  playerMarker.setPosition(playerPos);
+  dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
+  console.log(dist);
+  if (dist <= presetDistance) {
+    marker3.addListener('click', function() {
+      infowindow.open(gameMap, marker3);
+    });
+  } else if (dist > presetDistance) {
+    google.maps.event.clearInstanceListeners(marker3);
+  }
 }
-function getLocation(pos) {
-  var crd = pos.coords;
-  console.log(crd);
-  beachmarker.setPosition(new google.maps.LatLng(crd.latitude, crd.longitude));
-}
+
+var testString = '<div id="content">' +
+  '<div id="siteNotice">' +
+  '</div>' +
+  '<h1 id="firstHeading" class="firstHeading">Strawberry</h1>' +
+  '<div id="bodyContent">' +
+  '<p>Test <b>Lite text här</b>.' +
+  '</div>' +
+  '</div>';
+
+var infowindow = new google.maps.InfoWindow({
+  content: testString
+});
