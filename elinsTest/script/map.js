@@ -8,7 +8,7 @@ var options = {
 };
 //The degree to which the map is zoomed in. This can range from 0 (least zoomed) to 21 and above (most zoomed).
 gameMapZoom = 16;
-let beachmarker = null;
+let playerMarker = null;
 //The max and min zoom levels that are allowed.
 let gameMapZoomMax = 21;
 let gameMapZoomMin = 6;
@@ -141,7 +141,7 @@ function loadGameMap() {
 
   //The empty map variable ('gameMap') was created above. The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'game-map' (see code within the 'body' tags below), and applies the 'gameMapOptions' (above) to configure this map.
   gameMap = new google.maps.Map(document.getElementById("game-map"), gameMapOptions);
-  testMap(gameMapCenter);
+  setPlayerMarker(gameMapCenter);
   //Calls the function below to load up all the map markers.
   loadMapMarkers();
 }
@@ -236,9 +236,9 @@ var arrayMarker = [test1(), 'www.aftonbladet.se', 'www.facebook.com']
 //  content: contentString1
 // });
 // distance stop
-function testMap(gameMapCenter){
+function setPlayerMarker(gameMapCenter){
 id = navigator.geolocation.watchPosition(getLocation, error, options);
-  beachmarker = new google.maps.Marker({
+  playerMarker = new google.maps.Marker({
   position: gameMapCenter,
   map: gameMap,
   icon: 'pins/pink_MarkerA.png'
@@ -248,5 +248,5 @@ id = navigator.geolocation.watchPosition(getLocation, error, options);
 function getLocation(pos) {
   var crd = pos.coords;
   console.log(crd);
-  beachmarker.setPosition(new google.maps.LatLng(crd.latitude, crd.longitude));
+  playerMarker.setPosition(new google.maps.LatLng(crd.latitude, crd.longitude));
 }
