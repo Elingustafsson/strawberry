@@ -220,6 +220,8 @@ function setLocation(pos) {
   } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(marker3);
   }
+
+
 }
 
 var testString = '<div id="content">' +
