@@ -1,9 +1,5 @@
 //Create the variables that will be used within the map configuration options.
 //The latitude and longitude of the center of the map.
-var test1 = () => {
-  console.log('hej')
-}
-var arrayMarker = [test1, 'www.aftonbladet.se', 'www.facebook.com']
 var pointMarker = new Array();
 var pointMarkerImage = new Array();
 var quizzes = new Array();
@@ -14,7 +10,6 @@ var options = {
   timeout: 5000,
   maximumAge: 0
 };
-//The degree to which the map is zoomed in. This can range from 0 (least zoomed) to 21 and above (most zoomed).
 gameMapZoom = 16;
 let playerMarker = null;
 //The max and min zoom levels that are allowed.
@@ -24,11 +19,9 @@ let gameMapZoomMin = 6;
 let gameMapOptions = {
   center: gameMapCenter,
   zoom: gameMapZoom,
-  //The type of map. In addition to ROADMAP, the other 'premade' map styles are SATELLITE, TERRAIN and HYBRID.
   mapTypeId: google.maps.MapTypeId.ROADMAP,
   maxZoom: gameMapZoomMax,
   minZoom: gameMapZoomMin,
-  //Turn off the map controls as we will be adding our own later.
   panControl: false,
   mapTypeControl: false,
   styles: [{
@@ -158,103 +151,54 @@ function error(err) {
 }
 
 function loadMapMarkers() {
-
   //create array to store a set of location
-var collection = new Array();
+  var collection = new Array();
 
-//a set of locations stored in array
-collection[0] = new google.maps.LatLng(59.312943, 18.109854);
-collection[1] = new google.maps.LatLng(59.313670, 18.114184);
-collection[2] = new google.maps.LatLng(59.313670, 18.118675);
-quizzes[0] = {question: "Frågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-              answer1: "Olle från Byxekrok",
-              answer2: "Pelle från Öland",
-              answer3: "Johan från Stockholm",
-              answer4: "Pekka från Årjäng",
-              correctAnswer: 3};
-              quizzes[1] = {question: "XFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-                            answer1: "Olle från Byxekrok",
-                            answer2: "Pelle från Öland",
-                            answer3: "Johan från Stockholm",
-                            answer4: "Pekka från Årjäng",
-                            correctAnswer: 3};
+  //a set of locations stored in array
+  collection[0] = new google.maps.LatLng(59.312943, 18.109854);
+  collection[1] = new google.maps.LatLng(59.313670, 18.114184);
+  collection[2] = new google.maps.LatLng(59.313670, 18.118675);
+  quizzes[0] = {
+    question: "Frågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
+    answer1: "Olle från Byxekrok",
+    answer2: "Pelle från Öland",
+    answer3: "Johan från Stockholm",
+    answer4: "Pekka från Årjäng",
+    correctAnswer: 3
+  };
+  quizzes[1] = {
+    question: "XFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
+    answer1: "Olle från Byxekrok",
+    answer2: "Pelle från Öland",
+    answer3: "Johan från Stockholm",
+    answer4: "Pekka från Årjäng",
+    correctAnswer: 3
+  };
+  quizzes[2] = {
+    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
+    answer1: "Olle från Byxekrok",
+    answer2: "Pelle från Öland",
+    answer3: "Johan från Stockholm",
+    answer4: "Pekka från Årjäng",
+    correctAnswer: 3
+  };
 
+  var pointMarkerImage = new Array(); //store image of marker in array
+  //var pointMarker = new Array();//store marker in array
 
-//
-quizzes[2] = {question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-              answer1: "Olle från Byxekrok",
-              answer2: "Pelle från Öland",
-              answer3: "Johan från Stockholm",
-              answer4: "Pekka från Årjäng",
-              correctAnswer: 3};
-
-var pointMarkerImage = new Array();//store image of marker in array
-//var pointMarker = new Array();//store marker in array
-
-//create number of markers based on collection.length
-
-for(var i=0; i<collection.length; i++){
-
-pointMarkerImage[i] = new google.maps.MarkerImage('pins/orange_MarkerC.png');
-pointMarker[i] = new google.maps.Marker({
-        position: collection[i],
-        map: gameMap,
-        icon: pointMarkerImage[i],
-        animation: google.maps.Animation.BOUNCE,
-        title: "Quest nr. "+ i,
-        my_id: i
+  //create number of markers based on collection.length
+  for (var i = 0; i < collection.length; i++) {
+    pointMarkerImage[i] = new google.maps.MarkerImage('pins/orange_MarkerC.png');
+    pointMarker[i] = new google.maps.Marker({
+      position: collection[i],
+      map: gameMap,
+      icon: pointMarkerImage[i],
+      animation: google.maps.Animation.BOUNCE,
+      title: "Quest nr. " + i,
+      my_id: i
     });
-
-    //google.maps.event.addListener(pointMarker[i], 'click', function()    {
-    //         console.log("marker clicked: " + i)}
-    //);
-    }
+  }
 }
-  //Setting the position of map marker.
-  //Creating the map marker.
-  /*
-  let markerPosition1 = new google.maps.LatLng(59.312943, 18.109854);
-  marker1 = new google.maps.Marker({
-    //uses the position set above.
-    position: markerPosition1,
-    //adds the marker to the map.
-    map: gameMap,
-    title: 'Första, yaaaay!',
-    icon: 'pins/orange_MarkerC.png'
-  });
-  let markerPosition2 = new google.maps.LatLng(59.313670, 18.114184);
-  //Creating the map marker.
-  marker2 = new google.maps.Marker({
-    //uses the position set above.
-    position: markerPosition2,
-    //adds the marker to the map.
-    map: gameMap,
-    title: 'Andra, yaaaay!',
-    icon: 'pins/orange_MarkerC.png'
-  });
-  let markerPosition3 = new google.maps.LatLng(59.313670, 18.118675);
-  //Creating the map marker.
-  marker3 = new google.maps.Marker({
-    //uses the position set above.
-    position: markerPosition3,
-    //adds the marker to the map.
-    map: gameMap,
-    title: 'Tredje, yaaaay!',
-    icon: 'pins/orange_MarkerC.png'
-  });
-  marker1.addListener('click', function() {
-    console.log(arrayMarker);
-  });
-  marker2.addListener('click', function() {
-    window.location.href = arrayMarker[1];
-  });
-  marker3.setAnimation(google.maps.Animation.BOUNCE);
-  */
-
-
-
-
-
 
 function setPlayerMarker(gameMapCenter) {
   id = navigator.geolocation.watchPosition(setLocation, error, options);
@@ -267,10 +211,10 @@ function setPlayerMarker(gameMapCenter) {
 }
 
 function setLocation(pos) { // watchPosition callback
-  let presetDistance = 100;
+  let presetDistance = 100; //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
   playerMarker.setPosition(playerPos);
-  for(var i=0; i<pointMarker.length; i++) {
+  for (var i = 0; i < pointMarker.length; i++) {
     //console.log(element.getPosition())
     questPos = pointMarker[i].getPosition()
     dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
@@ -278,37 +222,9 @@ function setLocation(pos) { // watchPosition callback
     if (dist <= presetDistance)
       google.maps.event.addListener(pointMarker[i], 'click', function(e) {
         //console.log(this.my_id)
-         var i = this.my_id
+        var i = this.my_id
         console.log(quizzes[i])
-        
+
       })
-  }}
-
-
-  /*
-  questPos = marker3.getPosition();
-  playerMarker.setPosition(playerPos);
-  dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
-  console.log(dist);
-  if (dist <= presetDistance) {
-    marker3.addListener('click', function() {
-      infowindow.open(gameMap, marker3);
-    });
-  } else if (dist > presetDistance) {
-    google.maps.event.clearInstanceListeners(marker3);
   }
-  */
-
-
-var testString = '<div id="content">' +
-  '<div id="siteNotice">' +
-  '</div>' +
-  '<h1 id="firstHeading" class="firstHeading">Strawberry</h1>' +
-  '<div id="bodyContent">' +
-  '<p>Test <b>Lite text här</b>.' +
-  '</div>' +
-  '</div>';
-
-var infowindow = new google.maps.InfoWindow({
-  content: testString
-});
+}
