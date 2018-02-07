@@ -258,6 +258,7 @@ function setLocation(pos) { // watchPosition callback
       google.maps.event.addListener(pointMarker[i], 'click', function(e) {
         //console.log(this.my_id)
         var i = this.my_id
+        $("#markerModal").modal();
         console.log(quizzes[i])
       })
   }
