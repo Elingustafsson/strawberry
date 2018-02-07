@@ -27,7 +27,7 @@ let gameMapOptions = {
   styles: [{
       elementType: 'geometry',
       stylers: [{
-        color: '#242f3e'
+        color: '#ebe3cd'
       }]
     },
     {
@@ -124,6 +124,12 @@ let gameMapOptions = {
       elementType: 'labels.text.fill',
       stylers: [{
         color: '#515c6d'
+      }]
+    },
+    {
+      elementType: 'labels',
+      stylers: [{
+        visibility: 'off'
       }]
     },
   ]
