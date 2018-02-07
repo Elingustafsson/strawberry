@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Strawberry game</title>
+  <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+
+  <nav>
+    <a href="pages/profile.html"><img src="https://png.icons8.com/ios/33/ffffff/exit.png"></a>
+    <button id="questionbutton"><img src="https://png.icons8.com/ios/40/ffffff/question-mark.png"></button>
+  </nav>
+
+  <div id="info-Modal" class="modal-infoc">
+    <div class="info-content">
+      <span class="close1">&times;</span>
+      <section class="tutorial-section">
+        <h1 class="h1-tutorial">Tutorial</h1>
+        <div class="how-to">
+          <ul>
+            <li>How do I play?
+              <p>-Take over as many zones as you can</p>
+            </li>
+            <li>How do i capture zones?
+              <p>-Press the marker in the center of the zone that you want to take over</p>
+            </li>
+            <li>What happens when I press on a mark?
+              <p>-A quiz starts</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="questions">
+        <div class="question" id="quest"></div>
+        <div class="correction">
+        <div class="answerbox">
+          <div class="answer" id="answer1"></div>
+          <div class="answer" id="answer2"></div>
+        </div>
+        <div class="answerbox">
+          <div class="answer" id="answer3"></div>
+          <div class="answer" id="answer4"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div id="map_canvas"></div>
+  <footer>
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE5kp8oYu5PBbBxklN9QjSMLte2vpgfFg&libraries=geometry"></script>-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE5kp8oYu5PBbBxklN9QjSMLte2vpgfFg&libraries=geometry"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+#map_canvas {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close, .close1 {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus, .close1:hover, .close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav {
+  z-index: 0;
+  text-align: right;
+  background-color: #555;
+}
+
+#questionbutton {
+  background: none;
+  border: none;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.modal-infoc {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.h1-tutorial {
+  margin: 10px 0 30px 0;
+  font-size: 48px;
+  font-family: fantasy;
+}
+
+.how-to {
+  font-size: 20px;
+  font-family: fantasy;
+}
+
+.info-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: auto;
+  padding: 50px;
+  border: 0px solid #888;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.questions {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  text-align: center;
+}
+
+.answerbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.answer {
+  flex: 1;
+  margin: 10px 10px 10px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+  background-color: #444346;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.answer:hover {
+  background-color: #4f4e52a6;
+}
+
+.answer:active {
+  background-color: #4f4e52a6;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+@media only screen and (max-width:780px){
+	.info-content{
+		height: 50vh;
+		width: 65%;
+	}
+	.tutorial-section{
+		font-size: 1.2em;
+	}
+}

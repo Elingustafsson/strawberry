@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="../style/frontpage.css" type="text/css">
+  <link rel="stylesheet" href="../style/main.css" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Game title</title>
@@ -31,14 +31,13 @@
       </ul>
     </div>
   </div>
-
   <!-- MOBIL -->
   <div class="content content-padding">
     <h1 class="strong">STRAWBERRY GAME REPRESENT</h1>
     <h2>Conquer areas</h2>
     <h2>Find your team</h2>
     <h2>Answer questions</h2>
-    <button class="button" id="loginButton" type="button">LOG IN</button>
+    <button class="button" type="button" onclick="window.location.href='gameMap.html'">START GAME!</button>
   </div>
   <hr class="style12">
   <section id="news-pg" class="news content">
@@ -113,7 +112,7 @@
             <input class="modal-content" type="text" placeholder="username" autofocus="autofocus" id="username"><br>
             <input type="password" class="modal-content" placeholder="password" id="password"><br>
             <button type="button" class="button" onclick="getInfo()">Logga in</button>
-            <a class="button" onclick="regModal()">Create account</a>
+            <a class="button" onclick="regModal()" href="#">Create account</a>
             <span id="wrongPass"></span>
           </div>
         </form>
@@ -121,18 +120,10 @@
   </div>
   <!-- div loginModal opens the login box on index screen -->
 
-  <footer class="frontFooter">
-    <h2>Wish to get in touch with us?</h2>
-    <div class="fotterContent">
-      <p><img src="https://png.icons8.com/ios/18/000000/phone-not-being-used-filled.png">&nbsp;&nbsp;:(+46)70234512</p>
-      <a href="mailto:example@gmail.com"><img src="https://png.icons8.com/ios/18/000000/secured-letter-filled.png">&nbsp;&nbsp; example@gmail.com</a>
 
-    </div>
-
-  </footer>
 
 </body>
-<script type="text/javascript" src="../javascript/frontpage.js">
+<script type="text/javascript" src="../javascript/main.js">
 </script>
 
 </html>
