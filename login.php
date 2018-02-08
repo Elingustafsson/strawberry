@@ -1,26 +1,36 @@
 <?php
-$error=''; //Variable to Store error message;
-if(isset($_POST['submit'])){
- if(empty($_POST['user']) || empty($_POST['pass'])){
- $error = "Username or Password is Invalid";
+if(isset($_POST["submit"])){
+ if(!empty($_POST['user']) && !empty($_POST['pass'])){
+ $user = $_POST['user'];
+ $pass = $_POST['pass'];
+ //DB Connection
+include 'config.php';
+ //Selecting database
+ $query = mysqli_query($conn, "SELECT * FROM login WHERE username='".$user."' AND password='".$pass."'");
+ $numrows = mysqli_num_rows($query);
+ if($numrows !=0)
+ {
+ while($row = mysqli_fetch_assoc($query))
+ {
+ $dbusername=$row['username'];
+ $dbpassword=$row['password'];
+ }
+ if($user == $dbusername && $pass == $dbpassword)
+ {
+ session_start();
+ $_SESSION['sess_user']=$user;
+ //Redirect Browser
+ header("Location: pages/profilePage.html");
+ }
  }
  else
  {
- //Define $user and $pass
- $user=$_POST['user'];
- $pass=$_POST['pass'];
- include 'config.php';
- //sql query to fetch information of registerd user and finds user match.
- $query = mysqli_query($conn, "SELECT * FROM login WHERE password='$pass' AND username='$user'");
- $rows = mysqli_num_rows($query);
- if($rows == 1){
- header("Location: pages/profilePage.html"); // Redirecting to other page
+ echo "Invalid Username or Password!";
+ }
  }
  else
  {
- $error = "Username of Password is Invalid";
- }
- mysqli_close($conn); // Closing connection
+ echo "Required All fields!";
  }
 }
 ?>
