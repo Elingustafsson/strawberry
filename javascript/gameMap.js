@@ -281,7 +281,7 @@ function setLocation(pos) { // watchPosition callback
     .catch(error => {
       console.log(error);
     });
-  let presetDistance = 100 //Meter
+  let presetDistance = 1000000 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
   for (var i = 0; i < pointMarker.length; i++) {
@@ -295,13 +295,61 @@ function setLocation(pos) { // watchPosition callback
         var i = this.my_id
         $("#markerModal").modal();
         console.log(quizzes[i]);
+        if (i == 0) {
+          document.getElementById('question').innerHTML = quizzes[0].question;
+          document.getElementById('btn1').innerHTML = quizzes[0].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[0].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[0].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[0].answer4;
+        }
+        else if (i == 2) {
+          document.getElementById('question').innerHTML = quizzes[1].question;
+          document.getElementById('btn1').innerHTML = quizzes[1].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[1].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[1].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[1].answer4;
 
-        document.getElementById('question').innerHTML = quizzes[i].question;
-        document.getElementById('btn1').innerHTML = quizzes[i].answer1;
-        document.getElementById('btn2').innerHTML = quizzes[i].answer2;
-        document.getElementById('btn3').innerHTML = quizzes[i].answer3;
-        document.getElementById('btn4').innerHTML = quizzes[i].answer4;
+        }
+        else if (i == 3) {
+          document.getElementById('question').innerHTML = quizzes[2].question;
+          document.getElementById('btn1').innerHTML = quizzes[2].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[2].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[2].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[2].answer4;
 
+        }
+        else if (i == 4) {
+          document.getElementById('question').innerHTML = quizzes[3].question;
+          document.getElementById('btn1').innerHTML = quizzes[3].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[3].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[3].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[3].answer4;
+
+        }
+        else if (i == 5) {
+          document.getElementById('question').innerHTML = quizzes[4].question;
+          document.getElementById('btn1').innerHTML = quizzes[4].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[4].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[4].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[4].answer4;
+
+        }
+        else if (i == 6) {
+          document.getElementById('question').innerHTML = quizzes[5].question;
+          document.getElementById('btn1').innerHTML = quizzes[5].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[5].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[5].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[5].answer4;
+
+        }
+        else if (i == 7) {
+          document.getElementById('question').innerHTML = quizzes[6].question;
+          document.getElementById('btn1').innerHTML = quizzes[6].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[6].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[6].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[6].answer4;
+
+        }
 
 
 
