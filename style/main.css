@@ -11,3 +11,33 @@
 .padding-news {
   padding-top: 5%;
 }
+
+.acc-header {
+  background-image: url("../img/Strawberry-bg.png");
+  background-repeat: no-repeat;
+}
+
+.modal-body {
+  font-family: 'Tahoma', Geneva, Verdana, sans-serif;
+}
+
+.register-form {
+  text-align: center;
+}
+
+label {
+  display: inline-block; 
+  width: 120px; 
+  text-align: center;
+}
+
+.acc-submit {
+  background: #ee3731d7;
+  color: white;
+  border-style: outset;
+  border-color: #000000;
+  height: 40px;
+  width: 80px;
+  font: bold 15px 'Tahoma', Geneva, Verdana, sans-serif;
+  text-shadow:none;
+}
