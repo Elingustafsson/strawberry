@@ -295,6 +295,7 @@ function setLocation(pos) { // watchPosition callback
         var i = this.my_id
         $("#markerModal").modal();
         console.log(quizzes[i]);
+
         if (i == 0) {
           document.getElementById('question').innerHTML = quizzes[0].question;
           document.getElementById('btn1').innerHTML = quizzes[0].answer1;
@@ -302,7 +303,7 @@ function setLocation(pos) { // watchPosition callback
           document.getElementById('btn3').innerHTML = quizzes[0].answer3;
           document.getElementById('btn4').innerHTML = quizzes[0].answer4;
         }
-        else if (i == 2) {
+        else if (i == 1) {
           document.getElementById('question').innerHTML = quizzes[1].question;
           document.getElementById('btn1').innerHTML = quizzes[1].answer1;
           document.getElementById('btn2').innerHTML = quizzes[1].answer2;
@@ -310,7 +311,7 @@ function setLocation(pos) { // watchPosition callback
           document.getElementById('btn4').innerHTML = quizzes[1].answer4;
 
         }
-        else if (i == 3) {
+        else if (i == 2) {
           document.getElementById('question').innerHTML = quizzes[2].question;
           document.getElementById('btn1').innerHTML = quizzes[2].answer1;
           document.getElementById('btn2').innerHTML = quizzes[2].answer2;
@@ -318,7 +319,7 @@ function setLocation(pos) { // watchPosition callback
           document.getElementById('btn4').innerHTML = quizzes[2].answer4;
 
         }
-        else if (i == 4) {
+        else if (i == 3) {
           document.getElementById('question').innerHTML = quizzes[3].question;
           document.getElementById('btn1').innerHTML = quizzes[3].answer1;
           document.getElementById('btn2').innerHTML = quizzes[3].answer2;
@@ -326,7 +327,7 @@ function setLocation(pos) { // watchPosition callback
           document.getElementById('btn4').innerHTML = quizzes[3].answer4;
 
         }
-        else if (i == 5) {
+        else if (i == 4) {
           document.getElementById('question').innerHTML = quizzes[4].question;
           document.getElementById('btn1').innerHTML = quizzes[4].answer1;
           document.getElementById('btn2').innerHTML = quizzes[4].answer2;
@@ -334,7 +335,7 @@ function setLocation(pos) { // watchPosition callback
           document.getElementById('btn4').innerHTML = quizzes[4].answer4;
 
         }
-        else if (i == 6) {
+        else if (i == 5) {
           document.getElementById('question').innerHTML = quizzes[5].question;
           document.getElementById('btn1').innerHTML = quizzes[5].answer1;
           document.getElementById('btn2').innerHTML = quizzes[5].answer2;
@@ -342,12 +343,20 @@ function setLocation(pos) { // watchPosition callback
           document.getElementById('btn4').innerHTML = quizzes[5].answer4;
 
         }
-        else if (i == 7) {
+        else if (i == 6) {
           document.getElementById('question').innerHTML = quizzes[6].question;
           document.getElementById('btn1').innerHTML = quizzes[6].answer1;
           document.getElementById('btn2').innerHTML = quizzes[6].answer2;
           document.getElementById('btn3').innerHTML = quizzes[6].answer3;
           document.getElementById('btn4').innerHTML = quizzes[6].answer4;
+
+        }
+        else if (i == 7) {
+          document.getElementById('question').innerHTML = quizzes[7].question;
+          document.getElementById('btn1').innerHTML = quizzes[7].answer1;
+          document.getElementById('btn2').innerHTML = quizzes[7].answer2;
+          document.getElementById('btn3').innerHTML = quizzes[7].answer3;
+          document.getElementById('btn4').innerHTML = quizzes[7].answer4;
 
         }
 
