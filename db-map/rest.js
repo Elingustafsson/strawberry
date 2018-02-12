@@ -8,6 +8,7 @@ function REST_ROUTER(router,connection,md5) {
 REST_ROUTER.prototype.handleRoutes= function(router,connection,md5) {
 
    router.get("/questions",function(req,res){
+      res.setHeader('Access-Control-Allow-Origin', '*');
         var query = "SELECT * FROM ??";
         var table = ["questionanswers"];
         query = mysql.format(query,table);

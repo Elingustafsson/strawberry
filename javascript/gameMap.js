@@ -158,7 +158,26 @@ function error(err) {
 function loadMapMarkers() {
   //create array to store a set of location
   var collection = new Array()
+  //FETCH CODE START
 
+ //const fetch = require("node-fetch");
+ const url = "http://localhost:3000/api/questions/";
+
+ fetch(url)
+   .then(response => {
+     response.json().then(json => {
+       for(var j=0; j < json.questions.length; j++) {
+         quizzes[j] = json.questions[j];
+
+       }
+       //console.log(json);
+     });
+   })
+   .catch(error => {
+     console.log(error);
+   });
+
+   //FETCH CODE END
   //a set of locations stored in array
   collection[0] = new google.maps.LatLng(59.312943, 18.109854)
   collection[1] = new google.maps.LatLng(59.313670, 18.114184)
@@ -167,6 +186,7 @@ function loadMapMarkers() {
   collection[4] = new google.maps.LatLng(59.310822, 18.114690)
   collection[5] = new google.maps.LatLng(59.311496, 18.118675)
   collection[6] = new google.maps.LatLng(59.309242, 18.109821)
+  /*
   quizzes[0] = {
     question: "Frågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
     answer1: "Olle från Byxekrok",
@@ -223,6 +243,13 @@ function loadMapMarkers() {
     answer4: "Pekka från Årjäng",
     correctAnswer: 3
   }
+  */
+  /*
+  for(var j=0; j < json.questions.length; j++) {
+    quizzes[j] = json.questions[j];
+
+  } */
+    console.log(quizzes);
 
   var pointMarkerImage = new Array() //store image of marker in array
   //var pointMarker = new Array()//store marker in array
