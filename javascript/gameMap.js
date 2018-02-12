@@ -168,6 +168,11 @@ function loadMapMarkers() {
      response.json().then(json => {
        for(var j=0; j < json.questions.length; j++) {
          quizzes[j] = json.questions[j];
+         document.getElementById('question').innerHTML = quizzes[0].question;
+         document.getElementById('btn1').innerHTML = quizzes[0].answer1;
+         document.getElementById('btn2').innerHTML = quizzes[0].answer2;
+         document.getElementById('btn3').innerHTML = quizzes[0].answer3;
+         document.getElementById('btn4').innerHTML = quizzes[0].answer1;
 
        }
        //console.log(json);
@@ -292,7 +297,14 @@ function setLocation(pos) { // watchPosition callback
         //console.log(this.my_id)
         var i = this.my_id
         $("#markerModal").modal();
-        console.log(quizzes[i])
+        console.log(quizzes[i]);
+
+
+
+
+
+
+
       })
   }
 }
