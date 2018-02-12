@@ -161,26 +161,6 @@ function loadMapMarkers() {
   //FETCH CODE START
 
  //const fetch = require("node-fetch");
- const url = "http://localhost:3000/api/questions/";
-
- fetch(url)
-   .then(response => {
-     response.json().then(json => {
-       for(var j=0; j < json.questions.length; j++) {
-         quizzes[j] = json.questions[j];
-         document.getElementById('question').innerHTML = quizzes[0].question;
-         document.getElementById('btn1').innerHTML = quizzes[0].answer1;
-         document.getElementById('btn2').innerHTML = quizzes[0].answer2;
-         document.getElementById('btn3').innerHTML = quizzes[0].answer3;
-         document.getElementById('btn4').innerHTML = quizzes[0].answer1;
-
-       }
-       //console.log(json);
-     });
-   })
-   .catch(error => {
-     console.log(error);
-   });
 
    //FETCH CODE END
   //a set of locations stored in array
@@ -254,7 +234,7 @@ function loadMapMarkers() {
     quizzes[j] = json.questions[j];
 
   } */
-    console.log(quizzes);
+    // console.log(quizzes);
 
   var pointMarkerImage = new Array() //store image of marker in array
   //var pointMarker = new Array()//store marker in array
@@ -284,6 +264,23 @@ function setPlayerMarker(gameMapCenter) {
 }
 
 function setLocation(pos) { // watchPosition callback
+
+  const url = "http://localhost:3000/api/questions/";
+
+  fetch(url)
+    .then(response => {
+      response.json().then(json => {
+        for(var j=0; j < json.questions.length; j++) {
+          quizzes[j] = json.questions[j];
+
+
+        }
+        //console.log(json);
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
   let presetDistance = 100 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
@@ -299,7 +296,11 @@ function setLocation(pos) { // watchPosition callback
         $("#markerModal").modal();
         console.log(quizzes[i]);
 
-
+        document.getElementById('question').innerHTML = quizzes[i].question;
+        document.getElementById('btn1').innerHTML = quizzes[i].answer1;
+        document.getElementById('btn2').innerHTML = quizzes[i].answer2;
+        document.getElementById('btn3').innerHTML = quizzes[i].answer3;
+        document.getElementById('btn4').innerHTML = quizzes[i].answer4;
 
 
 
