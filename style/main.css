@@ -2,17 +2,30 @@
   border-radius: 0;
 }
 
-.container-profile{
-  display: flex;
-  flex-direction: column;
-}
-
 .container {
   width: auto;
   max-width: 680px;
   padding: 0 15px;
 }
 
+.container-profile{
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
 .padding-top {
   padding-top: 5%;
+}
+
+.user-profile {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.test {
+  height: 100px;
+  width: 100px;
 }
