@@ -191,6 +191,31 @@ function loadMapMarkers() {
 }
 
 function setPlayerMarker(gameMapCenter) {
+    $('#btn1, #btn2, #btn3, #btn4').click(function () {
+    for (var b = 0; b < quizzes.length; b++) {
+      
+      if ($(this).html()== quizzes[b].correctAnswer) {
+
+     document.getElementById(this.id).classList.add("btn-success");
+     document.getElementById('btn3').classList.add("btn-primary");
+  }
+
+    else {
+
+      console.log('wrong');
+
+  }
+
+}
+
+  });
+
+  $(".modal").on("hidden.bs.modal", function(){
+      $(".btn-primary").removeClass("btn-danger");
+      $(".btn-primary").removeClass("btn-success");
+
+
+  });
   id = navigator.geolocation.watchPosition(setLocation, error, options)
   playerMarker = new google.maps.Marker({
     position: gameMapCenter,
@@ -242,28 +267,10 @@ function setLocation(pos) { // watchPosition callback
   }
 }
 
+
+
 var butn1 = document.getElementById('btn1').innerHTML;
 var butn2 = document.getElementById('btn2').innerHTML;
 var butn3 = document.getElementById('btn3').innerHTML;
 var butn4 = document.getElementById('btn4').innerHTML;
 console.log(butn3);
-
-document.getElementById('btn3').onclick = function(){
-  document.getElementById('btn3').classList.add("btn-success");
-  document.getElementById('btn3').classList.add("btn-primary");
-}
-
-document.getElementById('btn2').onclick = function(){
-  document.getElementById('btn2').classList.add("btn-danger");
-  document.getElementById('btn2').classList.add("btn-primary");
-}
-
-document.getElementById('btn1').onclick = function(){
-  document.getElementById('btn1').classList.add("btn-danger");
-  document.getElementById('btn1').classList.add("btn-primary");
-}
-
-document.getElementById('btn4').onclick = function(){
-  document.getElementById('btn4').classList.add("btn-danger");
-  document.getElementById('btn4').classList.add("btn-primary");
-}
