@@ -2,12 +2,17 @@
   border-radius: 0;
 }
 
+.container-profile{
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: auto;
   max-width: 680px;
   padding: 0 15px;
 }
 
-.padding-news {
+.padding-top {
   padding-top: 5%;
 }
