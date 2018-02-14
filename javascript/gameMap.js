@@ -160,9 +160,9 @@ function loadMapMarkers() {
   var collection = new Array()
   //FETCH CODE START
 
- //const fetch = require("node-fetch");
+  //const fetch = require("node-fetch");
 
-   //FETCH CODE END
+  //FETCH CODE END
   //a set of locations stored in array
   collection[0] = new google.maps.LatLng(59.312943, 18.109854)
   collection[1] = new google.maps.LatLng(59.313670, 18.114184)
@@ -171,70 +171,7 @@ function loadMapMarkers() {
   collection[4] = new google.maps.LatLng(59.310822, 18.114690)
   collection[5] = new google.maps.LatLng(59.311496, 18.118675)
   collection[6] = new google.maps.LatLng(59.309242, 18.109821)
-  /*
-  quizzes[0] = {
-    question: "Frågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[1] = {
-    question: "XFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[2] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[3] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[4] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[5] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[6] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  */
-  /*
-  for(var j=0; j < json.questions.length; j++) {
-    quizzes[j] = json.questions[j];
 
-  } */
-    // console.log(quizzes);
 
   var pointMarkerImage = new Array() //store image of marker in array
   //var pointMarker = new Array()//store marker in array
@@ -264,16 +201,12 @@ function setPlayerMarker(gameMapCenter) {
 }
 
 function setLocation(pos) { // watchPosition callback
-
   const url = "http://localhost:3000/api/questions/";
-
   fetch(url)
     .then(response => {
       response.json().then(json => {
-        for(var j=0; j < json.questions.length; j++) {
+        for (var j = 0; j < json.questions.length; j++) {
           quizzes[j] = json.questions[j];
-
-
         }
         //console.log(json);
       });
@@ -281,6 +214,7 @@ function setLocation(pos) { // watchPosition callback
     .catch(error => {
       console.log(error);
     });
+
   let presetDistance = 1000000 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
@@ -294,75 +228,42 @@ function setLocation(pos) { // watchPosition callback
         //console.log(this.my_id)
         var i = this.my_id
         $("#markerModal").modal();
-        console.log(quizzes[i]);
-
-        if (i == 0) {
-          document.getElementById('question').innerHTML = quizzes[0].question;
-          document.getElementById('btn1').innerHTML = quizzes[0].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[0].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[0].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[0].answer4;
+        // console.log(quizzes);
+        for (var p = 0; p < quizzes.length; p++) {
+          if (i == p) {
+            document.getElementById('question').innerHTML = quizzes[p].question;
+            document.getElementById('btn1').innerHTML = quizzes[p].answer1;
+            document.getElementById('btn2').innerHTML = quizzes[p].answer2;
+            document.getElementById('btn3').innerHTML = quizzes[p].answer3;
+            document.getElementById('btn4').innerHTML = quizzes[p].answer4;
+          }
         }
-        else if (i == 1) {
-          document.getElementById('question').innerHTML = quizzes[1].question;
-          document.getElementById('btn1').innerHTML = quizzes[1].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[1].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[1].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[1].answer4;
-
-        }
-        else if (i == 2) {
-          document.getElementById('question').innerHTML = quizzes[2].question;
-          document.getElementById('btn1').innerHTML = quizzes[2].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[2].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[2].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[2].answer4;
-
-        }
-        else if (i == 3) {
-          document.getElementById('question').innerHTML = quizzes[3].question;
-          document.getElementById('btn1').innerHTML = quizzes[3].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[3].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[3].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[3].answer4;
-
-        }
-        else if (i == 4) {
-          document.getElementById('question').innerHTML = quizzes[4].question;
-          document.getElementById('btn1').innerHTML = quizzes[4].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[4].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[4].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[4].answer4;
-
-        }
-        else if (i == 5) {
-          document.getElementById('question').innerHTML = quizzes[5].question;
-          document.getElementById('btn1').innerHTML = quizzes[5].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[5].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[5].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[5].answer4;
-
-        }
-        else if (i == 6) {
-          document.getElementById('question').innerHTML = quizzes[6].question;
-          document.getElementById('btn1').innerHTML = quizzes[6].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[6].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[6].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[6].answer4;
-
-        }
-        else if (i == 7) {
-          document.getElementById('question').innerHTML = quizzes[7].question;
-          document.getElementById('btn1').innerHTML = quizzes[7].answer1;
-          document.getElementById('btn2').innerHTML = quizzes[7].answer2;
-          document.getElementById('btn3').innerHTML = quizzes[7].answer3;
-          document.getElementById('btn4').innerHTML = quizzes[7].answer4;
-
-        }
-
-
-
-
       })
   }
+}
+
+var butn1 = document.getElementById('btn1').innerHTML;
+var butn2 = document.getElementById('btn2').innerHTML;
+var butn3 = document.getElementById('btn3').innerHTML;
+var butn4 = document.getElementById('btn4').innerHTML;
+console.log(butn3);
+
+document.getElementById('btn3').onclick = function(){
+  document.getElementById('btn3').classList.add("btn-success");
+  document.getElementById('btn3').classList.add("btn-primary");
+}
+
+document.getElementById('btn2').onclick = function(){
+  document.getElementById('btn2').classList.add("btn-danger");
+  document.getElementById('btn2').classList.add("btn-primary");
+}
+
+document.getElementById('btn1').onclick = function(){
+  document.getElementById('btn1').classList.add("btn-danger");
+  document.getElementById('btn1').classList.add("btn-primary");
+}
+
+document.getElementById('btn4').onclick = function(){
+  document.getElementById('btn4').classList.add("btn-danger");
+  document.getElementById('btn4').classList.add("btn-primary");
 }
