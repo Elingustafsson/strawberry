@@ -191,38 +191,21 @@ function loadMapMarkers() {
 }
 
 function setPlayerMarker(gameMapCenter) {
-    $('#btn1, #btn2, #btn3, #btn4').click(function () {
-    for (var b = 0; b < quizzes.length; b++) {
-      
-      if ($(this).html()== quizzes[b].correctAnswer) {
-
-     document.getElementById(this.id).classList.add("btn-success");
-     document.getElementById('btn3').classList.add("btn-primary");
-  }
-
-    else {
-
-      console.log('wrong');
-
-  }
-
-}
-
-  });
-
-  $(".modal").on("hidden.bs.modal", function(){
-      $(".btn-primary").removeClass("btn-danger");
-      $(".btn-primary").removeClass("btn-success");
 
 
-  });
-  id = navigator.geolocation.watchPosition(setLocation, error, options)
-  playerMarker = new google.maps.Marker({
-    position: gameMapCenter,
-    map: gameMap,
-    icon: '../pins/pink_MarkerA.png'
-  })
-  loadMapMarkers()
+$(".modal").on("hidden.bs.modal", function() {
+  $(".btn-primary").removeClass("btn-danger");
+  $(".btn-primary").removeClass("btn-success");
+
+
+});
+id = navigator.geolocation.watchPosition(setLocation, error, options)
+playerMarker = new google.maps.Marker({
+  position: gameMapCenter,
+  map: gameMap,
+  icon: '../pins/pink_MarkerA.png'
+})
+loadMapMarkers()
 }
 
 function setLocation(pos) { // watchPosition callback
@@ -251,26 +234,37 @@ function setLocation(pos) { // watchPosition callback
     if (dist <= presetDistance)
       google.maps.event.addListener(pointMarker[i], 'click', function(e) {
         //console.log(this.my_id)
-        var i = this.my_id
+        var t = this.my_id
         $("#markerModal").modal();
         // console.log(quizzes);
-        for (var p = 0; p < quizzes.length; p++) {
-          if (i == p) {
-            document.getElementById('question').innerHTML = quizzes[p].question;
-            document.getElementById('btn1').innerHTML = quizzes[p].answer1;
-            document.getElementById('btn2').innerHTML = quizzes[p].answer2;
-            document.getElementById('btn3').innerHTML = quizzes[p].answer3;
-            document.getElementById('btn4').innerHTML = quizzes[p].answer4;
-          }
-        }
+
+        document.getElementById('question').innerHTML = quizzes[t].question;
+        document.getElementById('btn1').innerHTML = quizzes[t].answer1;
+        document.getElementById('btn2').innerHTML = quizzes[t].answer2;
+        document.getElementById('btn3').innerHTML = quizzes[t].answer3;
+        document.getElementById('btn4').innerHTML = quizzes[t].answer4;
+
+        bindAnswerButtons(t);
       })
   }
 }
 
 
+/*
+ * This function will bind onclick events for each answer button.
+ * @param quizId The ID of the quiz that is currently being displayed.
+ */
+function bindAnswerButtons(quizId){
+    $('#btn1, #btn2, #btn3, #btn4').click(function () {
+      console.log($(this).html() + quizzes[quizId].correctAnswer);
+        if ($(this).html() == quizzes[quizId].correctAnswer) {
+            document.getElementById(this.id).classList.add("btn-success");
+            $('#btn1, #btn2, #btn3, #btn4').off('click');
+        }
+        else {
+            console.log('wrong');
+            $('#btn1, #btn2, #btn3, #btn4').off('click');
+        }
+    });
 
-var butn1 = document.getElementById('btn1').innerHTML;
-var butn2 = document.getElementById('btn2').innerHTML;
-var butn3 = document.getElementById('btn3').innerHTML;
-var butn4 = document.getElementById('btn4').innerHTML;
-console.log(butn3);
+}
