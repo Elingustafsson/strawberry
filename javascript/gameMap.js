@@ -4,6 +4,7 @@ var pointMarker = new Array()
 var pointMarkerImage = new Array()
 var quizzes = new Array()
 
+
 let gameMapCenter
 var options = {
   enableHighAccuracy: true,
@@ -190,6 +191,22 @@ function loadMapMarkers() {
   }
 }
 
+// var markerslist = new Array();
+//     fetch('http://localhost:3000/api/questions/markers')
+//
+//       .then(response => {
+//         response.json().then(json => {
+//           for (var j = 0; j < json.Markers.length; j++) {
+//             markerslist[j] = json.Markers[j];
+//
+//           }
+//           console.log(markerslist);
+//         });
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+
 function setPlayerMarker(gameMapCenter) {
 
 
@@ -209,8 +226,8 @@ loadMapMarkers()
 }
 
 function setLocation(pos) { // watchPosition callback
-  const url = "http://localhost:3000/api/questions/";
-  fetch(url)
+
+  fetch('http://localhost:3000/api/questions/')
     .then(response => {
       response.json().then(json => {
         for (var j = 0; j < json.questions.length; j++) {
@@ -222,6 +239,21 @@ function setLocation(pos) { // watchPosition callback
     .catch(error => {
       console.log(error);
     });
+var markerslist = new Array();
+    fetch('http://localhost:3000/api/questions/markers')
+
+      .then(response => {
+        response.json().then(json => {
+          for (var j = 0; j < json.Markers.length; j++) {
+            markerslist[j] = json.Markers[j];
+
+          }
+          console.log(markerslist);
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
 
   let presetDistance = 1000000 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
