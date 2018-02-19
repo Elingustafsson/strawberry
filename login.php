@@ -6,7 +6,7 @@ if(isset($_POST["submit"])){
  //DB Connection
 include 'config.php';
  //Selecting database
- $query = mysqli_query($conn, "SELECT * FROM login WHERE username='".$user."' AND password='".$pass."'");
+ $query = mysqli_query($conn, "SELECT * FROM users WHERE username='".$user."' AND password='".$pass."'");
  $numrows = mysqli_num_rows($query);
  if($numrows !=0)
  {

@@ -6,16 +6,16 @@ if(isset($_POST["submit"])){
  $email = $_POST['email'];
  $team = $_POST['team'];
  include 'config.php';
- $query = mysqli_query($conn, "SELECT * FROM login WHERE username='".$user."'");
+ $query = mysqli_query($conn, "SELECT * FROM users WHERE username='".$user."'");
  $numrows = mysqli_num_rows($query);
  if($numrows == 0)
  {
  //Insert to Mysqli Query
- $sql = "INSERT INTO login(username, password, email, team) VALUES('$user','$pass','$email','$team')";
+ $sql = "INSERT INTO users(username, password, email, team) VALUES('$user','$pass','$email','$team')";
  $result = mysqli_query($conn, $sql);
  //Result Message
  if($result){
-    header("Location: index.html");
+    header("Location: index.php");
  }
  else
  {
