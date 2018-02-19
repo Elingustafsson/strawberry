@@ -16,7 +16,7 @@
 }
 
 .padding-top {
-  padding-top: 5%;
+  padding-top: 40px;
 }
 
 .user-profile {
@@ -38,8 +38,8 @@
 }
 
 label {
-  display: inline-block; 
-  width: 120px; 
+  display: inline-block;
+  width: 120px;
   text-align: center;
 }
 
