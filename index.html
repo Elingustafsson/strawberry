@@ -38,80 +38,100 @@
     </div>
   </nav>
   <!-- Modal login-->
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header acc-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <div class="modal-header test">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <h1 align="center">Login</h1>
-          <form action="login.php" method="post" style="text-align:center;">
-          <input type="text" placeholder="Username" id="user" name="user"><br/><br/>
-          <input type="password" placeholder="Password" id="pass" name="pass"><br/><br/>
-          <input type="submit" value="Login" name="submit" class="acc-submit">
-        </form>
+          <form>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="user" type="text" class="form-control" name="user" placeholder="Username">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Login</button>
         </div>
       </div>
+
     </div>
   </div>
 
   <!-- Modal create acc-->
-  <div class="modal fade" id="createAccModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade" id="createAccModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header acc-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+        <div class="modal-header test">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <div class="register-form">
-           <form action="register.php" method="post">
-            <label>Username:</label><input type="text" name="user"><br/><br/>
-            <label>Password:</label><input type="password" name="pass"><br/><br/>
-            <label>E-mail:</label><input type="text" name="email"><br/><br/>
-            <label>Team:</label><select name="team">
-            <option value="">Select...</option>
-            <option value="Blue">Blue</option>
-            <option value="Pink">Pink</option>
-            <option value="Purple">Purple</option>
-            <br/><br/>
-            </select>
-            <input type="submit" value="Register" name="submit" class="acc-submit"><br/><br/>
+          <form>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="user" type="text" class="form-control" name="user" placeholder="Username">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <br>
+            <p>Pick your team:</p>
+
+              <label class="radio-inline"><input type="radio" name="optradio">Pink</label>
+              <label class="radio-inline"><input type="radio" name="optradio">Blue</label>
+              <label class="radio-inline"><input type="radio" name="optradio">Purple</label>
+
           </form>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Login</button>
+        </div>
       </div>
-     </div>
+
     </div>
   </div>
 
   <div id="leaderboard" class="padding-top container">
     <h2>Leaderboard</h2>
     <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Team</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Pink</td>
-        <td>1500</td>
-      </tr>
-      <tr>
-        <td>Blue</td>
-        <td>800</td>
-      </tr>
-      <tr>
-        <td>Purple</td>
-        <td>150</td>
-      </tr>
-    </tbody>
-  </table>
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pink</td>
+          <td>1500</td>
+        </tr>
+        <tr>
+          <td>Blue</td>
+          <td>800</td>
+        </tr>
+        <tr>
+          <td>Purple</td>
+          <td>150</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div id="news" class="padding-news container">
