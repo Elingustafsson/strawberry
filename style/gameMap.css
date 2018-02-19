@@ -11,7 +11,7 @@ body {
 
 /*Adapt the following styling depending on where you want to put your map. If you want a 'full screen' map, then set the width and height to 100 percent and remove the margins.*/
 #game-map {
-    height: 91.3%;
+    height: 93%;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -33,5 +33,10 @@ body {
 @media (max-width: 773px) {
   .navbar-header {
     display: none;
+  }
+
+  #game-map{
+    height: 91.3%;
+    width: 100%;
   }
 }

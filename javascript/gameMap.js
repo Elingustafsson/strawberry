@@ -4,6 +4,7 @@ var pointMarker = new Array()
 var pointMarkerImage = new Array()
 var quizzes = new Array()
 
+
 let gameMapCenter
 var options = {
   enableHighAccuracy: true,
@@ -158,7 +159,11 @@ function error(err) {
 function loadMapMarkers() {
   //create array to store a set of location
   var collection = new Array()
+  //FETCH CODE START
 
+  //const fetch = require("node-fetch");
+
+  //FETCH CODE END
   //a set of locations stored in array
   collection[0] = new google.maps.LatLng(59.312943, 18.109854)
   collection[1] = new google.maps.LatLng(59.313670, 18.114184)
@@ -167,62 +172,7 @@ function loadMapMarkers() {
   collection[4] = new google.maps.LatLng(59.310822, 18.114690)
   collection[5] = new google.maps.LatLng(59.311496, 18.118675)
   collection[6] = new google.maps.LatLng(59.309242, 18.109821)
-  quizzes[0] = {
-    question: "Frågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[1] = {
-    question: "XFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[2] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[3] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[4] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[5] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
-  quizzes[6] = {
-    question: "ZFrågan lyder: FRÅGAN LYDER: Vem blir året sjordgubbsodlare?",
-    answer1: "Olle från Byxekrok",
-    answer2: "Pelle från Öland",
-    answer3: "Johan från Stockholm",
-    answer4: "Pekka från Årjäng",
-    correctAnswer: 3
-  }
+
 
   var pointMarkerImage = new Array() //store image of marker in array
   //var pointMarker = new Array()//store marker in array
@@ -241,18 +191,71 @@ function loadMapMarkers() {
   }
 }
 
+// var markerslist = new Array();
+//     fetch('http://localhost:3000/api/questions/markers')
+//
+//       .then(response => {
+//         response.json().then(json => {
+//           for (var j = 0; j < json.Markers.length; j++) {
+//             markerslist[j] = json.Markers[j];
+//
+//           }
+//           console.log(markerslist);
+//         });
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+
 function setPlayerMarker(gameMapCenter) {
-  id = navigator.geolocation.watchPosition(setLocation, error, options)
-  playerMarker = new google.maps.Marker({
-    position: gameMapCenter,
-    map: gameMap,
-    icon: '../pins/pink_MarkerA.png'
-  })
-  loadMapMarkers()
+
+
+$(".modal").on("hidden.bs.modal", function() {
+  $(".btn-primary").removeClass("btn-danger");
+  $(".btn-primary").removeClass("btn-success");
+
+
+});
+id = navigator.geolocation.watchPosition(setLocation, error, options)
+playerMarker = new google.maps.Marker({
+  position: gameMapCenter,
+  map: gameMap,
+  icon: '../pins/pink_MarkerA.png'
+})
+loadMapMarkers()
 }
 
 function setLocation(pos) { // watchPosition callback
-  let presetDistance = 100 //Meter
+
+  fetch('http://localhost:3000/api/questions/')
+    .then(response => {
+      response.json().then(json => {
+        for (var j = 0; j < json.questions.length; j++) {
+          quizzes[j] = json.questions[j];
+        }
+        //console.log(json);
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+var markerslist = new Array();
+    fetch('http://localhost:3000/api/questions/markers')
+
+      .then(response => {
+        response.json().then(json => {
+          for (var j = 0; j < json.Markers.length; j++) {
+            markerslist[j] = json.Markers[j];
+
+          }
+          console.log(markerslist);
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+  let presetDistance = 1000000 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
   for (var i = 0; i < pointMarker.length; i++) {
@@ -263,9 +266,37 @@ function setLocation(pos) { // watchPosition callback
     if (dist <= presetDistance)
       google.maps.event.addListener(pointMarker[i], 'click', function(e) {
         //console.log(this.my_id)
-        var i = this.my_id
+        var t = this.my_id
         $("#markerModal").modal();
-        console.log(quizzes[i])
+        // console.log(quizzes);
+
+        document.getElementById('question').innerHTML = quizzes[t].question;
+        document.getElementById('btn1').innerHTML = quizzes[t].answer1;
+        document.getElementById('btn2').innerHTML = quizzes[t].answer2;
+        document.getElementById('btn3').innerHTML = quizzes[t].answer3;
+        document.getElementById('btn4').innerHTML = quizzes[t].answer4;
+
+        bindAnswerButtons(t);
       })
   }
+}
+
+
+/*
+ * This function will bind onclick events for each answer button.
+ * @param quizId The ID of the quiz that is currently being displayed.
+ */
+function bindAnswerButtons(quizId){
+    $('#btn1, #btn2, #btn3, #btn4').click(function () {
+      console.log($(this).html() + quizzes[quizId].correctAnswer);
+        if ($(this).html() == quizzes[quizId].correctAnswer) {
+            document.getElementById(this.id).classList.add("btn-success");
+            $('#btn1, #btn2, #btn3, #btn4').off('click');
+        }
+        else {
+            console.log('wrong');
+            $('#btn1, #btn2, #btn3, #btn4').off('click');
+        }
+    });
+
 }
