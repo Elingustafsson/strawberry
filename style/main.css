@@ -8,9 +8,21 @@
   padding: 0 15px;
 }
 
-.padding-news {
+.container-profile {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align:Center;
+}
+
+.padding-top {
   padding-top: 5%;
 }
+
+.user-profile {
+  width:100%;
+  flex-direction: row;
+  margin: auto;
 
 .acc-header {
   background-image: url("../img/Strawberry-bg.png");
@@ -40,4 +52,5 @@ label {
   width: 80px;
   font: bold 15px 'Tahoma', Geneva, Verdana, sans-serif;
   text-shadow:none;
+
 }
