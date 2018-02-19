@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `questions` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `questions`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: questions
@@ -82,8 +84,7 @@ CREATE TABLE `users` (
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `teamID` varchar(45) DEFAULT NULL,
-  `userscol` varchar(45) DEFAULT 'red,blue,green',
+  `team` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -106,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-19  7:29:52
+-- Dump completed on 2018-02-19 11:03:02
