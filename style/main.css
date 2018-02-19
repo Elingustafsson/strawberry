@@ -12,7 +12,7 @@
   padding-top: 40px;
   display: flex;
   flex-direction: column;
-  text-align:Center;
+  text-align: Center;
 }
 
 .padding-top {
@@ -20,11 +20,11 @@
 }
 
 .user-profile {
-  width:100%;
+  width: 100%;
   flex-direction: row;
   margin: auto;
 }
 
-.test {
+.modal-bg {
   background-image: url("../img/Strawberry-bg.png");
 }
