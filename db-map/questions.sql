@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2018 at 02:28 PM
+-- Generation Time: Feb 20, 2018 at 02:41 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -84,18 +84,9 @@ INSERT INTO `questionanswers` (`questionid`, `answer1`, `answer2`, `answer3`, `a
 --
 
 CREATE TABLE `teamscore` (
-  `pinkscore` int(11) NOT NULL,
-  `purplescore` int(11) NOT NULL,
-  `bluescore` int(11) NOT NULL
+  `team` varchar(16) NOT NULL,
+  `score` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `teamscore`
---
-
-INSERT INTO `teamscore` (`pinkscore`, `purplescore`, `bluescore`) VALUES
-(5, 4, 3),
-(5, 4, 3);
 
 -- --------------------------------------------------------
 
