@@ -1,5 +1,10 @@
 //Create the variables that will be used within the map configuration options.
 //The latitude and longitude of the center of the map.
+
+let params = (new URL(location)).searchParams;
+const team = params.get('team');
+console.log(team);
+
 var pointMarker = new Array()
 var pointMarkerImage = new Array()
 var quizzes = new Array()
@@ -291,6 +296,8 @@ function bindAnswerButtons(quizId){
       console.log($(this).html() + quizzes[quizId].correctAnswer);
         if ($(this).html() == quizzes[quizId].correctAnswer) {
             document.getElementById(this.id).classList.add("btn-success");
+            console.log(team);
+
             $('#btn1, #btn2, #btn3, #btn4').off('click');
         }
         else {

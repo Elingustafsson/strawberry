@@ -3,10 +3,11 @@ if(isset($_POST["submit"])){
  if(!empty($_POST['user']) && !empty($_POST['pass'])){
  $user = $_POST['user'];
  $pass = $_POST['pass'];
+ $team = $_GET['team'] //ELLER PUT????
  //DB Connection
 include 'config.php';
  //Selecting database
- $query = mysqli_query($conn, "SELECT * FROM users WHERE username='".$user."' AND password='".$pass."'");
+ $query = mysqli_query($conn, "SELECT * FROM users WHERE username='".$user."' AND password='".$pass."' AND team='".$team."');
  $numrows = mysqli_num_rows($query);
  if($numrows !=0)
  {
