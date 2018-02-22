@@ -2,6 +2,7 @@
 //The latitude and longitude of the center of the map.
 
 let params = (new URL(location)).searchParams;
+params.set("team", "$team");
 const team = params.get('team');
 console.log(team);
 
