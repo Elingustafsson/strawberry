@@ -275,7 +275,6 @@ var markerslist = new Array();
         var t = this.my_id
         $("#markerModal").modal();
         // console.log(quizzes);
-
         document.getElementById('question').innerHTML = quizzes[t].question;
         document.getElementById('btn1').innerHTML = quizzes[t].answer1;
         document.getElementById('btn2').innerHTML = quizzes[t].answer2;
@@ -286,8 +285,6 @@ var markerslist = new Array();
       })
   }
 }
-
-
 /*
  * This function will bind onclick events for each answer button.
  * @param quizId The ID of the quiz that is currently being displayed.
@@ -297,8 +294,6 @@ function bindAnswerButtons(quizId){
       console.log($(this).html() + quizzes[quizId].correctAnswer);
         if ($(this).html() == quizzes[quizId].correctAnswer) {
             document.getElementById(this.id).classList.add("btn-success");
-            console.log(team);
-
             $('#btn1, #btn2, #btn3, #btn4').off('click');
         }
         else {

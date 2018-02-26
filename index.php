@@ -107,29 +107,34 @@
 
   <div id="leaderboard" class="padding-top container">
     <h2>Leaderboard</h2>
-    <table class="table table-striped">
-      <thead>
+    <?php
+    include 'config.php';
+
+    // Print the table
+    $sql = "SELECT * FROM teamscore ORDER BY score DESC";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        echo"
+        <table class='table table-striped'>
+        <thead>
         <tr>
-          <th>Team</th>
-          <th>Score</th>
+        <th>Team</th>
+        <th>Score</th>
         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Pink</td>
-          <td>1500</td>
-        </tr>
-        <tr>
-          <td>Blue</td>
-          <td>800</td>
-        </tr>
-        <tr>
-          <td>Purple</td>
-          <td>150</td>
-        </tr>
-      </tbody>
-    </table>
+        </thead>";
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['team'] . "</td>" . "<td>" . $row['score'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "\n <br> No results in the table!";
+    }
+    ?>
   </div>
+
 
   <div id="news" class="padding-news container">
     <h2>Latest news</h2>
