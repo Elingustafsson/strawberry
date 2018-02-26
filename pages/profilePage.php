@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,20 +34,17 @@
           <li><a href="#faq">FAQ</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="gameMap.html?team=pink"><span class="glyphicon glyphicon-triangle-right"></span> Start game</a></li>
-          <li><a href="../index.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <li><a href="gameMap.html"><span class="glyphicon glyphicon-triangle-right"></span> Start game</a></li>
+          <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <div id="prof" class="container-profile">
-    <h2>Welcome user</h2>
+    <h2>Welcome <?=$_SESSION['sess_user'];?>!</h2>
     <div class="user-profile">
       <div id=reactPic></div>
-      <h3>Here is some text</h3>
-      <p>bcryi</p>
-      <p>cyuevyruvbreu</p>
     </div>
   </div>
 
@@ -52,28 +52,32 @@
 
   <div id="leaderboard" class="padding-top container">
     <h2>Leaderboard</h2>
-    <table class="table table-striped">
-    <thead>
-      <tr>
+    <?php
+    include '../config.php';
+
+    // Print the table
+    $sql = "SELECT * FROM teamscore ORDER BY score DESC";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        echo"
+        <table class='table table-striped'>
+        <thead>
+        <tr>
         <th>Team</th>
         <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Pink</td>
-        <td>1500</td>
-      </tr>
-      <tr>
-        <td>Blue</td>
-        <td>800</td>
-      </tr>
-      <tr>
-        <td>Purple</td>
-        <td>150</td>
-      </tr>
-    </tbody>
-  </table>
+        </tr>
+        </thead>";
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['team'] . "</td>" . "<td>" . $row['score'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "\n <br> No results in the table!";
+    }
+    ?>
   </div>
 
   <div id="news" class="padding-top container">

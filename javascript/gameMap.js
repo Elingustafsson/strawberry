@@ -1,5 +1,11 @@
 //Create the variables that will be used within the map configuration options.
 //The latitude and longitude of the center of the map.
+
+let params = (new URL(location)).searchParams;
+params.set("team", "$team");
+const team = params.get('team');
+console.log(team);
+
 var pointMarker = new Array()
 var pointMarkerImage = new Array()
 var quizzes = new Array()
@@ -269,7 +275,6 @@ var markerslist = new Array();
         var t = this.my_id
         $("#markerModal").modal();
         // console.log(quizzes);
-
         document.getElementById('question').innerHTML = quizzes[t].question;
         document.getElementById('btn1').innerHTML = quizzes[t].answer1;
         document.getElementById('btn2').innerHTML = quizzes[t].answer2;
@@ -280,8 +285,6 @@ var markerslist = new Array();
       })
   }
 }
-
-
 /*
  * This function will bind onclick events for each answer button.
  * @param quizId The ID of the quiz that is currently being displayed.

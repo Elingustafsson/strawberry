@@ -20,7 +20,7 @@ include 'config.php';
  session_start();
  $_SESSION['sess_user']=$user;
  //Redirect Browser
- header("Location: pages/profilePage.html");
+ header("Location: pages/profilePage.php");
  }
  }
  else
