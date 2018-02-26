@@ -1,15 +1,6 @@
-//Create the variables that will be used within the map configuration options.
-//The latitude and longitude of the center of the map.
-
-let params = (new URL(location)).searchParams;
-params.set("team", "$team");
-const team = params.get('team');
-console.log(team);
-
 var pointMarker = new Array()
 var pointMarkerImage = new Array()
 var quizzes = new Array()
-
 
 let gameMapCenter
 var options = {
@@ -141,7 +132,6 @@ let gameMapOptions = {
     },
   ]
 }
-//Create the variable for the main map itself.
 let gameMap
 //When the page loads, the line below calls the function below called 'loadgameMap' to load up the map.
 google.maps.event.addDomListener(window, 'load', loadGameMap)
@@ -165,11 +155,6 @@ function error(err) {
 function loadMapMarkers() {
   //create array to store a set of location
   var collection = new Array()
-  //FETCH CODE START
-
-  //const fetch = require("node-fetch");
-
-  //FETCH CODE END
   //a set of locations stored in array
   collection[0] = new google.maps.LatLng(59.312943, 18.109854)
   collection[1] = new google.maps.LatLng(59.313670, 18.114184)
@@ -179,9 +164,7 @@ function loadMapMarkers() {
   collection[5] = new google.maps.LatLng(59.311496, 18.118675)
   collection[6] = new google.maps.LatLng(59.309242, 18.109821)
 
-
   var pointMarkerImage = new Array() //store image of marker in array
-  //var pointMarker = new Array()//store marker in array
 
   //create number of markers based on collection.length
   for (var i = 0; i < collection.length; i++) {
@@ -197,42 +180,21 @@ function loadMapMarkers() {
   }
 }
 
-// var markerslist = new Array();
-//     fetch('http://localhost:3000/api/questions/markers')
-//
-//       .then(response => {
-//         response.json().then(json => {
-//           for (var j = 0; j < json.Markers.length; j++) {
-//             markerslist[j] = json.Markers[j];
-//
-//           }
-//           console.log(markerslist);
-//         });
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
-
 function setPlayerMarker(gameMapCenter) {
-
-
-$(".modal").on("hidden.bs.modal", function() {
-  $(".btn-primary").removeClass("btn-danger");
-  $(".btn-primary").removeClass("btn-success");
-
-
-});
-id = navigator.geolocation.watchPosition(setLocation, error, options)
-playerMarker = new google.maps.Marker({
-  position: gameMapCenter,
-  map: gameMap,
-  icon: '../pins/pink_MarkerA.png'
-})
-loadMapMarkers()
+  $(".modal").on("hidden.bs.modal", function() {
+    $(".btn-primary").removeClass("btn-danger");
+    $(".btn-primary").removeClass("btn-success");
+  });
+  id = navigator.geolocation.watchPosition(setLocation, error, options)
+  playerMarker = new google.maps.Marker({
+    position: gameMapCenter,
+    map: gameMap,
+    icon: '../pins/pink_MarkerA.png'
+  })
+  loadMapMarkers()
 }
 
 function setLocation(pos) { // watchPosition callback
-
   fetch('http://localhost:3000/api/questions/')
     .then(response => {
       response.json().then(json => {
@@ -245,21 +207,19 @@ function setLocation(pos) { // watchPosition callback
     .catch(error => {
       console.log(error);
     });
-var markerslist = new Array();
-    fetch('http://localhost:3000/api/questions/markers')
-
-      .then(response => {
-        response.json().then(json => {
-          for (var j = 0; j < json.Markers.length; j++) {
-            markerslist[j] = json.Markers[j];
-
-          }
-          console.log(markerslist);
-        });
-      })
-      .catch(error => {
-        console.log(error);
+  var markerslist = new Array();
+  fetch('http://localhost:3000/api/questions/markers')
+    .then(response => {
+      response.json().then(json => {
+        for (var j = 0; j < json.Markers.length; j++) {
+          markerslist[j] = json.Markers[j];
+        }
+        console.log(markerslist);
       });
+    })
+    .catch(error => {
+      console.log(error);
+    });
 
   let presetDistance = 1000000 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
@@ -280,26 +240,20 @@ var markerslist = new Array();
         document.getElementById('btn2').innerHTML = quizzes[t].answer2;
         document.getElementById('btn3').innerHTML = quizzes[t].answer3;
         document.getElementById('btn4').innerHTML = quizzes[t].answer4;
-
         bindAnswerButtons(t);
       })
   }
 }
-/*
- * This function will bind onclick events for each answer button.
- * @param quizId The ID of the quiz that is currently being displayed.
- */
-function bindAnswerButtons(quizId){
-    $('#btn1, #btn2, #btn3, #btn4').click(function () {
-      console.log($(this).html() + quizzes[quizId].correctAnswer);
-        if ($(this).html() == quizzes[quizId].correctAnswer) {
-            document.getElementById(this.id).classList.add("btn-success");
-            $('#btn1, #btn2, #btn3, #btn4').off('click');
-        }
-        else {
-            console.log('wrong');
-            $('#btn1, #btn2, #btn3, #btn4').off('click');
-        }
-    });
 
+function bindAnswerButtons(quizId) {
+  $('#btn1, #btn2, #btn3, #btn4').click(function() {
+    console.log($(this).html() + quizzes[quizId].correctAnswer);
+    if ($(this).html() == quizzes[quizId].correctAnswer) {
+      document.getElementById(this.id).classList.add("btn-success");
+      $('#btn1, #btn2, #btn3, #btn4').off('click');
+    } else {
+      console.log('wrong');
+      $('#btn1, #btn2, #btn3, #btn4').off('click');
+    }
+  });
 }
