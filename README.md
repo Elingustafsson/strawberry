@@ -26,7 +26,7 @@ The reason we made this game is because it was an assignment that we got from ou
 - Vimly (Hosting)
 
 ## Style guidelines:
-- We use indentation (tab) of 1 spaces.
+- We use indentation (tab) of 1 space.
 - We're using Atom Beautify.
 - In the CSS files there's no indentation at the selector, ex:
 ```
