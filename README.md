@@ -5,6 +5,11 @@ This game is GPS oriented and you play it on your mobilephone by walking to diff
 You choose a team when you create your account and you won't be able to change your team once your account is created.
 You will also have access to a leaderboard where you can see which of the teams are in the lead.
 
+## Screenshots
+![picture](img/Create-account.png)
+![picture](img/Login.png)
+![picture](img/Question-modal.png)
+
 ## Motivation:
 The reason we made this game is because it was an assignment that we got from our teachers and this project won't be maintained after march 2nd, 2018.
 
@@ -13,13 +18,15 @@ The reason we made this game is because it was an assignment that we got from ou
 - CSS3 
 - JavaScript 
 - Bootstrap 
-- PHP 
-- MySQL 
+- PHP (Backend)
+- MySQL (Database)
 - React 
 - GPS 
 - JSON 
 - REST API
-- Node.js
+- Node.js (Backend)
+- Heroku (Hosting)
+- Vimly (Hosting)
 
 ## Getting started:
 Go to: http://strawberrygame.gouk.pw/ create your account and when you've logged in you can start the game.
