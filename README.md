@@ -21,6 +21,7 @@ The reason we made this game is because it was an assignment that we got from ou
 - GPS 
 - JSON 
 - REST API
+- jQuery.ajax
 - Node.js (Backend)
 - Heroku (Hosting)
 - Vimly (Hosting)
