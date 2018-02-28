@@ -261,8 +261,8 @@ function bindAnswerButtons(quizId) {
 
       //PUT med fetch för att lägga till poäng
 
-     fetch('http://localhost:3000/api/questions/teamscore/' + team2,  {
-      	method: 'PUT'
+     fetch('http://localhost:3000/api/teamscore/' + team2, {
+      	method: 'GET'
       }).then(function(response) {
 
       }).catch(function(err) {
@@ -273,8 +273,8 @@ var teamArray = new Array();
   fetch('http://localhost:3000/api/questions/teamscore')
     .then(response => {
       response.json().then(json => {
-        for (var n = 0; n < json.questions.length; n++) {
-          teamArray[n] = json.questions[n];
+        for (var n = 0; n < json.teamscore.length; n++) {
+          teamArray[n] = json.teamscore[n];
         }
         console.log(teamArray);
       });

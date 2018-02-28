@@ -49,8 +49,8 @@ REST_ROUTER.prototype.handleRoutes = function(router, connection, md5) {
     });
   });
 
-  UPDATE Orders SET Quantity = Quantity + 1 WHERE ...
-  router.put("/teamscore/:team",function(req,res){
+  // UPDATE Orders SET Quantity = Quantity + 1 WHERE ...
+  router.get("/teamscore/:team",function(req,res){
     res.setHeader('Access-Control-Allow-Origin', '*');
       var query = "UPDATE ?? SET ?? = ?? + 1 WHERE ?? = ?";
       var table = ["teamscore","score","score","team",req.params.team];
