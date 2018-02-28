@@ -257,26 +257,24 @@ function bindAnswerButtons(quizId) {
       document.getElementById(this.id).classList.add("btn-success");
       // Fetchar lagtabellen från db, assignar datan in i en lista kallad teamArray så vi kan använda json objektet
 
-      // var markerslist = new Array();
-      // fetch('http://localhost:3000/api/questions/markers')
-      //   .then(response => {
-      //     response.json().then(json => {
-      //       for (var j = 0; j < json.Markers.length; j++) {
-      //         markerslist[j] = json.Markers[j];
-      //       }
-      //       console.log(markerslist);
-      //     });
-      //   })
-      //   .catch(error => {
-      //     console.log(error);
-      //   });
+
+
+      //PUT med fetch för att lägga till poäng
+
+     fetch('http://localhost:3000/api/questions/teamscore/' + team2,  {
+      	method: 'PUT'
+      }).then(function(response) {
+
+      }).catch(function(err) {
+      	// Error :(
+      });
 
 var teamArray = new Array();
   fetch('http://localhost:3000/api/questions/teamscore')
     .then(response => {
       response.json().then(json => {
-        for (var j = 0; j < json.teamscore.length; j++) {
-          teamArray[j] = json.teamscore[j];
+        for (var n = 0; n < json.questions.length; n++) {
+          teamArray[n] = json.questions[n];
         }
         console.log(teamArray);
       });
@@ -295,3 +293,18 @@ var teamArray = new Array();
     }
   });
 }
+
+//TA BORT
+// var markerslist = new Array();
+// fetch('http://localhost:3000/api/questions/markers')
+//   .then(response => {
+//     response.json().then(json => {
+//       for (var j = 0; j < json.Markers.length; j++) {
+//         markerslist[j] = json.Markers[j];
+//       }
+//       console.log(markerslist);
+//     });
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });

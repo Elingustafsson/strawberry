@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2018 at 02:41 PM
+-- Generation Time: Feb 28, 2018 at 12:37 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -88,6 +88,15 @@ CREATE TABLE `teamscore` (
   `score` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `teamscore`
+--
+
+INSERT INTO `teamscore` (`team`, `score`) VALUES
+('Pink', 0),
+('Purple', 0),
+('Blue', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -110,7 +119,8 @@ INSERT INTO `users` (`userID`, `username`, `password`, `email`, `team`) VALUES
 (1, 'elinÃ¤rglad', 'elinÃ¤rglad', 'elinÃ¤rglad@gmail.com', 'Blue'),
 (4, 'elinÃ¤rlost', 'elinÃ¤rlost', 'elinÃ¤rlost', 'Pink'),
 (6, 'viktortest', 'viktortest', 'viktortest', 'purple'),
-(9, 'elinsuger', 'elinsuger', 'elinsuger@gmail.com', 'purple');
+(9, 'elinsuger', 'elinsuger', 'elinsuger@gmail.com', 'purple'),
+(10, 'inteviktor', 'inteviktor', 'inteviktor', 'Pink');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +164,7 @@ ALTER TABLE `questionanswers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
