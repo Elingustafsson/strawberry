@@ -5,9 +5,6 @@ This game is GPS oriented and you play it on your mobilephone by walking to diff
 You choose a team when you create your account and you won't be able to change your team once your account is created.
 You will also have access to a leaderboard where you can see which of the teams are in the lead.
 
-## Screenshots
-![picture](img/Create-account.png)
-![picture](img/Login.png)
 ![picture](img/Question-modal.png)
 
 ## Motivation:
