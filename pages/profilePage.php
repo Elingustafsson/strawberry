@@ -34,7 +34,7 @@ session_start();
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="gameMap.html"><span class="glyphicon glyphicon-triangle-right"></span> Start game</a></li>
+        <li><a href="gameMap.php"><span class="glyphicon glyphicon-triangle-right"></span> Start game</a></li>
         <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>

@@ -224,6 +224,8 @@ function setLocation(pos) { // watchPosition callback
       console.log(error);
     });
 
+
+// Ger laget poäng
   let presetDistance = 1000000 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
@@ -253,6 +255,38 @@ function bindAnswerButtons(quizId) {
     console.log($(this).html() + quizzes[quizId].correctAnswer);
     if ($(this).html() == quizzes[quizId].correctAnswer) {
       document.getElementById(this.id).classList.add("btn-success");
+      // Fetchar lagtabellen från db, assignar datan in i en lista kallad teamArray så vi kan använda json objektet
+
+      // var markerslist = new Array();
+      // fetch('http://localhost:3000/api/questions/markers')
+      //   .then(response => {
+      //     response.json().then(json => {
+      //       for (var j = 0; j < json.Markers.length; j++) {
+      //         markerslist[j] = json.Markers[j];
+      //       }
+      //       console.log(markerslist);
+      //     });
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   });
+
+var teamArray = new Array();
+  fetch('http://localhost:3000/api/questions/teamscore')
+    .then(response => {
+      response.json().then(json => {
+        for (var j = 0; j < json.teamscore.length; j++) {
+          teamArray[j] = json.teamscore[j];
+        }
+        console.log(teamArray);
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+  //Lägg den i "IF rätt svar" funktionen
+
       $('#btn1, #btn2, #btn3, #btn4').off('click');
 
     } else {

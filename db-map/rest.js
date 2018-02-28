@@ -37,18 +37,34 @@ REST_ROUTER.prototype.handleRoutes= function(router,connection,md5) {
 });
 
 // UPDATE Orders SET Quantity = Quantity + 1 WHERE ...
-router.put("/teamscore/:team",function(req,res){
-    var query = "UPDATE ?? SET ?? = ?? + 1 WHERE ?? = ?";
-    var table = ["teamscore","score","score","team",req.params.team];
-    query = mysql.format(query,table);
-    connection.query(query,function(err,rows){
-        if(err) {
-            res.json({"Error" : true, "Message" : "Error executing MySQL query"});
-        } else {
-            res.json({"Error" : false, "Message" : "Updated the password for email "+req.body.email});
-        }
-    });
-});
+// router.put("/teamscore/:team",function(req,res){
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//     var query = "UPDATE ?? SET ?? = ?? + 1 WHERE ?? = ?";
+//     var table = ["teamscore","score","score","team",req.params.team];
+//     query = mysql.format(query,table);
+//     connection.query(query,function(err,rows){
+//         if(err) {
+//             res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+//         } else {
+//             res.json({"Error" : false, "Message" : "Updated the password for email "+req.body.email});
+//         }
+//     });
+// });
+
+router.get("/questions/teamscore",function(req,res){
+res.setHeader('Access-Control-Allow-Origin', '*');
+     var query = "SELECT * FROM ??";
+     var table = ["teamscore"];
+     query = mysql.format(query,table);
+     connection.query(query,function(err,rows){
+       console.log(err);
+         if(err) {
+             res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+         } else {
+             res.json({"Error" : false, "Message" : "Success", "questions" : rows});
+         }
+     });
+ });
 
 router.get("/questions/markers",function(req,res){
    res.setHeader('Access-Control-Allow-Origin', '*');
