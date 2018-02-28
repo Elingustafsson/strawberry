@@ -15,6 +15,19 @@
   text-align: Center;
 }
 
+#leaderboard {
+  background-image: url("../img/strawberries.jpg");
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ldbrdtext {
+  color: #ffffffbb;
+}
+
+.table {
+  background-color: #ffffffbb;
+}
+
 .padding-top {
   padding-top: 40px;
 }
@@ -27,4 +40,22 @@
 
 .modal-bg {
   background-image: url("../img/Strawberry-bg.png");
+}
+
+#news {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carousel-caption {
+  padding-top: 20%;
+}
+
+#faq {
+  background-image: url("../img/morestrawberries.jpg");
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 20px;
+}
+
+.panel {
+  background-color: #ffffffbb;
 }
