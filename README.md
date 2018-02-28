@@ -37,10 +37,13 @@ height: 100%;
 ```
 
 ## Getting started:
-Go to: http://strawberrygame.gouk.pw/ create your account and when you've logged in you can start the game.
+Clone or download our [repository](https://github.com/Elingustafsson/strawberry.git), download XAMPP, download Node.js, import our database (QuizDB.sql) from the db-map folder.
 
 **_Link to our Trello:_**
 <br>[Trello](https://trello.com/b/dwdiaIEn/strawberry)
+
+**_Our game is hosted at this site:_**
+<br>http://strawberrygame.gouk.pw/
 
 ## Contributers:
 - **Viktor Stenqvist**
