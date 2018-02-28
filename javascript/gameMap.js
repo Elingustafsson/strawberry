@@ -1,3 +1,6 @@
+const team2 = params.get('team');
+console.log(team2);
+
 var pointMarker = new Array()
 var pointMarkerImage = new Array()
 var quizzes = new Array()
@@ -251,6 +254,7 @@ function bindAnswerButtons(quizId) {
     if ($(this).html() == quizzes[quizId].correctAnswer) {
       document.getElementById(this.id).classList.add("btn-success");
       $('#btn1, #btn2, #btn3, #btn4').off('click');
+
     } else {
       console.log('wrong');
       $('#btn1, #btn2, #btn3, #btn4').off('click');
