@@ -25,6 +25,16 @@ The reason we made this game is because it was an assignment that we got from ou
 - Heroku (Hosting)
 - Vimly (Hosting)
 
+## Style guidelines:
+- We use indentation (tab) of 1 spaces.
+- We're using Atom Beautify.
+- In the CSS files there's no indentation at the selector, ex:
+```
+html {
+height: 100%;
+}
+```
+
 ## Getting started:
 Go to: http://strawberrygame.gouk.pw/ create your account and when you've logged in you can start the game.
 
