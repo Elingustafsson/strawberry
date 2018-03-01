@@ -32,14 +32,14 @@
           </div>
           <div class="modal-body">
             <ul>
-              <li>How do I play?
-                <p>-Take over as many zones as you can</p>
-              </li>
-              <li>How do i capture zones?
-                <p>-Press the marker in the center of the zone that you want to take over</p>
-              </li>
-              <li>What happens when I press on a mark?
-                <p>-A quiz starts</p>
+            <li>How do I play?
+          <p>- Take over as many areas as you can.</p>
+        </li>
+        <li>How do I capture an area?
+          <p>- Press the marker in the area that you want to take over.</p>
+        </li>
+        <li>What happens when I press on a marker?
+          <p>- A quiz starts.</p>
               </li>
             </ul>
           </div>

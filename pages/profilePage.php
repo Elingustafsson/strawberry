@@ -60,7 +60,7 @@ session_start();
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
       echo"
-      <table class='table table-striped'>
+      <table class='table'>
       <thead>
       <tr>
       <th>Team</th>
@@ -112,7 +112,7 @@ session_start();
       <img src="../img/notebook.jpg" alt="Notebook" style="width:100%;">
         <div class="carousel-caption">
         <h3>Scheduled patches | 0.1 </h3>
-          <p>This is a new update, now you can press on a mark and start your quiz. More information will be available soon.</p>
+          <p>This is a new update, now you can press on a marker and start your quiz. More information will be available soon.</p>
         </div>
       </div>
 
