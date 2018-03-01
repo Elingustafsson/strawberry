@@ -253,13 +253,13 @@ function setLocation(pos) { // watchPosition callback
 
 function bindAnswerButtons(quizId) {
   $('#btn1, #btn2, #btn3, #btn4').click(function() {
-    console.log($(this).html() + quizzes[quizId].correctAnswer);
+
     if ($(this).html() == quizzes[quizId].correctAnswer) {
       document.getElementById(this.id).classList.add("btn-success");
       // Fetchar lagtabellen från db, assignar datan in i en lista kallad teamArray så vi kan använda json objektet
-      console.log('hej');
-
-      document.getElementById('question').innerHTML = "Congrats, 1 point to team " + team2;
+      console.log('correct');
+  alert($(this).html() + quizzes[quizId].correctAnswer);
+      document.getElementById('question').innerHTML = "Congrats, 1 point to " + team2;
       document.getElementById('btn1').innerHTML = "";
       document.getElementById('btn2').innerHTML = "";
       document.getElementById('btn3').innerHTML = "";
@@ -276,28 +276,19 @@ function bindAnswerButtons(quizId) {
       	// Error :(
       });
 
-var teamArray = new Array();
-  fetch(api_url + '/strawberrydb/teamscore')
-    .then(response => {
-      response.json().then(json => {
-        for (var n = 0; n < json.teamscore.length; n++) {
-          teamArray[n] = json.teamscore[n];
-        }
-        console.log(teamArray);
-      });
-    })
-    .catch(error => {
-      console.log(error);
-    });
+
 
   //Lägg den i "IF rätt svar" funktionen
 
       $('#btn1, #btn2, #btn3, #btn4').off('click');
 
-    } else {
+    } else if($(this).html() && $(this).html() != quizzes[quizId].correctAnswer){
+
+      alert($(this).html());
       console.log('wrong');
       $('#btn1, #btn2, #btn3, #btn4').off('click');
-      document.getElementById(this.id).classList.add("btn-danger");
+
+      //document.getElementById(this.id).classList.add("btn-danger");
       document.getElementById('question').innerHTML = "Wrong answer";
       document.getElementById('btn1').innerHTML = "";
       document.getElementById('btn2').innerHTML = "";
