@@ -1,3 +1,4 @@
+const api_url = "https://strawberrygameapp.herokuapp.com/api";
 const team2 = params.get('team');
 console.log(team2);
 
@@ -198,11 +199,11 @@ function setPlayerMarker(gameMapCenter) {
 }
 
 function setLocation(pos) { // watchPosition callback
-  fetch('http://localhost:3000/api/strawberrydb/')
+  fetch(api_url + '/u8157462_strawberrydb/')
     .then(response => {
       response.json().then(json => {
-        for (var j = 0; j < json.strawberrydb.length; j++) {
-          quizzes[j] = json.strawberrydb[j];
+        for (var j = 0; j < json.u8157462_strawberrydb.length; j++) {
+          quizzes[j] = json.u8157462_strawberrydb[j];
         }
         //console.log(json);
       });
@@ -211,7 +212,7 @@ function setLocation(pos) { // watchPosition callback
       console.log(error);
     });
   var markerslist = new Array();
-  fetch('http://localhost:3000/api/strawberrydb/markers')
+  fetch(api_url'/api/u8157462_strawberrydb/markers')
     .then(response => {
       response.json().then(json => {
         for (var j = 0; j < json.Markers.length; j++) {
@@ -261,7 +262,7 @@ function bindAnswerButtons(quizId) {
 
       //PUT med fetch för att lägga till poäng
 
-     fetch('http://localhost:3000/api/teamscore/' + team2, {
+     fetch(api_url + '/teamscore/' + team2, {
       	method: 'GET'
       }).then(function(response) {
 
@@ -270,7 +271,7 @@ function bindAnswerButtons(quizId) {
       });
 
 var teamArray = new Array();
-  fetch('http://localhost:3000/api/strawberrydb/teamscore')
+  fetch(api_url + '/u8157462_strawberrydb/teamscore')
     .then(response => {
       response.json().then(json => {
         for (var n = 0; n < json.teamscore.length; n++) {
@@ -296,7 +297,7 @@ var teamArray = new Array();
 
 //TA BORT
 // var markerslist = new Array();
-// fetch('http://localhost:3000/api/strawberrydb/markers')
+// fetch('http://localhost:3000/api/u8157462_strawberrydb/markers')
 //   .then(response => {
 //     response.json().then(json => {
 //       for (var j = 0; j < json.Markers.length; j++) {
