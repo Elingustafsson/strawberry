@@ -1,28 +1,29 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #CCC;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #CCC;
 }
 
 /*Adapt the following styling depending on where you want to put your map. If you want a 'full screen' map, then set the width and height to 100 percent and remove the margins.*/
+
 #game-map {
-    height: 93%;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  height: 93%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pop_up_box_text {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff;
-    display: inline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  display: inline;
 }
 
 .navbar-inverse {
@@ -34,25 +35,24 @@ body {
   .navbar-header {
     display: none;
   }
-
-  #game-map{
+  #game-map {
     height: 91.3%;
     width: 100%;
   }
 }
 
 .center-header {
- text-align: center;
- font-size: 1.8em;
+  text-align: center;
+  font-size: 1.8em;
 }
 
 .btn11 {
- border-radius: 6px;
- box-shadow: none;
- border: none;
- background-color: #00CED1;
- margin: 11px 0;
- padding: 5px 0;
- font-size: 1.2em;
- color: white;
+  border-radius: 6px;
+  box-shadow: none;
+  border: none;
+  background-color: #00CED1;
+  margin: 11px 0;
+  padding: 5px 0;
+  font-size: 1.2em;
+  color: white;
 }
