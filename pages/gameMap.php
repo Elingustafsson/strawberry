@@ -1,3 +1,4 @@
+
 <?php session_start();
 include '../config.php';
 $sess_user = $_SESSION["sess_user"];
@@ -11,6 +12,7 @@ if($row = mysqli_fetch_array($result)) {
 
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,15 +26,15 @@ if($row = mysqli_fetch_array($result)) {
 
 <body>
   <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="profilePage.html">Strawberry game</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-out"></span> Help</a></li>
-        <li><a href="profilePage.php"><span class="glyphicon glyphicon-log-in"></span> Quit game</a></li>
-      </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="profilePage.html">Strawberry game</a>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-out"></span> Help</a></li>
+      <li><a href="profilePage.php"><span class="glyphicon glyphicon-log-in"></span> Quit game</a></li>
+    </ul>
+  </div>
   </nav>
   <div class="container">
     <!-- Modal -->
@@ -65,6 +67,7 @@ if($row = mysqli_fetch_array($result)) {
     </div>
   </div>
   <div class="modal fade" id="markerModal" role="dialog">
+
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -92,6 +95,7 @@ if($row = mysqli_fetch_array($result)) {
     let params = (new URL(location)).searchParams;
     params.set("team", simple);
   </script>
+
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE5kp8oYu5PBbBxklN9QjSMLte2vpgfFg&libraries=geometry"></script>
   <script src="../javascript/gameMap.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
