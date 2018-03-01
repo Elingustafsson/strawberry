@@ -259,6 +259,12 @@ function bindAnswerButtons(quizId) {
       // Fetchar lagtabellen från db, assignar datan in i en lista kallad teamArray så vi kan använda json objektet
       console.log('hej');
 
+      document.getElementById('question').innerHTML = "Congrats, 1 point to team " + team2;
+      document.getElementById('btn1').innerHTML = "";
+      document.getElementById('btn2').innerHTML = "";
+      document.getElementById('btn3').innerHTML = "";
+      document.getElementById('btn4').innerHTML = "";
+
 
       //PUT med fetch för att lägga till poäng
 
@@ -291,6 +297,12 @@ var teamArray = new Array();
     } else {
       console.log('wrong');
       $('#btn1, #btn2, #btn3, #btn4').off('click');
+      document.getElementById(this.id).classList.add("btn-danger");
+      document.getElementById('question').innerHTML = "Wrong answer";
+      document.getElementById('btn1').innerHTML = "";
+      document.getElementById('btn2').innerHTML = "";
+      document.getElementById('btn3').innerHTML = "";
+      document.getElementById('btn4').innerHTML = "";
     }
   });
 }
