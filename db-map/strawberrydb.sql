@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `u8157462_strawberrydb`
 --
-CREATE DATABASE IF NOT EXISTS `u8157462_strawberrydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `u8157462_strawberrydb`;
+CREATE DATABASE IF NOT EXISTS `strawberrydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `strawberrydb`;
 
 -- --------------------------------------------------------
 

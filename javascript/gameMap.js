@@ -199,11 +199,11 @@ function setPlayerMarker(gameMapCenter) {
 }
 
 function setLocation(pos) { // watchPosition callback
-  fetch(api_url + '/u8157462_strawberrydb/')
+  fetch(api_url + '/strawberrydb/')
     .then(response => {
       response.json().then(json => {
-        for (var j = 0; j < json.u8157462_strawberrydb.length; j++) {
-          quizzes[j] = json.u8157462_strawberrydb[j];
+        for (var j = 0; j < json.strawberrydb.length; j++) {
+          quizzes[j] = json.strawberrydb[j];
         }
         //console.log(json);
       });
@@ -212,7 +212,7 @@ function setLocation(pos) { // watchPosition callback
       console.log(error);
     });
   var markerslist = new Array();
-  fetch(api_url'/api/u8157462_strawberrydb/markers')
+  fetch(api_url + '/strawberrydb/markers')
     .then(response => {
       response.json().then(json => {
         for (var j = 0; j < json.Markers.length; j++) {
@@ -227,7 +227,7 @@ function setLocation(pos) { // watchPosition callback
 
 
 // Ger laget poäng
-  let presetDistance = 1000000 //Meter
+  let presetDistance = 100 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
   for (var i = 0; i < pointMarker.length; i++) {
@@ -257,13 +257,13 @@ function bindAnswerButtons(quizId) {
     if ($(this).html() == quizzes[quizId].correctAnswer) {
       document.getElementById(this.id).classList.add("btn-success");
       // Fetchar lagtabellen från db, assignar datan in i en lista kallad teamArray så vi kan använda json objektet
-
+      console.log('hej');
 
 
       //PUT med fetch för att lägga till poäng
 
      fetch(api_url + '/teamscore/' + team2, {
-      	method: 'GET'
+      	method: 'get'
       }).then(function(response) {
 
       }).catch(function(err) {
@@ -271,7 +271,7 @@ function bindAnswerButtons(quizId) {
       });
 
 var teamArray = new Array();
-  fetch(api_url + '/u8157462_strawberrydb/teamscore')
+  fetch(api_url + '/strawberrydb/teamscore')
     .then(response => {
       response.json().then(json => {
         for (var n = 0; n < json.teamscore.length; n++) {
