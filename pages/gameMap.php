@@ -71,15 +71,13 @@ if($row = mysqli_fetch_array($result)) {
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 id="question" class="center-header modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p id="question">This is a small modal.</p>
-          <button id="btn1" class="btn-primary btn btn-sm butn">question</button>
-          <button id="btn2" class="btn-primary btn btn-sm butn">question</button>
-          <button id="btn3" class="btn-primary btn btn-sm butn">question</button>
-          <button id="btn4" class="btn-primary btn btn-sm butn">question</button>
+          <button id="btn1" class="btn11 btn-block">Question</button>
+          <button id="btn2" class="btn11 btn-block">Question</button>
+          <button id="btn3" class="btn11 btn-block">Question</button>
+          <button id="btn4" class="btn11 btn-block">Question</button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
