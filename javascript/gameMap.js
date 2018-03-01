@@ -198,11 +198,11 @@ function setPlayerMarker(gameMapCenter) {
 }
 
 function setLocation(pos) { // watchPosition callback
-  fetch('http://localhost:3000/api/questions/')
+  fetch('http://localhost:3000/api/strawberrydb/')
     .then(response => {
       response.json().then(json => {
-        for (var j = 0; j < json.questions.length; j++) {
-          quizzes[j] = json.questions[j];
+        for (var j = 0; j < json.strawberrydb.length; j++) {
+          quizzes[j] = json.strawberrydb[j];
         }
         //console.log(json);
       });
@@ -211,7 +211,7 @@ function setLocation(pos) { // watchPosition callback
       console.log(error);
     });
   var markerslist = new Array();
-  fetch('http://localhost:3000/api/questions/markers')
+  fetch('http://localhost:3000/api/strawberrydb/markers')
     .then(response => {
       response.json().then(json => {
         for (var j = 0; j < json.Markers.length; j++) {
@@ -270,7 +270,7 @@ function bindAnswerButtons(quizId) {
       });
 
 var teamArray = new Array();
-  fetch('http://localhost:3000/api/questions/teamscore')
+  fetch('http://localhost:3000/api/strawberrydb/teamscore')
     .then(response => {
       response.json().then(json => {
         for (var n = 0; n < json.teamscore.length; n++) {
@@ -296,7 +296,7 @@ var teamArray = new Array();
 
 //TA BORT
 // var markerslist = new Array();
-// fetch('http://localhost:3000/api/questions/markers')
+// fetch('http://localhost:3000/api/strawberrydb/markers')
 //   .then(response => {
 //     response.json().then(json => {
 //       for (var j = 0; j < json.Markers.length; j++) {
