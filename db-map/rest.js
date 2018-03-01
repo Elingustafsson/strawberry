@@ -7,7 +7,7 @@ function REST_ROUTER(router, connection, md5) {
 
 REST_ROUTER.prototype.handleRoutes = function(router, connection, md5) {
 
-  router.get("/questions", function(req, res) {
+  router.get("/strawberrydb", function(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     var query = "SELECT * FROM ??";
     var table = ["questionanswers"];
@@ -23,13 +23,13 @@ REST_ROUTER.prototype.handleRoutes = function(router, connection, md5) {
         res.json({
           "Error": false,
           "Message": "Success",
-          "questions": rows
+          "strawberrydb": rows
         });
       }
     });
   });
 
-  router.post("/questions/questionanswers", function(req, res) {
+  router.post("/strawberrydb/questionanswers", function(req, res) {
     var query = "INSERT INTO ??(??,??,??,??) VALUES (?,?,?,?)";
     var table = ["questionanswers", "answer1", "answer2", "answer3", "question", req.body.answer1, req.body.answer2, req.body.answer3, req.body.question];
     query = mysql.format(query, table);
@@ -64,7 +64,7 @@ REST_ROUTER.prototype.handleRoutes = function(router, connection, md5) {
       });
   });
 
-  router.get("/questions/teamscore", function(req, res) {
+  router.get("/strawberrydb/teamscore", function(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     var query = "SELECT * FROM ??";
     var table = ["teamscore"];
@@ -86,7 +86,7 @@ REST_ROUTER.prototype.handleRoutes = function(router, connection, md5) {
     });
   });
 
-  router.get("/questions/markers", function(req, res) {
+  router.get("/strawberrydb/markers", function(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     var query = "SELECT * FROM ??";
     var table = ["markers"];
