@@ -14,6 +14,7 @@ include 'config.php';
  {
  $dbusername=$row['username'];
  $dbpassword=$row['password'];
+ $sess_team=$row['team'];
  }
  if($user == $dbusername && $pass == $dbpassword)
  {

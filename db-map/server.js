@@ -17,7 +17,7 @@ REST.prototype.connectMysql = function() {
         host     : 'localhost',
         user     : 'root',
         password : '',
-        database : 'questions',
+        database : 'u8157462_strawberrydb',
         debug    :  false
     });
     pool.getConnection(function(err,connection){

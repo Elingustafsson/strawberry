@@ -1,3 +1,7 @@
+const api_url = "https://strawberrygameapp.herokuapp.com/api";
+const team2 = params.get('team');
+console.log(team2);
+
 var pointMarker = new Array()
 var pointMarkerImage = new Array()
 var quizzes = new Array()
@@ -195,11 +199,11 @@ function setPlayerMarker(gameMapCenter) {
 }
 
 function setLocation(pos) { // watchPosition callback
-  fetch('http://localhost:3000/api/questions/')
+  fetch(api_url + '/strawberrydb/')
     .then(response => {
       response.json().then(json => {
-        for (var j = 0; j < json.questions.length; j++) {
-          quizzes[j] = json.questions[j];
+        for (var j = 0; j < json.strawberrydb.length; j++) {
+          quizzes[j] = json.strawberrydb[j];
         }
         //console.log(json);
       });
@@ -208,7 +212,7 @@ function setLocation(pos) { // watchPosition callback
       console.log(error);
     });
   var markerslist = new Array();
-  fetch('http://localhost:3000/api/questions/markers')
+  fetch(api_url + '/strawberrydb/markers')
     .then(response => {
       response.json().then(json => {
         for (var j = 0; j < json.Markers.length; j++) {
@@ -221,7 +225,9 @@ function setLocation(pos) { // watchPosition callback
       console.log(error);
     });
 
-  let presetDistance = 1000000 //Meter
+
+// Ger laget poäng
+  let presetDistance = 100 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
   for (var i = 0; i < pointMarker.length; i++) {
@@ -247,13 +253,62 @@ function setLocation(pos) { // watchPosition callback
 
 function bindAnswerButtons(quizId) {
   $('#btn1, #btn2, #btn3, #btn4').click(function() {
-    console.log($(this).html() + quizzes[quizId].correctAnswer);
+
     if ($(this).html() == quizzes[quizId].correctAnswer) {
       document.getElementById(this.id).classList.add("btn-success");
+      // Fetchar lagtabellen från db, assignar datan in i en lista kallad teamArray så vi kan använda json objektet
+      console.log('correct');
+  alert($(this).html() + quizzes[quizId].correctAnswer);
+      document.getElementById('question').innerHTML = "Congrats, 1 point to " + team2;
+      document.getElementById('btn1').innerHTML = "";
+      document.getElementById('btn2').innerHTML = "";
+      document.getElementById('btn3').innerHTML = "";
+      document.getElementById('btn4').innerHTML = "";
+
+
+      //PUT med fetch för att lägga till poäng
+
+     fetch(api_url + '/teamscore/' + team2, {
+      	method: 'get'
+      }).then(function(response) {
+
+      }).catch(function(err) {
+      	// Error :(
+      });
+
+
+
+  //Lägg den i "IF rätt svar" funktionen
+
       $('#btn1, #btn2, #btn3, #btn4').off('click');
-    } else {
+
+    } else if($(this).html() && $(this).html() != quizzes[quizId].correctAnswer){
+
+      alert($(this).html());
       console.log('wrong');
       $('#btn1, #btn2, #btn3, #btn4').off('click');
+
+      //document.getElementById(this.id).classList.add("btn-danger");
+      document.getElementById('question').innerHTML = "Wrong answer";
+      document.getElementById('btn1').innerHTML = "";
+      document.getElementById('btn2').innerHTML = "";
+      document.getElementById('btn3').innerHTML = "";
+      document.getElementById('btn4').innerHTML = "";
     }
   });
 }
+
+//TA BORT
+// var markerslist = new Array();
+// fetch('http://localhost:3000/api/u8157462_strawberrydb/markers')
+//   .then(response => {
+//     response.json().then(json => {
+//       for (var j = 0; j < json.Markers.length; j++) {
+//         markerslist[j] = json.Markers[j];
+//       }
+//       console.log(markerslist);
+//     });
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });

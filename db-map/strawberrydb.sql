@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2018 at 12:37 PM
+-- Generation Time: Mar 01, 2018 at 10:21 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -19,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `questions`
+-- Database: `u8157462_strawberrydb`
 --
+CREATE DATABASE IF NOT EXISTS `strawberrydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `strawberrydb`;
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,7 @@ CREATE TABLE `teamscore` (
 --
 
 INSERT INTO `teamscore` (`team`, `score`) VALUES
-('Pink', 0),
+('Pink', 1),
 ('Purple', 0),
 ('Blue', 0);
 
