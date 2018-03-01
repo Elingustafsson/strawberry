@@ -51,7 +51,8 @@ session_start();
 <hr>
 
 <div id="leaderboard" class="padding-top container">
-<div class="ldbrdtext"><h2>Leaderboard</h2></div>
+<div class="ldbrd"><h2>Leaderboard</h2></div>
+ <div class="ldbrdtext">
   <?php
   include '../config.php';
 
@@ -78,6 +79,7 @@ session_start();
       echo "\n <br> No results in the table!";
   }
   ?>
+ </div>
 </div>
 
 <div id="news" class="padding-top container">
@@ -133,20 +135,31 @@ session_start();
   <div class="panel panel-default">
     <div class="panel-body">
     <h2>F.A.Qs</h2>
+    <div class="faqtext">
       <ul>
-        <li>How do I play?
+        <li><strong>How do I play?</strong>
           <p>- Take over as many areas as you can.</p>
         </li>
-        <li>How do I capture an area?
+        <li><strong>How do I capture an area?</strong>
           <p>- Press the marker in the area that you want to take over.</p>
         </li>
-        <li>What happens when I press on a marker?
+        <li><strong>What happens when I press on a marker?</strong>
           <p>- A quiz starts.</p>
         </li>
-        <li>How to contact us:
+        <li><strong>What kind of currency do you get when you take over an area?</strong>
+          <p>- You get a strawberry.</p>
+        </li>
+        <li><strong>What happens if I answer a question incorrect?</strong>
+          <p>- You won't be able to answer that question again for a certain amount of time.</p>
+        </li>
+        <li><strong>Can I join a team whenever I want?</strong>
+          <p>- No you choose your team when you create your account.</p>
+        </li>
+        <li><strong>How to contact us:</strong>
         <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:strawberry@game.com">strawberry@game.com</a></p>
         <p><span class="glyphicon glyphicon-earphone"></span> <a href="tel:+468-1337 0123">+468-1337 0123</a></p>
-        </li>
+       </div> 
+      </li>
       </ul>
     </div>
   </div>

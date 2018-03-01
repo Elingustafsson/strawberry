@@ -20,11 +20,16 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.ldbrdtext {
+.ldbrd {
   color: #ffffffbb;
 }
 
+.ldbrdtext {
+  font-size: 22px;
+}
+
 .table {
+  
   background-color: #ffffffbb;
 }
 
@@ -52,8 +57,13 @@
 
 #faq {
   background-image: url("../img/morestrawberries.jpg");
+  background-image: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding-top: 20px;
+}
+
+.faqtext {
+  font-size: large;
 }
 
 .panel {
