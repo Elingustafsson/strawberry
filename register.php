@@ -1,20 +1,6 @@
 <?php
 $link_address = 'index.php';
 
-echo '<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<title>error page</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="style/main.css">
-</head>
-<body>';
-
 if(isset($_POST["submit"])){
   if(!empty($_POST['user']) && !empty($_POST['pass']) && !empty($_POST['email']) && !empty($_POST['team'])){
     $user = $_POST['user'];
@@ -37,26 +23,15 @@ if(isset($_POST["submit"])){
     else
     {
       echo '
-      <div class="container">
-      <div class="panel panel-default">
-      <div class="panel-body">
       <h2>That Username already exists! <br> Please try again.<h2>
-      <a href="'.$link_address.'" class="btn btn-default" role="button">Go back</a>
-      </div>
-      </div>';
+      <a href="'.$link_address.'">Go back</a>';
     }
   }
   else
   {
     echo '
-    <div class="container">
-    <div class="panel panel-default">
-    <div class="panel-body">
     <h2>Required all fields!<h2>
-    <a href="'.$link_address.'" class="btn btn-default" role="button">Go back</a>
-    </div>
-    </div>';
+    <a href="'.$link_address.'">Go back</a>';
   }
 }
-echo '</body></html>';
 ?>
