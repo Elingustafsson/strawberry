@@ -55,7 +55,7 @@
       <h2>Required all fields!<h2>
       <a href="'.$link_address.'" class="btn btn-default" role="button">Go back</a>
       </div>
-      </div>'; }
+      </div>'; 
     }
   }
   ?>
