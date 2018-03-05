@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+  <?php
+  $link_address = 'index.php';
+
+echo '<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,10 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style/main.css">
 </head>
-<body>
-
-  <?php
-  $link_address = 'index.php';
+<body>';
 
   if(isset($_POST["submit"])){
     if(!empty($_POST['user']) && !empty($_POST['pass'])){
@@ -64,7 +64,5 @@
       </div>';
     }
   }
+  echo '</body></html>';
   ?>
-
-</body>
-</html>
