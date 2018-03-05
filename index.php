@@ -90,7 +90,7 @@
           <br>
           <label for="sel1">Pick your team:</label>
           <select name="team" class="form-control">
-            <option>Team</option>
+            <option value="">Team</option>
             <option value="Pink">Pink</option>
             <option value="Blue">Blue</option>
             <option value="Purple">Purple</option>
