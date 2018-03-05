@@ -44,24 +44,39 @@ if($row = mysqli_fetch_array($result)) {
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Tutorial</h4>
+            <h4 class="modal-title"><strong>Tutorial</strong></h4>
           </div>
           <div class="modal-body">
             <ul>
-            <li>How do I play?
-          <p>- Take over as many areas as you can.</p>
-        </li>
-        <li>How do I capture an area?
-          <p>- Press the marker in the area that you want to take over.</p>
-        </li>
-        <li>What happens when I press on a marker?
-          <p>- A quiz starts.</p>
+              <li><strong>How do I play?</strong>
+                <p>- You collect points by answering questions.</p>
               </li>
-            </ul>
+              <li><strong>How do I access the questions?</strong>
+                <p>- Press the marker in the area within 50m.</p>
+              </li>
+              <li><strong>What happens when I press on a marker?</strong>
+                <p>- A quiz starts.</p>
+              </li>
+              <li><strong>What is going and going, but never coming to the door?</strong>
+                <p>- The clock.</p>
+              </li>
+              <li><strong>What happens if I answer a question incorrect?</strong>
+                <p>- Nothing, we are nice and give you as many tries as you prefer.</p>
+              </li>
+              <li><strong>Can I join a team whenever I want?</strong>
+                <p>- No you choose your team when you create your account.</p>
+              </li>
+              <li><strong>How to contact us:</strong>
+                <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:strawberry@game.com">strawberry@game.com</a></p>
+                <p><span class="glyphicon glyphicon-earphone"></span> <a href="tel:+468-1337 0123">+468-1337 0123</a></p>
           </div>
+          </li>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
+          </ul>
+          </div>
+
         </div>
       </div>
     </div>

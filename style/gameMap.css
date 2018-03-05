@@ -56,8 +56,8 @@ body {
   font-size: 1.2em;
   color: white;
 }
-@media (max-width: 773px)
-{
+
+@media (max-width: 773px) {
   .btn11 {
     border-radius: 6px;
     box-shadow: none;

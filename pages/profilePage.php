@@ -138,29 +138,29 @@ session_start();
     <div class="faqtext">
       <ul>
         <li><strong>How do I play?</strong>
-          <p>- Take over as many areas as you can.</p>
+          <p>- You collect points by answering questions.</p>
         </li>
-        <li><strong>How do I capture an area?</strong>
-          <p>- Press the marker in the area that you want to take over.</p>
+        <li><strong>How do I access the questions?</strong>
+          <p>- Press the marker in the area within 50m.</p>
         </li>
         <li><strong>What happens when I press on a marker?</strong>
           <p>- A quiz starts.</p>
         </li>
-        <li><strong>What kind of currency do you get when you take over an area?</strong>
-          <p>- You get a strawberry.</p>
+        <li><strong>What is going and going, but never coming to the door?</strong>
+          <p>- The clock.</p>
         </li>
         <li><strong>What happens if I answer a question incorrect?</strong>
-          <p>- You won't be able to answer that question again for a certain amount of time.</p>
+          <p>- Nothing, we are nice and give you as many tries as you prefer.</p>
         </li>
         <li><strong>Can I join a team whenever I want?</strong>
           <p>- No you choose your team when you create your account.</p>
         </li>
         <li><strong>How to contact us:</strong>
-        <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:strawberry@game.com">strawberry@game.com</a></p>
-        <p><span class="glyphicon glyphicon-earphone"></span> <a href="tel:+468-1337 0123">+468-1337 0123</a></p>
-       </div>
-      </li>
-      </ul>
+          <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:strawberry@game.com">strawberry@game.com</a></p>
+          <p><span class="glyphicon glyphicon-earphone"></span> <a href="tel:+468-1337 0123">+468-1337 0123</a></p>
+    </div>
+    </li>
+    </ul>
     </div>
   </div>
 </div>
