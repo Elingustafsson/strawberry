@@ -227,7 +227,7 @@ function setLocation(pos) { // watchPosition callback
 
 
 // Ger laget poäng
-  let presetDistance = 100 //Meter
+  let presetDistance = 1000000 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
   for (var i = 0; i < pointMarker.length; i++) {

@@ -81,7 +81,7 @@ session_start();
   ?>
  </div>
 </div>
-
+<hr>
 <div id="news" class="padding-top container">
   <h2>Latest news</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -158,7 +158,7 @@ session_start();
         <li><strong>How to contact us:</strong>
         <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:strawberry@game.com">strawberry@game.com</a></p>
         <p><span class="glyphicon glyphicon-earphone"></span> <a href="tel:+468-1337 0123">+468-1337 0123</a></p>
-       </div> 
+       </div>
       </li>
       </ul>
     </div>

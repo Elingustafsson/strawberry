@@ -28,7 +28,7 @@ if($row = mysqli_fetch_array($result)) {
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="profilePage.html">Strawberry game</a>
+      <a class="navbar-brand" href="profilePage.php">Strawberry game</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-out"></span> Help</a></li>

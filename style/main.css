@@ -16,6 +16,7 @@
 }
 
 #leaderboard {
+  margin-top:.5em;
   background-image: url("../img/strawberries.jpg");
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -29,7 +30,6 @@
 }
 
 .table {
-
   background-color: #ffffffbb;
 }
 

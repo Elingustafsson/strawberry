@@ -136,7 +136,7 @@
   ?>
  </div>
 </div>
-
+<hr>
 <div id="news" class="padding-news container">
   <h2>Latest news</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
