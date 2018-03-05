@@ -146,6 +146,7 @@ function loadGameMap() {
     gameMapCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
     gameMap.setCenter(gameMapCenter)
   })
+
   gameMap = new google.maps.Map(document.getElementById("game-map"), gameMapOptions)
   setPlayerMarker(gameMapCenter)
   //Calls the function below to load up all the map markers.
@@ -166,7 +167,9 @@ function loadMapMarkers() {
   collection[4] = new google.maps.LatLng(59.310822, 18.114690)
   collection[5] = new google.maps.LatLng(59.311496, 18.118675)
   collection[6] = new google.maps.LatLng(59.309242, 18.109821)
+
   var pointMarkerImage = new Array() //store image of marker in array
+
   //create number of markers based on collection.length
   for (var i = 0; i < collection.length; i++) {
     pointMarkerImage[i] = new google.maps.MarkerImage('../pins/orange_MarkerC.png')
@@ -202,6 +205,7 @@ function setLocation(pos) { // watchPosition callback
         for (var j = 0; j < json.strawberrydb.length; j++) {
           quizzes[j] = json.strawberrydb[j];
         }
+        //console.log(json);
       });
     })
     .catch(error => {
@@ -220,17 +224,22 @@ function setLocation(pos) { // watchPosition callback
     .catch(error => {
       console.log(error);
     });
+
+// Ger laget poäng
   let presetDistance = 50 //Meter
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
   playerMarker.setPosition(playerPos)
   for (var i = 0; i < pointMarker.length; i++) {
+    //console.log(element.getPosition())
     questPos = pointMarker[i].getPosition()
     dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos)
     console.log(dist)
     if (dist <= presetDistance)
       google.maps.event.addListener(pointMarker[i], 'click', function(e) {
+        //console.log(this.my_id)
         var t = this.my_id
         $("#markerModal").modal();
+        // console.log(quizzes);
         document.getElementById('question').innerHTML = quizzes[t].question;
         document.getElementById('btn1').innerHTML = quizzes[t].answer1;
         document.getElementById('btn2').innerHTML = quizzes[t].answer2;
@@ -243,6 +252,7 @@ function setLocation(pos) { // watchPosition callback
 
 function bindAnswerButtons(quizId) {
   $('#btn1, #btn2, #btn3, #btn4').click(function() {
+
     if ($(this).html() == quizzes[quizId].correctAnswer) {
       document.getElementById(this.id).classList.add("btn-success");
       // Fetchar lagtabellen från db, assignar datan in i en lista kallad teamArray så vi kan använda json objektet
@@ -255,17 +265,18 @@ function bindAnswerButtons(quizId) {
 
       //PUT med fetch för att lägga till poäng
 
-      fetch(api_url + '/teamscore/' + team2, {
-        method: 'get'
+     fetch(api_url + '/teamscore/' + team2, {
+      	method: 'get'
       }).then(function(response) {
 
       }).catch(function(err) {
-        // Error :(
+      	// Error :(
       });
 
       $('#btn1, #btn2, #btn3, #btn4').off('click');
 
-    } else if ($(this).html() && $(this).html() != quizzes[quizId].correctAnswer) {
+    } else if($(this).html() && $(this).html() != quizzes[quizId].correctAnswer){
+
       console.log('wrong');
       $('#btn1, #btn2, #btn3, #btn4').off('click');
       document.getElementById(this.id).classList.add("btn-danger");

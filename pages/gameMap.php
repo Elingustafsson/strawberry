@@ -90,10 +90,10 @@ if($row = mysqli_fetch_array($result)) {
           <h4 id="question" class="center-header modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <button id="btn1" class="btn11 btn-block">Question</button>
-          <button id="btn2" class="btn11 btn-block">Question</button>
-          <button id="btn3" class="btn11 btn-block">Question</button>
-          <button id="btn4" class="btn11 btn-block">Question</button>
+          <button id="btn1" class="btn11 btn-block btn-primary">Question</button>
+          <button id="btn2" class="btn11 btn-block btn-primary">Question</button>
+          <button id="btn3" class="btn11 btn-block btn-primary">Question</button>
+          <button id="btn4" class="btn11 btn-block btn-primary">Question</button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
